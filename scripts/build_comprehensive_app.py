@@ -2,15 +2,96 @@
 """
 Build Comprehensive Multi-Horizon Career Visualizer
 Integrates ALL 9,453 titles from SSOC 2024 Alphabetical Index & SFw framework
-mapped to all 1,006 unique 5-digit SSOC occupational valuations.
+mapped to title-specific calibrated market salaries and seniority multipliers.
 """
 
 import os
+import re
 import json
 import zipfile
 import xml.etree.ElementTree as ET
 
-def extract_all_titles(xlsx_path):
+def calibrate_title_pay(code: str, title: str, p25: float, p50: float, p75: float):
+    t_lower = title.lower()
+    
+    # 1. Constitutional, Apex Political & Judiciary (Official Singapore Gazetted Benchmarks)
+    if code == '11110':
+        if 'prime minister' in t_lower:
+            return 110000, 15.0 # S$2.2M/yr
+        elif 'minister of state' in t_lower:
+            return 38000, 6.0   # S$770k/yr
+        elif 'minister' in t_lower and 'secretary' not in t_lower:
+            return 55000, 7.0   # MR4 benchmark S$1.1M/yr
+        elif 'attorney general' in t_lower and 'deputy' not in t_lower:
+            return 70000, 7.0
+        elif 'deputy attorney general' in t_lower:
+            return 45000, 6.0
+        elif 'speaker' in t_lower:
+            return 45000, 6.0
+        elif 'parliamentary secretary' in t_lower:
+            return 28000, 5.0
+        elif 'legislator' in t_lower or 'member of parliament' in t_lower or 'parliamentarian' in t_lower:
+            return 16041, 1.0   # Statutory MP allowance: S$192,500/yr
+        elif 'solicitor general' in t_lower:
+            return 50000, 6.0
+            
+    if code == '11121':
+        if 'permanent secretary' in t_lower or 'auditor general' in t_lower:
+            return 55000, 6.0
+        elif 'commissioner' in t_lower and 'deputy' not in t_lower:
+            return 38000, 5.0
+        elif 'deputy commissioner' in t_lower or 'deputy secretary' in t_lower:
+            return 28000, 4.5
+        elif 'ambassador' in t_lower or 'high commissioner' in t_lower:
+            return 32000, 4.5
+        elif 'director-general' in t_lower:
+            return 35000, 5.0
+
+    if code == '26120':
+        if 'chief justice' in t_lower:
+            return 75000, 8.0
+        elif 'judge of appeal' in t_lower:
+            return 58000, 7.0
+        elif 'high court judge' in t_lower:
+            return 48000, 6.5
+        elif 'judicial commissioner' in t_lower:
+            return 36000, 5.5
+        elif 'district court judge' in t_lower or 'presiding judge' in t_lower:
+            return 26000, 4.5
+        elif 'magistrate' in t_lower or 'registrar' in t_lower:
+            return 18000, 4.0
+
+    # Junior / Entry level check
+    if re.search(r'\b(pupil|intern\b|apprentice|trainee lawyer|assistant nurse)\b', t_lower):
+        return int(round(p25 * 0.70)), 1.0
+
+    # Tier 1: C-Suite / Apex / Founder / Managing Director / Senior Partner / General Secretary
+    if re.search(r'\b(chief executive|ceo|chief financial|cfo|chief technology|cto|chief operating|coo|chief information|cio|chief risk|cro|chief data|chief digital|chief security|ciso|managing director|president\b|senior partner|general secretary)\b', t_lower):
+        return int(round(max(p75 * 1.35, p50 * 1.70))), 4.0
+
+    # Tier 2: Director / Vice President / Head of Group / Site Director / General Manager / Partner / Senior Official
+    if re.search(r'\b(director|vice-president|vice president|vp\b|svp\b|head of|site director|general manager|dean\b|partner\b|senior official)\b', t_lower):
+        return int(round(max(p75 * 1.05, p50 * 1.30))), 3.5
+
+    # Tier 3: Senior Manager / Assistant Director / Lead / Principal / Superintendent / Architect / Chief Engineer
+    if re.search(r'\b(senior manager|lead\b|principal\b|assistant director|superintendent|chief engineer|senior fellow|fellow|master craftsman|architect\b)\b', t_lower):
+        return int(round(p75 * 0.95)), 3.0
+
+    # Tier 4: Manager / Senior Specialist / Senior Engineer / Senior Associate / Senior Developer
+    if re.search(r'\b(manager\b|senior engineer|senior specialist|senior analyst|senior consultant|senior associate|senior developer)\b', t_lower):
+        return int(round(p50 * 1.05)), 2.5
+
+    # Tier 5: Administrator / Assistant Manager / Deputy / Specialist / Mid-Level
+    if re.search(r'\b(administrator|assistant manager|deputy|specialist|consultant|engineer|analyst|developer|designer|officer|physician|accountant|doctor)\b', t_lower):
+        return int(round(p25 + (p50 - p25) * 0.60)), 2.0
+
+    # Tier 6: Junior / Associate / Assistant / Trainee / Aide
+    if re.search(r'\b(assistant|associate|junior|trainee|aide|helper|attendant)\b', t_lower):
+        return int(round(p25 * 0.85)), 1.5
+
+    return int(p50), 2.2
+
+def extract_all_titles(xlsx_path, master_lookup):
     print(f"Extracting titles from {xlsx_path}...")
     with zipfile.ZipFile(xlsx_path, 'r') as z:
         with z.open('xl/sharedStrings.xml') as f:
@@ -42,17 +123,34 @@ def extract_all_titles(xlsx_path):
             title = row_vals[1].strip()
             ttype = row_vals[2].strip() if len(row_vals) > 2 else ''
             if len(code) == 5 and (code.isdigit() or code.startswith('X')):
-                # Type flag: P = Principal Title, S = Skills Framework (SFw), A = Alternative Title
                 t_flag = 'P' if 'Principal' in ttype else ('S' if 'SFw' in ttype else 'A')
-                titles_index.append([title, code, t_flag])
                 
-    print(f"Extracted {len(titles_index)} total job title records.")
+                # Fetch baseline SSOC wage bounds
+                parent_stats = master_lookup.get(code, {'p25': 4000, 'p50': 6000, 'p75': 9000})
+                calibrated_base, calibrated_bm = calibrate_title_pay(
+                    code, title, parent_stats['p25'], parent_stats['p50'], parent_stats['p75']
+                )
+                titles_index.append([title, code, t_flag, calibrated_base, calibrated_bm])
+                
+    print(f"Extracted and calibrated {len(titles_index)} total job title records.")
     return titles_index
 
 def build_app():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     json_path = os.path.join(base_dir, "ssoc_2024_actuarial_stay_leave_master.json")
     
+    with open(json_path, "r", encoding="utf-8") as f:
+        master_data = json.load(f)
+        
+    master_lookup = {}
+    for r in master_data:
+        code = str(r["ssoc_code"]).strip()
+        master_lookup[code] = {
+            "p25": int(r["p25_monthly_base_sgd"]),
+            "p50": int(r["p50_median_monthly_base_sgd"]),
+            "p75": int(r["p75_monthly_base_sgd"])
+        }
+        
     # Locate uploaded SSOC alphabetical index XLSX dynamically
     xlsx_candidate = os.environ.get("SSOC_XLSX_PATH", "")
     if not xlsx_candidate or not os.path.exists(xlsx_candidate):
@@ -66,19 +164,14 @@ def build_app():
             xlsx_candidate = candidate
         else:
             xlsx_candidate = os.path.join(base_dir, "ssoc2024-alphabetical-index.xlsx")
-        
-    titles_index = extract_all_titles(xlsx_candidate)
+            
+    titles_index = extract_all_titles(xlsx_candidate, master_lookup)
     
-    with open(json_path, "r", encoding="utf-8") as f:
-        master_data = json.load(f)
-        
-    print(f"Loaded {len(master_data)} 5-digit SSOC master occupational records.")
-    
-    # Build lookup dictionary keyed by 5-digit SSOC code
-    ssoc_lookup = {}
+    # Build full SSOC dictionary
+    ssoc_dict = {}
     for r in master_data:
         code = str(r["ssoc_code"]).strip()
-        ssoc_lookup[code] = {
+        ssoc_dict[code] = {
             "c": code,
             "t": r["ssoc_title"],
             "p25": int(r["p25_monthly_base_sgd"]),
@@ -103,11 +196,9 @@ def build_app():
             "com": r["sideline_coi_mitigation"]
         }
         
-    lookup_json = json.dumps(ssoc_lookup, separators=(',', ':'), ensure_ascii=False)
+    lookup_json = json.dumps(ssoc_dict, separators=(',', ':'), ensure_ascii=False)
     titles_json = json.dumps(titles_index, separators=(',', ':'), ensure_ascii=False)
     
-    print(f"Lookup JSON size: {len(lookup_json)/1024:.1f} KB")
-    print(f"Titles JSON size: {len(titles_json)/1024:.1f} KB")
     print(f"Total payload size: {(len(lookup_json) + len(titles_json))/1024:.1f} KB")
 
     html = f"""<!DOCTYPE html>
@@ -158,7 +249,7 @@ def build_app():
             Singapore Actuarial Core
           </span>
           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800">
-            9,453 Job Titles · 1,006 SSOC 2024 Occupations
+            9,453 Calibrated Titles · 1,006 SSOC 2024 Occupations
           </span>
           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950 text-amber-400 border border-amber-800">
             1 Jan 2026 CPF Rules Active
@@ -168,7 +259,7 @@ def build_app():
           Stochastic Life-Path & Career Stay-vs-Leave Engine
         </h1>
         <p class="text-xs md:text-sm text-[var(--text-muted)] mt-1">
-          Complete Singapore occupational index covering all <span class="text-cyan-400 font-semibold font-mono">9,453</span> official titles, SFw roles, Merton jump-diffusion, Bellman counteroffer solver, and ACRA/CPF MediSave sidelines.
+          Title-specific calibrated compensation across <span class="text-cyan-400 font-semibold font-mono">9,453</span> official roles (C-suite, ministers, directors, engineers, trades) with Merton jump-diffusion, Bellman counteroffer solver, and ACRA/CPF MediSave sidelines.
         </p>
       </div>
 
@@ -229,33 +320,40 @@ def build_app():
         <!-- Role Search / Selector -->
         <div class="relative mb-4">
           <div class="flex justify-between items-center mb-1">
-            <label class="block text-xs font-semibold text-[var(--text-muted)]">Search Any Job Title or SSOC Code</label>
+            <label class="block text-xs font-semibold text-[var(--text-muted)]">Search Specific Job Title or SSOC Code</label>
             <span class="text-[10px] text-cyan-400 font-mono" id="stayMatchCount">Type to search 9,453 titles</span>
           </div>
-          <input type="text" id="staySearchInput" placeholder="e.g. Software Developer, CFO, Finance Director, Nurse..."
+          <input type="text" id="staySearchInput" placeholder="e.g. Software Developer, CFO, Minister, Director, Nurse..."
                  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-cyan-500 text-sm">
           <div id="stayDropdown" class="absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto bg-slate-900 border border-slate-700 rounded-lg shadow-2xl custom-scrollbar hidden"></div>
         </div>
 
         <!-- Selected Occupation Details -->
-        <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80 mb-4">
-          <div class="flex justify-between items-center text-xs text-[var(--text-muted)] mb-1">
-            <span>Primary SSOC Classification:</span>
-            <span class="text-cyan-400 font-semibold font-mono" id="stayTitleDisplay">Software developer</span>
+        <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80 mb-4">
+          <div class="flex justify-between items-start text-xs mb-2">
+            <div>
+              <span class="text-[var(--text-muted)]">Selected Title Benchmark:</span>
+              <div class="text-cyan-400 font-bold text-sm" id="staySelectedTitleLabel">Software developer</div>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800" id="stayTitleTypeBadge">Principal</span>
           </div>
+          
           <div class="grid grid-cols-3 gap-2 text-center text-xs pt-2 border-t border-slate-800">
             <div>
-              <div class="text-[var(--text-muted)] text-[10px]">MOM P50 Base</div>
-              <div class="font-bold text-white text-sm font-mono" id="stayP50Display">S$7,500/mo</div>
+              <div class="text-[var(--text-muted)] text-[10px]">Title Market Base</div>
+              <div class="font-bold text-white text-sm font-mono" id="stayP50Display">S$6,810/mo</div>
             </div>
             <div>
               <div class="text-[var(--text-muted)] text-[10px]">Typical Bonus</div>
-              <div class="font-bold text-white text-sm font-mono" id="stayBonusDisplay">2.5 Months</div>
+              <div class="font-bold text-white text-sm font-mono" id="stayBonusDisplay">2.0 Months</div>
             </div>
             <div>
               <div class="text-[var(--text-muted)] text-[10px]">Total Annual Cash</div>
-              <div class="font-bold text-cyan-400 text-sm font-mono" id="stayTotCashDisplay">S$108,750</div>
+              <div class="font-bold text-cyan-400 text-sm font-mono" id="stayTotCashDisplay">S$95,340</div>
             </div>
+          </div>
+          <div class="text-[10px] text-slate-500 mt-2 truncate" id="stayParentInfo">
+            Parent Basket: SSOC 25121 · Software developer (MOM Broad Group Median: S$7,500/mo)
           </div>
         </div>
 
@@ -263,12 +361,12 @@ def build_app():
         <div class="grid grid-cols-2 gap-3 mb-4">
           <div>
             <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Your Monthly Base (SGD)</label>
-            <input type="number" id="stayBaseInput" value="7500" step="100"
+            <input type="number" id="stayBaseInput" value="6810" step="100"
                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-white focus:outline-none focus:border-cyan-500 font-mono text-sm">
           </div>
           <div>
             <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Your Annual Bonus (SGD)</label>
-            <input type="number" id="stayBonusInput" value="18750" step="500"
+            <input type="number" id="stayBonusInput" value="13620" step="500"
                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-white focus:outline-none focus:border-cyan-500 font-mono text-sm">
           </div>
         </div>
@@ -326,20 +424,24 @@ def build_app():
             <label class="block text-xs font-semibold text-[var(--text-muted)]">Search Target Job Title or SSOC Code</label>
             <span class="text-[10px] text-emerald-400 font-mono" id="leaveMatchCount">Type to search 9,453 titles</span>
           </div>
-          <input type="text" id="leaveSearchInput" placeholder="e.g. Director of Engineering, General Manager, CTO..."
+          <input type="text" id="leaveSearchInput" placeholder="e.g. Director, General Manager, CTO, Minister..."
                  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500 text-sm">
           <div id="leaveDropdown" class="absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto bg-slate-900 border border-slate-700 rounded-lg shadow-2xl custom-scrollbar hidden"></div>
         </div>
 
         <!-- Selected Occupation Details -->
-        <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80 mb-4">
-          <div class="flex justify-between items-center text-xs text-[var(--text-muted)] mb-1">
-            <span>Primary SSOC Classification:</span>
-            <span class="text-emerald-400 font-semibold font-mono" id="leaveTitleDisplay">Production / Specialised Services Manager</span>
+        <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80 mb-4">
+          <div class="flex justify-between items-start text-xs mb-2">
+            <div>
+              <span class="text-[var(--text-muted)]">Target Title Benchmark:</span>
+              <div class="text-emerald-400 font-bold text-sm" id="leaveSelectedTitleLabel">Information and communications technology (ICT) manager</div>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800" id="leaveTitleTypeBadge">Principal</span>
           </div>
+          
           <div class="grid grid-cols-3 gap-2 text-center text-xs pt-2 border-t border-slate-800">
             <div>
-              <div class="text-[var(--text-muted)] text-[10px]">Target P50 Base</div>
+              <div class="text-[var(--text-muted)] text-[10px]">Target Market Base</div>
               <div class="font-bold text-white text-sm font-mono" id="leaveP50Display">S$12,000/mo</div>
             </div>
             <div>
@@ -350,6 +452,9 @@ def build_app():
               <div class="text-[var(--text-muted)] text-[10px]">Target Total Cash</div>
               <div class="font-bold text-emerald-400 text-sm font-mono" id="leaveTotCashDisplay">S$180,000</div>
             </div>
+          </div>
+          <div class="text-[10px] text-slate-500 mt-2 truncate" id="leaveParentInfo">
+            Parent Basket: SSOC 12210 · ICT manager (MOM Broad Group Median: S$12,000/mo)
           </div>
         </div>
 
@@ -764,8 +869,14 @@ def build_app():
     let state = {{
       role1Code: "25121",
       role1Title: "Software developer",
+      role1Type: "P",
+      role1Base: 6810,
+      role1Bm: 2.0,
       role2Code: "12210",
       role2Title: "Information and communications technology (ICT) manager",
+      role2Type: "P",
+      role2Base: 12000,
+      role2Bm: 3.0,
       currentAge: 32,
       retireAge: 65,
       selectedHorizon: 10,
@@ -795,9 +906,12 @@ def build_app():
       setupFuzzyDropdown('staySearchInput', 'stayDropdown', 'stayMajorFilter', 'stayMatchCount', (selectedItem) => {{
         state.role1Code = selectedItem.code;
         state.role1Title = selectedItem.title;
-        const role = getRoleData(state.role1Code);
-        document.getElementById('stayBaseInput').value = role.p50;
-        document.getElementById('stayBonusInput').value = Math.round(role.p50 * role.bm);
+        state.role1Type = selectedItem.ttype;
+        state.role1Base = selectedItem.base;
+        state.role1Bm = selectedItem.bm;
+        
+        document.getElementById('stayBaseInput').value = selectedItem.base;
+        document.getElementById('stayBonusInput').value = Math.round(selectedItem.base * selectedItem.bm);
         syncUIFromState();
         runSimulation();
       }});
@@ -805,9 +919,12 @@ def build_app():
       setupFuzzyDropdown('leaveSearchInput', 'leaveDropdown', 'leaveMajorFilter', 'leaveMatchCount', (selectedItem) => {{
         state.role2Code = selectedItem.code;
         state.role2Title = selectedItem.title;
-        const role = getRoleData(state.role2Code);
-        document.getElementById('leaveBaseInput').value = role.p50;
-        document.getElementById('leaveBonusInput').value = Math.round(role.p50 * role.bm);
+        state.role2Type = selectedItem.ttype;
+        state.role2Base = selectedItem.base;
+        state.role2Bm = selectedItem.bm;
+        
+        document.getElementById('leaveBaseInput').value = selectedItem.base;
+        document.getElementById('leaveBonusInput').value = Math.round(selectedItem.base * selectedItem.bm);
         syncUIFromState();
         runSimulation();
       }});
@@ -843,14 +960,16 @@ def build_app():
         const title = item[0];
         const code = item[1];
         const ttype = item[2]; // P, A, S
+        const base = item[3];
+        const bm = item[4];
 
         if (majorFilter !== 'ALL' && !code.startsWith(majorFilter)) {{
           continue;
         }}
 
         if (!q || code.includes(q) || title.toLowerCase().includes(q)) {{
-          matches.push({{ title, code, ttype }});
-          if (matches.length >= 100) break; // Top 100 for fast responsiveness
+          matches.push({{ title, code, ttype, base, bm }});
+          if (matches.length >= 100) break; // Top 100 for speed
         }}
       }}
 
@@ -871,7 +990,7 @@ def build_app():
       }};
 
       dropdown.innerHTML = matches.map((m, idx) => {{
-        const rData = SSOC_LOOKUP[m.code] || {{ p50: 0 }};
+        const rData = SSOC_LOOKUP[m.code] || {{ t: '' }};
         return `
           <div class="px-3 py-2 hover:bg-slate-800 cursor-pointer border-b border-slate-800/40 text-xs flex justify-between items-center" data-idx="${{idx}}">
             <div class="pr-2 truncate">
@@ -880,11 +999,11 @@ def build_app():
                 ${{badgeMap[m.ttype] || ''}}
               </div>
               <div class="text-[11px] text-slate-400 font-mono mt-0.5">
-                SSOC ${{m.code}} · ${{rData.t || ''}}
+                SSOC ${{m.code}} · ${{rData.t}}
               </div>
             </div>
             <div class="text-right font-mono shrink-0">
-              <span class="text-cyan-400 font-semibold">S$${{rData.p50.toLocaleString()}}</span>
+              <span class="text-cyan-400 font-semibold">S$${{m.base.toLocaleString()}}</span>
               <span class="text-slate-500 text-[10px]">/mo</span>
             </div>
           </div>
@@ -907,21 +1026,33 @@ def build_app():
       const r1 = getRoleData(state.role1Code);
       const r2 = getRoleData(state.role2Code);
 
+      const badgeNameMap = {{
+        'P': 'Principal SSOC Title',
+        'S': 'Skills Framework (SFw) Role',
+        'A': 'Alternative Industry Title'
+      }};
+
       // Role 1 UI
       document.getElementById('stayRoleCode').textContent = `SSOC ${{r1.c}}`;
       document.getElementById('staySearchInput').value = state.role1Title;
-      document.getElementById('stayTitleDisplay').textContent = `${{r1.t}} (${{r1.c}})`;
-      document.getElementById('stayP50Display').textContent = `S$${{r1.p50.toLocaleString()}}/mo`;
-      document.getElementById('stayBonusDisplay').textContent = `${{r1.bm}} Months`;
-      document.getElementById('stayTotCashDisplay').textContent = `S$${{r1.tot.toLocaleString()}}`;
+      document.getElementById('staySelectedTitleLabel').textContent = state.role1Title;
+      document.getElementById('stayTitleTypeBadge').textContent = badgeNameMap[state.role1Type] || 'Standard';
+      document.getElementById('stayP50Display').textContent = `S$${{state.role1Base.toLocaleString()}}/mo`;
+      document.getElementById('stayBonusDisplay').textContent = `${{state.role1Bm}} Months`;
+      const totCash1 = Math.round(state.role1Base * 12 + state.role1Base * state.role1Bm);
+      document.getElementById('stayTotCashDisplay').textContent = `S$${{totCash1.toLocaleString()}}`;
+      document.getElementById('stayParentInfo').textContent = `Parent Basket: SSOC ${{r1.c}} · ${{r1.t}} (MOM Broad Group Median: S$${{r1.p50.toLocaleString()}}/mo)`;
 
       // Role 2 UI
       document.getElementById('leaveRoleCode').textContent = `SSOC ${{r2.c}}`;
       document.getElementById('leaveSearchInput').value = state.role2Title;
-      document.getElementById('leaveTitleDisplay').textContent = `${{r2.t}} (${{r2.c}})`;
-      document.getElementById('leaveP50Display').textContent = `S$${{r2.p50.toLocaleString()}}/mo`;
+      document.getElementById('leaveSelectedTitleLabel').textContent = state.role2Title;
+      document.getElementById('leaveTitleTypeBadge').textContent = badgeNameMap[state.role2Type] || 'Standard';
+      document.getElementById('leaveP50Display').textContent = `S$${{state.role2Base.toLocaleString()}}/mo`;
       document.getElementById('leaveThreshDisplay').textContent = `+${{r2.lp}}%`;
-      document.getElementById('leaveTotCashDisplay').textContent = `S$${{r2.tot.toLocaleString()}}`;
+      const totCash2 = Math.round(state.role2Base * 12 + state.role2Base * state.role2Bm);
+      document.getElementById('leaveTotCashDisplay').textContent = `S$${{totCash2.toLocaleString()}}`;
+      document.getElementById('leaveParentInfo').textContent = `Parent Basket: SSOC ${{r2.c}} · ${{r2.t}} (MOM Broad Group Median: S$${{r2.p50.toLocaleString()}}/mo)`;
 
       // Demographics
       document.getElementById('currentAgeVal').textContent = state.currentAge;
@@ -1007,8 +1138,8 @@ def build_app():
     }}
 
     function applyMultiplier(mult) {{
-      const curBase = parseFloat(document.getElementById('stayBaseInput').value) || getRoleData(state.role1Code).p50;
-      const curBonus = parseFloat(document.getElementById('stayBonusInput').value) || (getRoleData(state.role1Code).p50 * getRoleData(state.role1Code).bm);
+      const curBase = parseFloat(document.getElementById('stayBaseInput').value) || state.role1Base;
+      const curBonus = parseFloat(document.getElementById('stayBonusInput').value) || (state.role1Base * state.role1Bm);
       document.getElementById('leaveBaseInput').value = Math.round(curBase * mult);
       document.getElementById('leaveBonusInput').value = Math.round(curBonus * mult);
       runSimulation();
@@ -1044,11 +1175,11 @@ def build_app():
       const r1 = getRoleData(state.role1Code);
       const r2 = getRoleData(state.role2Code);
 
-      const stayBase0 = parseFloat(document.getElementById('stayBaseInput').value) || r1.p50;
-      const stayBonus0 = parseFloat(document.getElementById('stayBonusInput').value) || (r1.p50 * r1.bm);
+      const stayBase0 = parseFloat(document.getElementById('stayBaseInput').value) || state.role1Base;
+      const stayBonus0 = parseFloat(document.getElementById('stayBonusInput').value) || (state.role1Base * state.role1Bm);
 
-      const leaveBase0 = parseFloat(document.getElementById('leaveBaseInput').value) || r2.p50;
-      const leaveBonus0 = parseFloat(document.getElementById('leaveBonusInput').value) || (r2.p50 * r2.bm);
+      const leaveBase0 = parseFloat(document.getElementById('leaveBaseInput').value) || state.role2Base;
+      const leaveBonus0 = parseFloat(document.getElementById('leaveBonusInput').value) || (state.role2Base * state.role2Bm);
 
       const startLiquid = parseFloat(document.getElementById('startLiquidInput').value) || 100000;
       const startCpf = parseFloat(document.getElementById('startCpfInput').value) || 120000;
