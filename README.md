@@ -1,5 +1,7 @@
 # Singapore Quantitative Career Actuary & Stochastic Life-Path Engine (`fight_or_flight`)
 
+🌐 **Live Interactive Web App (GitHub Pages)**: [https://lauyeehow1986-hub.github.io/fight_or_flight/](https://lauyeehow1986-hub.github.io/fight_or_flight/)
+
 Antigravity Skill: `sg-career-actuarial-stay-leave-engine`  
 FastMCP Server: `sg-career-actuarial-mcp`
 
