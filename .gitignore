@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments & credentials
+.env
+.env.*
+.venv
+env/
+venv/
+ENV/
+*.pem
+*.key
+*.token
+
+# OS artifacts
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE and local editor state
+.idea/
+.vscode/
+*.local
+*.log
+
+# Private case studies, employer negotiations and individual compensation data
+*private*
+*confidential*
+*negotiation*
+*custom_case*
+*personal*
+*internal*
+*salary_ask*
+*compensation_review*
+*benchmark_private*
+*custom_offer*
+*client_*
+*patient_*
+*hospital_*
+*cluster_*
+*institute_*
+*health_*
