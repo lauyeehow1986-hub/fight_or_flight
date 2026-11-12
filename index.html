@@ -209,13 +209,13 @@
               <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Job Rank / Grade</label>
               <select id="stayRankSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-500">
                 <option value="INTERN">Trainee / Intern (Cap S$3.8k)</option>
-                <option value="JUNIOR">Junior / Associate (MX13 / Cap S$6.2k)</option>
-                <option value="MID">Specialist / Officer (MX12 / Cap S$9.5k)</option>
-                <option value="SENIOR" selected>Senior Specialist / Manager (MX11 / Cap S$14k)</option>
-                <option value="LEAD">Lead / Principal / Asst Dir (MX11A / Cap S$18.5k)</option>
-                <option value="DIRECTOR">Director / Head / VP (MX10 / Cap S$26k)</option>
-                <option value="SENIOR_DIRECTOR">Senior Director / MD (MX9 / Cap S$38k)</option>
-                <option value="APEX">C-Suite / Apex (Cap S$75k)</option>
+                <option value="JUNIOR">Junior / Associate (Cap S$6.2k)</option>
+                <option value="MID">Specialist / Executive (Cap S$9.5k)</option>
+                <option value="SENIOR" selected>Senior Specialist / Manager (Cap S$14k)</option>
+                <option value="LEAD">Lead / Principal / Asst Dir (Cap S$18.5k)</option>
+                <option value="DIRECTOR">Director / VP / Head (Cap S$26k)</option>
+                <option value="SENIOR_DIRECTOR">Senior Director / MD (Cap S$38k)</option>
+                <option value="APEX">C-Suite / Apex Exec (Cap S$75k)</option>
               </select>
             </div>
             <div>
@@ -428,13 +428,13 @@
               <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Target Rank / Grade</label>
               <select id="leaveRankSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-500">
                 <option value="INTERN">Trainee / Intern (Cap S$3.8k)</option>
-                <option value="JUNIOR">Junior / Associate (MX13 / Cap S$6.2k)</option>
-                <option value="MID">Specialist / Officer (MX12 / Cap S$9.5k)</option>
-                <option value="SENIOR">Senior Specialist / Manager (MX11 / Cap S$14k)</option>
-                <option value="LEAD" selected>Lead / Principal / Asst Dir (MX11A / Cap S$18.5k)</option>
-                <option value="DIRECTOR">Director / Head / VP (MX10 / Cap S$26k)</option>
-                <option value="SENIOR_DIRECTOR">Senior Director / MD (MX9 / Cap S$38k)</option>
-                <option value="APEX">C-Suite / Apex (Cap S$75k)</option>
+                <option value="JUNIOR">Junior / Associate (Cap S$6.2k)</option>
+                <option value="MID">Specialist / Executive (Cap S$9.5k)</option>
+                <option value="SENIOR">Senior Specialist / Manager (Cap S$14k)</option>
+                <option value="LEAD" selected>Lead / Principal / Asst Dir (Cap S$18.5k)</option>
+                <option value="DIRECTOR">Director / VP / Head (Cap S$26k)</option>
+                <option value="SENIOR_DIRECTOR">Senior Director / MD (Cap S$38k)</option>
+                <option value="APEX">C-Suite / Apex Exec (Cap S$75k)</option>
               </select>
             </div>
             <div>
@@ -1164,14 +1164,14 @@
 
     // Actuarial Configuration for Seniority Ranks & Grade Ceiling Caps
     const RANK_CONFIG = {
-      'INTERN': { label: 'Intern / Trainee', cap: 3800, next: 'JUNIOR', promoOdds: 0.35, promoRaise: 0.25 },
-      'JUNIOR': { label: 'Junior / Associate (MX13)', cap: 6200, next: 'MID', promoOdds: 0.22, promoRaise: 0.18 },
-      'MID': { label: 'Specialist / Officer (MX12)', cap: 9500, next: 'SENIOR', promoOdds: 0.15, promoRaise: 0.15 },
-      'SENIOR': { label: 'Senior Specialist / Manager (MX11)', cap: 14000, next: 'LEAD', promoOdds: 0.10, promoRaise: 0.15 },
-      'LEAD': { label: 'Lead / Principal / Asst Dir (MX11A)', cap: 18500, next: 'DIRECTOR', promoOdds: 0.06, promoRaise: 0.15 },
-      'DIRECTOR': { label: 'Director / Head / VP (MX10)', cap: 26000, next: 'SENIOR_DIRECTOR', promoOdds: 0.04, promoRaise: 0.18 },
-      'SENIOR_DIRECTOR': { label: 'Senior Director / MD (MX9)', cap: 38000, next: 'APEX', promoOdds: 0.02, promoRaise: 0.20 },
-      'APEX': { label: 'C-Suite / Apex / Perm Sec', cap: 75000, next: 'APEX', promoOdds: 0.01, promoRaise: 0.10 }
+      'INTERN': { label: 'Intern / Trainee', cap: 3800, next: 'JUNIOR', promoOdds: 0.35, promoRaise: 0.25, mx: 'Intern' },
+      'JUNIOR': { label: 'Junior / Associate', cap: 6200, next: 'MID', promoOdds: 0.22, promoRaise: 0.18, mx: 'MX13' },
+      'MID': { label: 'Specialist / Executive', cap: 9500, next: 'SENIOR', promoOdds: 0.15, promoRaise: 0.15, mx: 'MX12' },
+      'SENIOR': { label: 'Senior Specialist / Manager', cap: 14000, next: 'LEAD', promoOdds: 0.10, promoRaise: 0.15, mx: 'MX11' },
+      'LEAD': { label: 'Lead / Principal / Asst Director', cap: 18500, next: 'DIRECTOR', promoOdds: 0.06, promoRaise: 0.15, mx: 'MX11A' },
+      'DIRECTOR': { label: 'Director / VP / Head', cap: 26000, next: 'SENIOR_DIRECTOR', promoOdds: 0.04, promoRaise: 0.18, mx: 'MX10' },
+      'SENIOR_DIRECTOR': { label: 'Senior Director / Managing Director', cap: 38000, next: 'APEX', promoOdds: 0.02, promoRaise: 0.20, mx: 'MX9' },
+      'APEX': { label: 'C-Suite / Apex Executive / Partner', cap: 75000, next: 'APEX', promoOdds: 0.01, promoRaise: 0.10, mx: 'Apex / Perm Sec' }
     };
 
     // Official MOM Labour Market Report & SSIC 2020/2025 Industry Baseline Retrenchment Incidence
@@ -1233,98 +1233,126 @@
     }
 
     function detectIndustryFromCode(code, title) {
-      const c = String(code || '');
+      const c = String(code || '').trim();
       const t = String(title || '').toLowerCase();
 
-      // Specialized domain routing for SSOC 21221 (Statistician)
+      // 1. Specialized domain routing for SSOC 21221 (Statistician)
       if (c === '21221') {
-        if (/\b(biostat|bioinform|biometr)/.test(t)) return 'BIOMED_PHARMA';
-        if (/\b(health|epidemiol|clinic|medic)/.test(t)) return 'HEALTHCARE_CLINICAL';
-        if (/\b(finan|quant|invest|deriv|risk)/.test(t)) return 'FIN_BANKING';
-        if (/\b(demograph|populat|census|vital|educat)/.test(t)) return 'CIVIL_SERVICE_EDU';
-        if (/\b(econ|market|survey|consult)/.test(t)) return 'STRAT_CONSULTING';
+        if (/\b(biostat|bioinform|biometr)/i.test(t)) return 'BIOMED_PHARMA';
+        if (/\b(health|epidemiol|clinic|medic)/i.test(t)) return 'HEALTHCARE_CLINICAL';
+        if (/\b(finan|quant|invest|deriv|risk)/i.test(t)) return 'FIN_BANKING';
+        if (/\b(demograph|populat|census|vital|educat)/i.test(t)) return 'CIVIL_SERVICE_EDU';
+        if (/\b(econ|market|survey|consult)/i.test(t)) return 'STRAT_CONSULTING';
         return 'STRAT_CONSULTING';
       }
 
-      // 1. Tech & Software (Section J)
+      // 2. Specific industry keywords in title (e.g. SFw, specialized company titles)
+      if (/\b(biopharm|pharmaceutical|biomed|clinical research|biotech|drug discovery)/i.test(t)) {
+        return 'BIOMED_PHARMA';
+      }
+      if (/\b(aerospace|aircraft|aviation|flight|pilot|air traffic)/i.test(t)) {
+        return 'AVIATION_AEROSPACE';
+      }
+      if (/\b(shipping|maritime|sea transport|seafarer|port ops|stevedor)/i.test(t)) {
+        return 'MARITIME_LOGISTICS';
+      }
+      if (/\b(semiconductor|wafer fab|integrated circuit|ic design)/i.test(t)) {
+        return 'SEMICON_HARDWARE';
+      }
+      if (/\b(petrochemical|oil & gas|energy and chemicals|refining|subsea)/i.test(t)) {
+        return 'CHEM_ENERGY_MFG';
+      }
+      if (/\b(fintech|crypto|blockchain|web3|defi|digital bank)/i.test(t)) {
+        return 'FINTECH_WEB3';
+      }
+
+      // 3. Tech & Software (Section J)
       if (c.startsWith('25') || c.startsWith('133') || c === '12210' || c === '12230' || c.startsWith('351') || c.startsWith('352')) {
-        if (/\b(fintech|crypto|blockchain|web3|defi)/.test(t)) return 'FINTECH_WEB3';
         return 'ICT';
       }
 
-      // 2. Electronics & Semiconductors (Section C26)
+      // 4. Electronics & Semiconductors (Section C26)
       if (c.startsWith('215') || c === '31141' || c === '31142' || c.startsWith('7421') || c.startsWith('7422') || c === '82121') {
         return 'SEMICON_HARDWARE';
       }
 
-      // 3. Biomedical Sciences & Pharma (Section C21)
-      if (c === '21311' || c === '21312' || c === '21319' || c === '21321' || c.startsWith('3141') || c.startsWith('3211') || c.startsWith('2145') || /\b(biostat|bioinform|pharma|biomed|biotech|clinical trial|clinical research|drug discovery|genom)/.test(t)) {
+      // 5. Biomedical Sciences & Pharma (Section C21)
+      if (c === '21311' || c === '21312' || c === '21319' || c === '21321' || c.startsWith('3141') || c.startsWith('3211') || c.startsWith('2145')) {
         return 'BIOMED_PHARMA';
       }
 
-      // 4. Chemicals, Energy, Materials & Precision Mfg (Section C19-20, C24-25, C28)
+      // 6. Chemicals, Energy, Materials & Precision Mfg (Section C19-20, C24-25, C28)
       if (c.startsWith('214') || c.startsWith('311') || c.startsWith('7') || c.startsWith('8') || c.startsWith('1321') || c.startsWith('1329')) {
         return 'CHEM_ENERGY_MFG';
       }
 
-      // 5. Banking & Financial Services (Section K64)
-      if (c.startsWith('241') || c.startsWith('331') || c.startsWith('1211') || c === '21211' || c === '12133' || c === '33210') {
-        if (/\b(fintech|crypto|blockchain|digital bank)/.test(t)) return 'FINTECH_WEB3';
+      // 7. Banking & Financial Services (Section K64)
+      if (c.startsWith('241') || c.startsWith('331') || c.startsWith('1211') || c === '21211' || c === '12133' || c === '33210' || c === '13461' || c === '13462' || c === '13463') {
         return 'FIN_BANKING';
       }
 
-      // 6. Legal, Accounting & Tax Advisory (Section M69)
-      if (c.startsWith('261') || c.startsWith('3411') || c === '24111' || c === '24112' || c === '33130' || /\b(lawyer|advocate|solicitor|paralegal|auditor|account|tax|company secretary)/.test(t)) {
+      // 8. Legal, Accounting & Tax Advisory (Section M69)
+      if (c.startsWith('261') || c.startsWith('3411') || c === '24111' || c === '24112' || c === '33130' || /\b(lawyer|advocate|solicitor|paralegal|auditor|accountant|tax consultant|company secretary)/i.test(t)) {
         return 'PROF_LEGAL_ACCT';
       }
 
-      // 7. Management Consulting & Strategic Advisory (Section M70, M73)
-      if (c.startsWith('242') || c.startsWith('1212') || c.startsWith('1213') || c.startsWith('1222')) {
+      // 9. Management Consulting, Corporate Advisory & Executive Management (Section M70, M73)
+      // Note: SSOC 112 (Corporate CEOs, Managing Directors, Company Directors, COOs)
+      if (c.startsWith('242') || c.startsWith('1212') || c.startsWith('1213') || c.startsWith('1222') || c.startsWith('112')) {
+        if (/\b(retail|store|merchandis)/i.test(t)) return 'RETAIL_ECOMMERCE';
+        if (/\b(food|restaurant|hotel|f&b|catering)/i.test(t)) return 'HOSPITALITY_FNB';
+        if (/\b(logistics|warehouse|transport|supply chain)/i.test(t)) return 'MARITIME_LOGISTICS';
+        if (/\b(manufacturing|precision|engineering|plant)/i.test(t)) return 'CHEM_ENERGY_MFG';
+        if (/\b(construction|built environment|building)/i.test(t)) return 'BUILT_ENVIRONMENT';
+        if (/\b(health|hospital|clinic)/i.test(t)) return 'HEALTHCARE_CLINICAL';
         return 'STRAT_CONSULTING';
       }
 
-      // 8. Aviation, Aerospace & Air Transport (Section H51, C30)
-      if (c.startsWith('3151') || c.startsWith('3153') || c.startsWith('3154') || c.startsWith('3155') || c.startsWith('5111') || c === '21442' || c === '13243' || c.startsWith('7232') || /\b(pilot|flight|aircraft|aerospace|air traffic|aviation|cabin crew)/.test(t)) {
+      // 10. Aviation, Aerospace & Air Transport (Section H51, C30)
+      if (c.startsWith('3151') || c.startsWith('3153') || c.startsWith('3154') || c.startsWith('3155') || c.startsWith('5111') || c === '21442' || c === '13243' || c.startsWith('7232')) {
         return 'AVIATION_AEROSPACE';
       }
 
-      // 9. Maritime, Shipping & Supply Chain (Section H50, H52)
-      if (c.startsWith('3152') || c.startsWith('8350') || c === '13241' || c === '13242' || c === '13245' || c === '33311' || /\b(maritime|ship|vessel|harbour|marine|port|seafarer|stevedore)/.test(t)) {
+      // 11. Maritime, Shipping & Supply Chain (Section H50, H52)
+      if (c.startsWith('3152') || c.startsWith('8350') || c === '13241' || c === '13242' || c === '13245' || c === '33311') {
         return 'MARITIME_LOGISTICS';
       }
 
-      // 10. Real Estate, REITs & Property Development (Section L68)
-      if (c.startsWith('3334') || c === '12194' || c === '24341' || /\b(property|real estate|reit|leasing|landlord|estate agent|valuer)/.test(t)) {
+      // 12. Real Estate, REITs & Property Development (Section L68)
+      if (c.startsWith('3334') || c === '12194' || c === '24341' || /\b(property|real estate|reit|leasing|landlord|estate agent|valuer)/i.test(t)) {
         return 'REAL_ESTATE_REITS';
       }
 
-      // 11. Civil Engineering & Built Environment (Section F41-43)
-      if (c.startsWith('216') || c.startsWith('312') || c.startsWith('71') || c.startsWith('2142') || c.startsWith('3112') || /\b(civil engineer|architect|surveyor|construction|site manager|m&e)/.test(t)) {
+      // 13. Civil Engineering & Built Environment (Section F41-43)
+      if (c.startsWith('216') || c.startsWith('312') || c.startsWith('71') || c.startsWith('2142') || c.startsWith('3112') || c === '13230' || /\b(civil engineer|architect|surveyor|construction|site manager|m&e)/i.test(t)) {
         return 'BUILT_ENVIRONMENT';
       }
 
-      // 12. Healthcare, Clinical Medicine & Social Work (Section Q86-88)
-      if (c.startsWith('22') || c.startsWith('32') || c.startsWith('1342') || c.startsWith('1343') || c.startsWith('2634') || c.startsWith('2635') || c.startsWith('325') || /\b(doctor|physician|surgeon|nurse|therapist|pharmacist|medical|radiograph|clinic)/.test(t)) {
+      // 14. Healthcare, Clinical Medicine & Social Work (Section Q86-88)
+      if (c.startsWith('22') || c.startsWith('32') || c.startsWith('1342') || c.startsWith('1343') || c.startsWith('2634') || c.startsWith('2635') || c.startsWith('325') || /\b(doctor|physician|surgeon|nurse|therapist|pharmacist|medical|radiograph|clinic)/i.test(t)) {
         return 'HEALTHCARE_CLINICAL';
       }
 
-      // 13. Public Administration, Civil Service & MOE (Section O84, P85)
-      if (c.startsWith('23') || c.startsWith('111') || c.startsWith('0') || c.startsWith('X') || c.startsWith('112') || c.startsWith('1341') || c.startsWith('231') || /\b(ministry|statutory board|civil service|police|armed forces|teacher|lecturer|professor|principal)/.test(t)) {
+      // 15. Public Administration, Civil Service & MOE (Section O84, P85)
+      // STRICT: 111 (Legislators & Senior Government Officials), 23 (MOE/University Teachers), 1341/1345 (School Principals), 13491/33551/54121 (Police), X3/X4/X5 (Military & Diplomatic)
+      // Excludes generic corporate "principal chemist/engineer" and private tutors
+      if (c.startsWith('111') || c.startsWith('23') || c === '13410' || c === '13451' || c === '13459' || c === '13491' || c === '33551' || c === '54121' || c.startsWith('X')) {
+        if (/\b(golf|private tuition|piano|music|dance|art)/i.test(t)) return 'HOSPITALITY_FNB';
         return 'CIVIL_SERVICE_EDU';
       }
 
-      // 14. Hospitality, Tourism & Food Services (Section I55-56)
-      if (c.startsWith('51') || c.startsWith('141') || c.startsWith('3434') || c.startsWith('512') || c.startsWith('513') || /\b(hotel|chef|cook|waiter|bartender|hospitality|concierge|tour guide|f&b|restaurant)/.test(t)) {
+      // 16. Hospitality, Tourism & Food Services (Section I55-56)
+      if (c.startsWith('51') || c.startsWith('141') || c.startsWith('3434') || c.startsWith('512') || c.startsWith('513') || c.startsWith('143') || /\b(hotel|chef|cook|waiter|bartender|hospitality|concierge|tour guide|f&b|restaurant|casino)/i.test(t)) {
         return 'HOSPITALITY_FNB';
       }
 
-      // 15. Retail, Consumer Goods & E-Commerce (Section G47)
-      if (c.startsWith('52') || c.startsWith('142') || c === '12214' || c === '12215' || /\b(retail|store|merchandis|cashier|shop|boutique|e-commerce)/.test(t)) {
+      // 17. Retail, Consumer Goods & E-Commerce (Section G47)
+      if (c.startsWith('52') || c.startsWith('142') || c === '12214' || c === '12215' || /\b(retail|store|merchandis|cashier|shop|boutique|e-commerce)/i.test(t)) {
         return 'RETAIL_ECOMMERCE';
       }
 
-      // 16. Wholesale & Global Commodity Trade (Section G46)
-      if (c.startsWith('332') || c.startsWith('333') || c.startsWith('1221') || c === '12220' || /\b(wholesale|commodity|trader|import|export|distributor|b2b)/.test(t)) {
+      // 18. Wholesale & Global Commodity Trade (Section G46)
+      if (c.startsWith('332') || c.startsWith('333') || c.startsWith('1221') || c === '12220' || /\b(wholesale|commodity|trader|import|export|distributor|b2b)/i.test(t)) {
         return 'COMMODITY_WHOLESALE';
       }
 
@@ -2008,7 +2036,11 @@
           capNote.innerHTML = `<span class="text-rose-400 font-semibold">⚠️ Capped at Band Max:</span> 0% merit increments until promoted to ${rCfg.next}.`;
         } else {
           meterBar.className = isStay ? "bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full transition-all" : "bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full transition-all";
-          capNote.textContent = `S$${headroom.toLocaleString()} headroom remaining before merit freeze.`;
+          if (ind === 'CIVIL_SERVICE_EDU') {
+          capNote.textContent = `S$${headroom.toLocaleString()} headroom remaining before merit freeze (${rCfg.mx || 'MX'} scale).`;
+        } else {
+          capNote.textContent = `S$${headroom.toLocaleString()} headroom remaining before compensation ceiling.`;
+        }
         }
       }
 
