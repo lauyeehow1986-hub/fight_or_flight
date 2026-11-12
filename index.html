@@ -232,6 +232,7 @@
                 <option value="COMMODITY_WHOLESALE">Wholesale & Commodity Trade (1.2%/yr)</option>
                 <option value="RETAIL_ECOMMERCE">Retail, Consumer & E-Commerce (1.3%/yr)</option>
                 <option value="AVIATION_AEROSPACE">Aviation, Aerospace & Air Transport (1.2%/yr)</option>
+                <option value="LAND_TRANSPORT_RAIL">Land Transport, Rail & Transit (1.0%/yr)</option>
                 <option value="MARITIME_LOGISTICS">Maritime, Shipping & Supply Chain (1.0%/yr)</option>
                 <option value="REAL_ESTATE_REITS">Real Estate, REITs & Property Dev (0.9%/yr)</option>
                 <option value="BUILT_ENVIRONMENT">Civil Engineering & Construction (1.1%/yr)</option>
@@ -451,6 +452,7 @@
                 <option value="COMMODITY_WHOLESALE">Wholesale & Commodity Trade (1.2%/yr)</option>
                 <option value="RETAIL_ECOMMERCE">Retail, Consumer & E-Commerce (1.3%/yr)</option>
                 <option value="AVIATION_AEROSPACE">Aviation, Aerospace & Air Transport (1.2%/yr)</option>
+                <option value="LAND_TRANSPORT_RAIL">Land Transport, Rail & Transit (1.0%/yr)</option>
                 <option value="MARITIME_LOGISTICS">Maritime, Shipping & Supply Chain (1.0%/yr)</option>
                 <option value="REAL_ESTATE_REITS">Real Estate, REITs & Property Dev (0.9%/yr)</option>
                 <option value="BUILT_ENVIRONMENT">Civil Engineering & Construction (1.1%/yr)</option>
@@ -1187,6 +1189,7 @@
       'COMMODITY_WHOLESALE': { label: 'Wholesale & Commodity Trade', baseRetrench: 0.012, ssic: 'Section G46', desc: 'B2B cross-border trading, energy/metals desks, agricultural trade & regional distribution' },
       'RETAIL_ECOMMERCE': { label: 'Retail, Consumer Goods & E-Commerce', baseRetrench: 0.013, ssic: 'Section G47', desc: 'Omnichannel retail, FMCG brands, e-commerce marketplaces & consumer spending shifts' },
       'AVIATION_AEROSPACE': { label: 'Aviation, Aerospace & Air Transport', baseRetrench: 0.012, ssic: 'Section H51/C30', desc: 'Changi air hub, airline operations, aerospace MRO (Rolls-Royce, Pratt & Whitney)' },
+      'LAND_TRANSPORT_RAIL': { label: 'Land Transport, Rail & Public Transit', baseRetrench: 0.010, ssic: 'Section H49', desc: 'MRT/LRT rail networks (SMRT, SBS Transit), public bus operations & land transport fleet engineering' },
       'MARITIME_LOGISTICS': { label: 'Maritime, Shipping & Supply Chain', baseRetrench: 0.010, ssic: 'Section H50/52', desc: 'PSA container port, global shipping liners, 3PL warehousing & freight forwarders' },
       'REAL_ESTATE_REITS': { label: 'Real Estate, REITs & Property Dev', baseRetrench: 0.009, ssic: 'Section L68', desc: 'Commercial/residential property developers, REIT managers & leasing asset management' },
       'BUILT_ENVIRONMENT': { label: 'Civil Engineering & Construction', baseRetrench: 0.011, ssic: 'Section F41-43', desc: 'BCA contractors, infrastructure civil engineering, MEP systems & project delivery' },
@@ -1250,12 +1253,22 @@
       if (/\b(biopharm|pharmaceutical|biomed|clinical research|biotech|drug discovery)/i.test(t)) {
         return 'BIOMED_PHARMA';
       }
-      if (/\b(aerospace|aircraft|aviation|flight|pilot|air traffic)/i.test(t)) {
+
+      // AIR TRANSPORT & AEROSPACE KEYWORDS (SSIC H51/C30)
+      if (/\b(aerospace|aircraft|aviation|flight|pilot|air traffic|airport|airside|ground handling|airline|avionics|air cargo)\b/i.test(t)) {
         return 'AVIATION_AEROSPACE';
       }
-      if (/\b(shipping|maritime|sea transport|seafarer|port ops|stevedor)/i.test(t)) {
+
+      // LAND TRANSPORT, RAIL & PUBLIC TRANSIT KEYWORDS (SSIC H49)
+      if (/\b(rail|train|mrt|lrt|public transport|land transport|bus fleet|bus operations|bus depot|rolling stock|permanent way|track engineer|depot manager|rapid transit)\b/i.test(t)) {
+        return 'LAND_TRANSPORT_RAIL';
+      }
+
+      // MARITIME & WATER TRANSPORT KEYWORDS (SSIC H50/52)
+      if (/\b(shipping|maritime|sea transport|seafarer|port ops|stevedor|freight forwarding|vessel|ocean|harbour)\b/i.test(t)) {
         return 'MARITIME_LOGISTICS';
       }
+
       if (/\b(semiconductor|wafer fab|integrated circuit|ic design)/i.test(t)) {
         return 'SEMICON_HARDWARE';
       }
@@ -1297,7 +1310,6 @@
       }
 
       // 9. Management Consulting, Corporate Advisory & Executive Management (Section M70, M73)
-      // Note: SSOC 112 (Corporate CEOs, Managing Directors, Company Directors, COOs)
       if (c.startsWith('242') || c.startsWith('1212') || c.startsWith('1213') || c.startsWith('1222') || c.startsWith('112')) {
         if (/\b(retail|store|merchandis)/i.test(t)) return 'RETAIL_ECOMMERCE';
         if (/\b(food|restaurant|hotel|f&b|catering)/i.test(t)) return 'HOSPITALITY_FNB';
@@ -1309,49 +1321,52 @@
       }
 
       // 10. Aviation, Aerospace & Air Transport (Section H51, C30)
-      if (c.startsWith('3151') || c.startsWith('3153') || c.startsWith('3154') || c.startsWith('3155') || c.startsWith('5111') || c === '21442' || c === '13243' || c.startsWith('7232')) {
+      if (c.startsWith('3151') || c.startsWith('3153') || c.startsWith('3154') || c.startsWith('3155') || c.startsWith('5111') || c === '21442' || c.startsWith('7232')) {
         return 'AVIATION_AEROSPACE';
       }
 
-      // 11. Maritime, Shipping & Supply Chain (Section H50, H52)
-      if (c.startsWith('3152') || c.startsWith('8350') || c === '13241' || c === '13242' || c === '13245' || c === '33311') {
+      // 11. Land Transport, Rail & Public Transit (Section H49)
+      if ((c === '13243' || c === '21421') || c.startsWith('833') || c.startsWith('832')) {
+        return 'LAND_TRANSPORT_RAIL';
+      }
+
+      // 12. Maritime, Shipping & Supply Chain (Section H50, H52)
+      if (c.startsWith('3152') || c.startsWith('8350') || c in ['13241', '13242', '13245', '33311']) {
         return 'MARITIME_LOGISTICS';
       }
 
-      // 12. Real Estate, REITs & Property Development (Section L68)
+      // 13. Real Estate, REITs & Property Development (Section L68)
       if (c.startsWith('3334') || c === '12194' || c === '24341' || /\b(property|real estate|reit|leasing|landlord|estate agent|valuer)/i.test(t)) {
         return 'REAL_ESTATE_REITS';
       }
 
-      // 13. Civil Engineering & Built Environment (Section F41-43)
+      // 14. Civil Engineering & Built Environment (Section F41-43)
       if (c.startsWith('216') || c.startsWith('312') || c.startsWith('71') || c.startsWith('2142') || c.startsWith('3112') || c === '13230' || /\b(civil engineer|architect|surveyor|construction|site manager|m&e)/i.test(t)) {
         return 'BUILT_ENVIRONMENT';
       }
 
-      // 14. Healthcare, Clinical Medicine & Social Work (Section Q86-88)
+      // 15. Healthcare, Clinical Medicine & Social Work (Section Q86-88)
       if (c.startsWith('22') || c.startsWith('32') || c.startsWith('1342') || c.startsWith('1343') || c.startsWith('2634') || c.startsWith('2635') || c.startsWith('325') || /\b(doctor|physician|surgeon|nurse|therapist|pharmacist|medical|radiograph|clinic)/i.test(t)) {
         return 'HEALTHCARE_CLINICAL';
       }
 
-      // 15. Public Administration, Civil Service & MOE (Section O84, P85)
-      // STRICT: 111 (Legislators & Senior Government Officials), 23 (MOE/University Teachers), 1341/1345 (School Principals), 13491/33551/54121 (Police), X3/X4/X5 (Military & Diplomatic)
-      // Excludes generic corporate "principal chemist/engineer" and private tutors
+      // 16. Public Administration, Civil Service & MOE (Section O84, P85)
       if (c.startsWith('111') || c.startsWith('23') || c === '13410' || c === '13451' || c === '13459' || c === '13491' || c === '33551' || c === '54121' || c.startsWith('X')) {
         if (/\b(golf|private tuition|piano|music|dance|art)/i.test(t)) return 'HOSPITALITY_FNB';
         return 'CIVIL_SERVICE_EDU';
       }
 
-      // 16. Hospitality, Tourism & Food Services (Section I55-56)
+      // 17. Hospitality, Tourism & Food Services (Section I55-56)
       if (c.startsWith('51') || c.startsWith('141') || c.startsWith('3434') || c.startsWith('512') || c.startsWith('513') || c.startsWith('143') || /\b(hotel|chef|cook|waiter|bartender|hospitality|concierge|tour guide|f&b|restaurant|casino)/i.test(t)) {
         return 'HOSPITALITY_FNB';
       }
 
-      // 17. Retail, Consumer Goods & E-Commerce (Section G47)
+      // 18. Retail, Consumer Goods & E-Commerce (Section G47)
       if (c.startsWith('52') || c.startsWith('142') || c === '12214' || c === '12215' || /\b(retail|store|merchandis|cashier|shop|boutique|e-commerce)/i.test(t)) {
         return 'RETAIL_ECOMMERCE';
       }
 
-      // 18. Wholesale & Global Commodity Trade (Section G46)
+      // 19. Wholesale & Global Commodity Trade (Section G46)
       if (c.startsWith('332') || c.startsWith('333') || c.startsWith('1221') || c === '12220' || /\b(wholesale|commodity|trader|import|export|distributor|b2b)/i.test(t)) {
         return 'COMMODITY_WHOLESALE';
       }
