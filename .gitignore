@@ -14,7 +14,10 @@ ENV/
 *.key
 *.token
 
-# OS artifacts
+# Local scratch and temporary test scripts
+scratch/
+temp/
+tmp/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
