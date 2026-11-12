@@ -48,7 +48,7 @@
             Singapore Actuarial Core
           </span>
           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800">
-            9,449 Calibrated Titles · 1,006 SSOC 2024 Occupations
+            9,453 Calibrated Titles · 1,006 SSOC 2024 Occupations
           </span>
           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950 text-amber-400 border border-amber-800">
             1 Jan 2026 CPF Rules Active
@@ -58,7 +58,7 @@
           Stochastic Life-Path & Career Stay-vs-Leave Engine
         </h1>
         <p class="text-xs md:text-sm text-[var(--text-muted)] mt-1">
-          Title-specific calibrated compensation across <span class="text-cyan-400 font-semibold font-mono">9,449</span> official roles (C-suite, ministers, directors, engineers, trades) with Merton jump-diffusion, Bellman counteroffer solver, and interactive ACRA/CPF MediSave sidelines.
+          Title-specific calibrated compensation across <span class="text-cyan-400 font-semibold font-mono">9,453</span> official roles (C-suite, ministers, directors, engineers, trades) with Merton jump-diffusion, Bellman counteroffer solver, and interactive ACRA/CPF MediSave sidelines.
         </p>
       </div>
 
@@ -102,17 +102,17 @@
         <div class="mb-3">
           <label class="block text-[11px] font-semibold text-[var(--text-muted)] mb-1">Filter by SSOC Major Group</label>
           <select id="stayMajorFilter" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500">
-            <option value="ALL">All Groups (All 9,449 Titles across 1,006 Occupations)</option>
-            <option value="1">1 - Managers & Senior Officials (82 codes, 1,021 titles)</option>
-            <option value="2" selected>2 - Professionals: Tech, Finance, Health, Eng (308 codes, 3,450 titles)</option>
-            <option value="3">3 - Associate Professionals & Technicians (216 codes, 2,140 titles)</option>
-            <option value="4">4 - Clerical Support Workers (60 codes, 480 titles)</option>
-            <option value="5">5 - Service & Sales Workers (86 codes, 790 titles)</option>
-            <option value="6">6 - Agricultural & Fishery Workers (11 codes, 110 titles)</option>
-            <option value="7">7 - Craftsmen & Related Trades Workers (94 codes, 680 titles)</option>
-            <option value="8">8 - Plant & Machine Operators & Drivers (79 codes, 520 titles)</option>
-            <option value="9">9 - Cleaners, Labourers & Elementary (65 codes, 240 titles)</option>
-            <option value="X">X - Armed Forces & Unclassified (5 codes, 22 titles)</option>
+            <option value="ALL">All Groups (All 9,453 Titles across 1,006 Occupations)</option>
+            <option value="1">1 - Managers & Senior Officials (82 codes, 1,096 titles)</option>
+            <option value="2" selected>2 - Professionals: Tech, Finance, Health, Eng (308 codes, 2,581 titles)</option>
+            <option value="3">3 - Associate Professionals & Technicians (216 codes, 1,875 titles)</option>
+            <option value="4">4 - Clerical Support Workers (60 codes, 426 titles)</option>
+            <option value="5">5 - Service & Sales Workers (86 codes, 565 titles)</option>
+            <option value="6">6 - Agricultural & Fishery Workers (11 codes, 139 titles)</option>
+            <option value="7">7 - Craftsmen & Related Trades Workers (94 codes, 1,138 titles)</option>
+            <option value="8">8 - Plant & Machine Operators & Drivers (79 codes, 1,101 titles)</option>
+            <option value="9">9 - Cleaners, Labourers & Elementary (65 codes, 521 titles)</option>
+            <option value="X">X - Armed Forces & Unclassified (5 codes, 11 titles)</option>
           </select>
         </div>
 
@@ -120,11 +120,11 @@
         <div class="relative mb-4">
           <div class="flex justify-between items-center mb-1">
             <label class="block text-xs font-semibold text-[var(--text-muted)]">Search Specific Job Title or SSOC Code</label>
-            <span class="text-[10px] text-cyan-400 font-mono" id="stayMatchCount">Type to search 9,449 titles</span>
+            <span class="text-[10px] text-cyan-400 font-mono" id="stayMatchCount">Type to search 9,453 titles</span>
           </div>
           <input type="text" id="staySearchInput" placeholder="e.g. Software Developer, CFO, Minister, Director, Nurse..."
                  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-cyan-500 text-sm">
-          <div id="stayDropdown" class="absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto bg-slate-900 border border-slate-700 rounded-lg shadow-2xl custom-scrollbar hidden"></div>
+          <div id="stayDropdown" class="absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto overscroll-contain bg-slate-900 border border-slate-700 rounded-lg shadow-2xl custom-scrollbar hidden"></div>
         </div>
 
         <!-- Selected Occupation Details -->
@@ -327,17 +327,17 @@
         <div class="mb-3">
           <label class="block text-[11px] font-semibold text-[var(--text-muted)] mb-1">Filter by SSOC Major Group</label>
           <select id="leaveMajorFilter" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500">
-            <option value="ALL">All Groups (All 9,449 Titles across 1,006 Occupations)</option>
-            <option value="1" selected>1 - Managers & Senior Officials (82 codes, 1,021 titles)</option>
-            <option value="2">2 - Professionals: Tech, Finance, Health, Eng (308 codes, 3,450 titles)</option>
-            <option value="3">3 - Associate Professionals & Technicians (216 codes, 2,140 titles)</option>
-            <option value="4">4 - Clerical Support Workers (60 codes, 480 titles)</option>
-            <option value="5">5 - Service & Sales Workers (86 codes, 790 titles)</option>
-            <option value="6">6 - Agricultural & Fishery Workers (11 codes, 110 titles)</option>
-            <option value="7">7 - Craftsmen & Related Trades Workers (94 codes, 680 titles)</option>
-            <option value="8">8 - Plant & Machine Operators & Drivers (79 codes, 520 titles)</option>
-            <option value="9">9 - Cleaners, Labourers & Elementary (65 codes, 240 titles)</option>
-            <option value="X">X - Armed Forces & Unclassified (5 codes, 22 titles)</option>
+            <option value="ALL">All Groups (All 9,453 Titles across 1,006 Occupations)</option>
+            <option value="1" selected>1 - Managers & Senior Officials (82 codes, 1,096 titles)</option>
+            <option value="2">2 - Professionals: Tech, Finance, Health, Eng (308 codes, 2,581 titles)</option>
+            <option value="3">3 - Associate Professionals & Technicians (216 codes, 1,875 titles)</option>
+            <option value="4">4 - Clerical Support Workers (60 codes, 426 titles)</option>
+            <option value="5">5 - Service & Sales Workers (86 codes, 565 titles)</option>
+            <option value="6">6 - Agricultural & Fishery Workers (11 codes, 139 titles)</option>
+            <option value="7">7 - Craftsmen & Related Trades Workers (94 codes, 1,138 titles)</option>
+            <option value="8">8 - Plant & Machine Operators & Drivers (79 codes, 1,101 titles)</option>
+            <option value="9">9 - Cleaners, Labourers & Elementary (65 codes, 521 titles)</option>
+            <option value="X">X - Armed Forces & Unclassified (5 codes, 11 titles)</option>
           </select>
         </div>
 
@@ -345,11 +345,11 @@
         <div class="relative mb-4">
           <div class="flex justify-between items-center mb-1">
             <label class="block text-xs font-semibold text-[var(--text-muted)]">Search Target Job Title or SSOC Code</label>
-            <span class="text-[10px] text-emerald-400 font-mono" id="leaveMatchCount">Type to search 9,449 titles</span>
+            <span class="text-[10px] text-emerald-400 font-mono" id="leaveMatchCount">Type to search 9,453 titles</span>
           </div>
           <input type="text" id="leaveSearchInput" placeholder="e.g. ICT Manager, VP Engineering, Partner, Director..."
                  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500 text-sm">
-          <div id="leaveDropdown" class="absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto bg-slate-900 border border-slate-700 rounded-lg shadow-2xl custom-scrollbar hidden"></div>
+          <div id="leaveDropdown" class="absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto overscroll-contain bg-slate-900 border border-slate-700 rounded-lg shadow-2xl custom-scrollbar hidden"></div>
         </div>
 
         <!-- Selected Occupation Details -->
@@ -707,7 +707,7 @@
             <h3 class="font-bold text-white text-base">Interactive High-Margin Sideline & Venture Studio</h3>
           </div>
           <p class="text-xs text-[var(--text-muted)] mt-0.5">
-            Dynamically suggested for your chosen roles across all 9,449 titles. Adjust archetype, weekly hours, hourly billing rate, setup capex, monthly opex, and legal structure in real time.
+            Dynamically suggested for your chosen roles across all 9,453 titles. Adjust archetype, weekly hours, hourly billing rate, setup capex, monthly opex, and legal structure in real time.
           </p>
         </div>
         <div class="flex items-center gap-2">
@@ -1152,7 +1152,7 @@
           Official statistical classifications like SSOC 2024 group many related job titles under a single 5-digit occupational code (e.g., SSOC <code>11110</code> encompasses <em>Cabinet Minister</em>, <em>Attorney General</em>, and <em>Legislator / Member of Parliament</em>; SSOC <code>12111</code> encompasses <em>Chief Financial Officer</em>, <em>Finance Director</em>, and <em>Assistant Finance Manager</em>). <strong>MOM publishes survey data only at the 5-digit code level and never at the individual sub-title level.</strong>
         </p>
         <p class="text-slate-300 leading-relaxed text-[11px]">
-          In real Singapore corporate and public sector practice, an apex Cabinet Minister or Chief Financial Officer earns substantially more than a backbench MP or Assistant Manager. The Singapore Career Actuarial Engine resolves this disparity by applying <strong>Statutory Gazetted Benchmarks</strong> to public roles and <strong>Actuarial Seniority Multipliers</strong> to private roles, ensuring every single one of the 9,449 titles reflects its true market compensation.
+          In real Singapore corporate and public sector practice, an apex Cabinet Minister or Chief Financial Officer earns substantially more than a backbench MP or Assistant Manager. The Singapore Career Actuarial Engine resolves this disparity by applying <strong>Statutory Gazetted Benchmarks</strong> to public roles and <strong>Actuarial Seniority Multipliers</strong> to private roles, ensuring every single one of the 9,453 titles reflects its true market compensation.
         </p>
       </div>
     </section>
@@ -1432,7 +1432,7 @@
       return SSOC_LOOKUP[code] || SSOC_LOOKUP["25121"];
     }
 
-    // Domain Sideline Generator for any of the 9,449 titles
+    // Domain Sideline Generator for any of the 9,453 titles
     // 15 Singapore Sideline Archetypes with Empirical Benchmarks
     const ARCHETYPE_BENCHMARKS = {
       "ADVISORY": {
@@ -1869,11 +1869,124 @@
       });
     }
 
+    const DROPDOWN_BATCH_SIZE = 100;
+
+    function buildDropdownOptionHtml(m, idx) {
+      const badgeMap = {
+        'P': '<span class="text-[9px] px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Principal</span>',
+        'S': '<span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-950 text-purple-400 border border-purple-800">Skills Framework</span>',
+        'A': '<span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Alternative</span>'
+      };
+      const rData = SSOC_LOOKUP[m.code] || { t: '', p50: 0, src: 'ACTUARIALLY_IMPUTED' };
+      let provBadge = '';
+      if (m.calibType === 'STAT') {
+        provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800">🏛️ Statutory</span>';
+      } else if (m.calibType === 'SEN') {
+        provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">⚡ Seniority</span>';
+      } else if (rData.src === 'MOM_OWS_2024_REPORTED') {
+        provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">🟢 MOM Reported</span>';
+      } else {
+        provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-yellow-950 text-yellow-300 border border-yellow-800">🟡 Imputed</span>';
+      }
+
+      return `
+        <div class="px-3 py-2 hover:bg-slate-800 cursor-pointer border-b border-slate-800/40 text-xs flex justify-between items-center" data-idx="${idx}">
+          <div class="pr-2 truncate">
+            <div class="flex items-center gap-1.5 truncate">
+              <span class="font-bold text-white">${m.title}</span>
+              ${badgeMap[m.ttype] || ''}
+              ${provBadge}
+            </div>
+            <div class="text-[10px] text-slate-400 font-mono mt-0.5">
+              SSOC ${m.code} · ${rData.t}
+            </div>
+          </div>
+          <div class="text-right shrink-0">
+            <div class="font-mono font-bold text-white">S$${m.base.toLocaleString()}/mo</div>
+            <div class="text-[10px] text-slate-400 font-mono">${m.bm} Mo Bonus</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function updateDropdownCountLabel(state) {
+      if (!state.countLabel) return;
+      const total = state.matches.length;
+      if (total === 0) {
+        state.countLabel.textContent = '0 matches';
+        return;
+      }
+      const noun = state.query ? 'matches' : 'titles';
+      if (state.renderedCount < total) {
+        state.countLabel.textContent = `Showing ${state.renderedCount.toLocaleString()} of ${total.toLocaleString()} ${noun}`;
+      } else {
+        state.countLabel.textContent = `Showing all ${total.toLocaleString()} ${noun}`;
+      }
+    }
+
+    function appendDropdownBatch(dropdown, batchCount = DROPDOWN_BATCH_SIZE) {
+      const state = dropdown._acState;
+      if (!state || state.renderedCount >= state.matches.length) return 0;
+
+      const listEl = state.listEl;
+      const footerEl = state.footerEl;
+      if (!listEl) return 0;
+
+      const start = state.renderedCount;
+      const end = Math.min(start + batchCount, state.matches.length);
+      let chunkHtml = '';
+      for (let idx = start; idx < end; idx++) {
+        chunkHtml += buildDropdownOptionHtml(state.matches[idx], idx);
+      }
+
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = chunkHtml;
+      while (wrapper.firstChild) {
+        listEl.appendChild(wrapper.firstChild);
+      }
+
+      state.renderedCount = end;
+      updateDropdownCountLabel(state);
+
+      if (footerEl) {
+        const remaining = state.matches.length - state.renderedCount;
+        if (remaining > 0) {
+          const nextStep = Math.min(DROPDOWN_BATCH_SIZE, remaining);
+          footerEl.innerHTML = `
+            <div class="px-3 py-2 bg-slate-950/90 border-t border-slate-800 flex items-center justify-between gap-2 text-[11px]">
+              <span class="text-slate-400 font-mono">Showing ${state.renderedCount.toLocaleString()} of ${state.matches.length.toLocaleString()} (${remaining.toLocaleString()} more)</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <button type="button" data-action="load-more" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-semibold">+${nextStep} More</button>
+                <button type="button" data-action="load-all" class="px-2 py-1 rounded bg-cyan-950 hover:bg-cyan-900 text-cyan-300 border border-cyan-800 font-semibold">Show All</button>
+              </div>
+            </div>
+          `;
+        } else {
+          footerEl.innerHTML = `
+            <div class="px-3 py-1.5 bg-slate-950/60 border-t border-slate-800/60 text-center text-[10px] text-slate-500 font-mono">
+              End of list · All ${state.matches.length.toLocaleString()} titles loaded
+            </div>
+          `;
+        }
+      }
+      return end - start;
+    }
+
     function setupFuzzyDropdown(inputId, dropdownId, filterId, countId, onSelect) {
       const input = document.getElementById(inputId);
       const dropdown = document.getElementById(dropdownId);
       const filter = document.getElementById(filterId);
       const countLabel = document.getElementById(countId);
+
+      dropdown._acState = {
+        matches: [],
+        renderedCount: 0,
+        query: '',
+        countLabel,
+        onSelect,
+        listEl: null,
+        footerEl: null
+      };
 
       function doRender() {
         renderOptions(input.value, dropdown, filter.value, countLabel, onSelect);
@@ -1882,6 +1995,42 @@
       input.addEventListener('focus', doRender);
       input.addEventListener('input', doRender);
       filter.addEventListener('change', doRender);
+
+      dropdown.addEventListener('scroll', () => {
+        const state = dropdown._acState;
+        if (!state || state.renderedCount >= state.matches.length) return;
+        if (dropdown.scrollTop + dropdown.clientHeight >= dropdown.scrollHeight - 60) {
+          appendDropdownBatch(dropdown, DROPDOWN_BATCH_SIZE);
+        }
+      });
+
+      dropdown.addEventListener('click', (e) => {
+        const state = dropdown._acState;
+        if (!state) return;
+
+        let target = e.target;
+        const actionBtn = target && target.closest ? target.closest('[data-action]') : null;
+        if (actionBtn) {
+          e.stopPropagation();
+          const action = actionBtn.getAttribute('data-action');
+          if (action === 'load-more') {
+            appendDropdownBatch(dropdown, DROPDOWN_BATCH_SIZE);
+          } else if (action === 'load-all') {
+            appendDropdownBatch(dropdown, state.matches.length - state.renderedCount);
+          }
+          return;
+        }
+
+        const rowEl = target && target.closest ? target.closest('[data-idx]') : null;
+        if (rowEl) {
+          const idx = parseInt(rowEl.getAttribute('data-idx'), 10);
+          const selected = state.matches[idx];
+          if (selected) {
+            dropdown.classList.add('hidden');
+            state.onSelect(selected);
+          }
+        }
+      });
 
       document.addEventListener('click', (e) => {
         if (!input.contains(e.target) && !dropdown.contains(e.target) && !filter.contains(e.target)) {
@@ -1892,7 +2041,7 @@
 
     function renderOptions(query, dropdown, majorFilter, countLabel, onSelect) {
       const q = query.toLowerCase().trim();
-      let matches = [];
+      const matches = [];
 
       for (let i = 0; i < TITLES_INDEX.length; i++) {
         const item = TITLES_INDEX[i];
@@ -1910,68 +2059,46 @@
 
         if (!q || code.includes(q) || title.toLowerCase().includes(q)) {
           matches.push({ title, code, ttype, base, bm, calibType, calibNote });
-          if (matches.length >= 100) break; // Top 100 for speed
         }
       }
 
-      if (countLabel) {
-        countLabel.textContent = q ? `Found ${matches.length >= 100 ? '100+' : matches.length} matches` : `Showing 100 of 9,449 titles`;
-      }
+      dropdown.innerHTML = '';
+      dropdown.scrollTop = 0;
 
       if (matches.length === 0) {
+        dropdown._acState = {
+          matches: [],
+          renderedCount: 0,
+          query: q,
+          countLabel,
+          onSelect,
+          listEl: null,
+          footerEl: null
+        };
+        updateDropdownCountLabel(dropdown._acState);
         dropdown.innerHTML = '<div class="p-3 text-xs text-slate-500">No matching job titles or SSOC codes found.</div>';
         dropdown.classList.remove('hidden');
         return;
       }
 
-      const badgeMap = {
-        'P': '<span class="text-[9px] px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Principal</span>',
-        'S': '<span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-950 text-purple-400 border border-purple-800">Skills Framework</span>',
-        'A': '<span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Alternative</span>'
+      const listEl = document.createElement('div');
+      listEl.setAttribute('data-role', 'dropdown-list');
+      const footerEl = document.createElement('div');
+      footerEl.setAttribute('data-role', 'dropdown-footer');
+      dropdown.appendChild(listEl);
+      dropdown.appendChild(footerEl);
+
+      dropdown._acState = {
+        matches,
+        renderedCount: 0,
+        query: q,
+        countLabel,
+        onSelect,
+        listEl,
+        footerEl
       };
 
-      dropdown.innerHTML = matches.map((m, idx) => {
-        const rData = SSOC_LOOKUP[m.code] || { t: '', p50: 0, src: 'ACTUARIALLY_IMPUTED' };
-        let provBadge = '';
-        if (m.calibType === 'STAT') {
-          provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800">🏛️ Statutory</span>';
-        } else if (m.calibType === 'SEN') {
-          provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">⚡ Seniority</span>';
-        } else if (rData.src === 'MOM_OWS_2024_REPORTED') {
-          provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">🟢 MOM Reported</span>';
-        } else {
-          provBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-yellow-950 text-yellow-300 border border-yellow-800">🟡 Imputed</span>';
-        }
-
-        return `
-          <div class="px-3 py-2 hover:bg-slate-800 cursor-pointer border-b border-slate-800/40 text-xs flex justify-between items-center" data-idx="${idx}">
-            <div class="pr-2 truncate">
-              <div class="flex items-center gap-1.5 truncate">
-                <span class="font-bold text-white">${m.title}</span>
-                ${badgeMap[m.ttype] || ''}
-                ${provBadge}
-              </div>
-              <div class="text-[10px] text-slate-400 font-mono mt-0.5">
-                SSOC ${m.code} · ${rData.t}
-              </div>
-            </div>
-            <div class="text-right shrink-0">
-              <div class="font-mono font-bold text-white">S$${m.base.toLocaleString()}/mo</div>
-              <div class="text-[10px] text-slate-400 font-mono">${m.bm} Mo Bonus</div>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      dropdown.querySelectorAll('[data-idx]').forEach(el => {
-        el.addEventListener('click', () => {
-          const idx = parseInt(el.getAttribute('data-idx'));
-          const selected = matches[idx];
-          dropdown.classList.add('hidden');
-          onSelect(selected);
-        });
-      });
-
+      appendDropdownBatch(dropdown, DROPDOWN_BATCH_SIZE);
       dropdown.classList.remove('hidden');
     }
 
