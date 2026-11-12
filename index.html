@@ -863,50 +863,73 @@
         </span>
       </div>
 
-      <!-- 3-Pillar Audit Metrics -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-        <div class="bg-slate-950/80 p-4 rounded-xl border border-emerald-900/60">
-          <div class="flex items-center justify-between mb-2">
-            <span class="font-bold text-emerald-400 flex items-center gap-1.5">
-              <span>🟢</span> 1. MOM Survey Reported
-            </span>
-            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono text-[11px]">535 Codes (53.2%)</span>
+      <!-- 4-Pillar Audit & Live MCP Grounding Metrics -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-emerald-900/60 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-emerald-400 flex items-center gap-1.5">
+                <span>🟢</span> 1. MOM Survey Reported
+              </span>
+              <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono text-[11px]">535 Codes (53.2%)</span>
+            </div>
+            <p class="text-slate-300 text-[11px] leading-relaxed">
+              Directly reported by the <strong>Ministry of Manpower (MOM)</strong> in the Occupational Wage Survey (OWS) 2024 published on Data.gov.sg (resource <code>d_9917e751f7498502f70052a940a3f312</code>).
+            </p>
           </div>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
-            Directly reported by the <strong>Ministry of Manpower (MOM)</strong> in the Occupational Wage Survey (OWS) 2024 published on Data.gov.sg (resource <code>d_9917e751f7498502f70052a940a3f312</code>).
-          </p>
           <div class="text-[10px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">
             Covers private commercial establishments with ≥25 employees where resident sample size is statistically significant (≥10 respondents). Contains verified 25th, 50th, and 75th percentile basic and gross wages.
           </div>
         </div>
 
-        <div class="bg-slate-950/80 p-4 rounded-xl border border-amber-900/60">
-          <div class="flex items-center justify-between mb-2">
-            <span class="font-bold text-amber-300 flex items-center gap-1.5">
-              <span>🏛️</span> 2. Statutory / Gazetted
-            </span>
-            <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono text-[11px]">42 Apex Roles</span>
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-amber-900/60 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-amber-300 flex items-center gap-1.5">
+                <span>🏛️</span> 2. Statutory / Gazetted
+              </span>
+              <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono text-[11px]">42 Apex Roles</span>
+            </div>
+            <p class="text-slate-300 text-[11px] leading-relaxed">
+              Governed by official <strong>Singapore Parliamentary Statutes & Gazetted Frameworks</strong>, not surveyed in private commercial employer wage surveys.
+            </p>
           </div>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
-            Governed by official <strong>Singapore Parliamentary Statutes & Gazetted Frameworks</strong>, not surveyed in private commercial employer wage surveys.
-          </p>
           <div class="text-[10px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">
             Includes Prime Minister (S$110k/mo base, S$2.2M benchmark), Cabinet Ministers (MR4 benchmark: S$55k/mo base + 7mo bonus), Members of Parliament (S$192,500/yr allowance = S$16,041/mo), Judges, and Senior Civil Servants.
           </div>
         </div>
 
-        <div class="bg-slate-950/80 p-4 rounded-xl border border-blue-900/60">
-          <div class="flex items-center justify-between mb-2">
-            <span class="font-bold text-blue-300 flex items-center gap-1.5">
-              <span>🟡</span> 3. Actuarially Imputed & Calibrated
-            </span>
-            <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-mono text-[11px]">468 Codes (46.5%)</span>
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-blue-900/60 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-blue-300 flex items-center gap-1.5">
+                <span>🟡</span> 3. Actuarially Calibrated
+              </span>
+              <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-mono text-[11px]">468 Codes + Seniority</span>
+            </div>
+            <p class="text-slate-300 text-[11px] leading-relaxed">
+              Statistical models for niche occupations suppressed by MOM (sample size &lt;10) and sub-title seniority multipliers within broad 5-digit occupational baskets.
+            </p>
           </div>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
-            Statistical models for niche occupations suppressed by MOM (sample size &lt;10) and sub-title seniority multipliers within broad 5-digit occupational baskets.
-          </p>
           <div class="text-[10px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">
             Triangulates SingStat TableBuilder Series <code>M182171</code>, 2-digit Sub-Major group regressions, and empirical market multipliers across C-Suite (1.70x), Directors (1.30x), Managers (1.05x), and Juniors (0.85x).
+          </div>
+        </div>
+
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-cyan-900/60 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-cyan-300 flex items-center gap-1.5">
+                <span>🌐</span> 4. Live MCP Verification
+              </span>
+              <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 font-mono text-[11px]">SingStat & News MCP</span>
+            </div>
+            <p class="text-slate-300 text-[11px] leading-relaxed">
+              Real-time triangulation via the official <strong>SingStat MCP Server</strong> (SANDRA AI) and the <strong>Singapore News MCP</strong> (Straits Times, Business Times, CNA).
+            </p>
+          </div>
+          <div class="text-[10px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">
+            Corroborates Supplementary Survey on Own-Account Workers (~34k secondary workers), Tripartite Guidelines on Restraint of Trade / Non-Compete Clauses, and live retrenchment / restructuring news.
           </div>
         </div>
       </div>
