@@ -163,16 +163,102 @@
         </div>
 
         <!-- User Overrides for Current Role -->
-        <div class="grid grid-cols-2 gap-3 mb-4">
+        <div class="grid grid-cols-3 gap-2.5 mb-4">
           <div>
             <label class="block text-[11px] font-semibold text-[var(--text-muted)] mb-1">Your Monthly Base (SGD)</label>
             <input type="number" id="stayBaseInput" value="8750" step="100"
                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-white font-mono text-sm focus:outline-none focus:border-cyan-500">
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-[var(--text-muted)] mb-1">Annual Bonus / AWS (SGD)</label>
+            <label class="block text-[11px] font-semibold text-[var(--text-muted)] mb-1">Annual Bonus / AWS</label>
             <input type="number" id="stayBonusInput" value="17500" step="500"
                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-white font-mono text-sm focus:outline-none focus:border-cyan-500">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-[var(--text-muted)] mb-1">Current Tenure (Years)</label>
+            <input type="number" id="stayTenureInput" value="4" min="0" max="30"
+                   class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-white font-mono text-sm focus:outline-none focus:border-cyan-500">
+          </div>
+        </div>
+
+        <!-- Employment Contract Type, Seniority Grade & Retrenchment Actuarial Risk -->
+        <div class="bg-slate-900/40 p-3.5 rounded-xl border border-slate-800/80 mb-4 space-y-3">
+          <div class="flex items-center justify-between pb-1.5 border-b border-slate-800/60">
+            <span class="text-xs font-bold text-white flex items-center gap-1.5">
+              <span>📋</span> Employment Contract, Rank & Retrenchment Risk
+            </span>
+            <span class="text-[10px] text-cyan-400 font-mono font-semibold" id="stayContractBadge">Perm Full-Time</span>
+          </div>
+
+          <!-- Contract Type Toggle -->
+          <div>
+            <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Contract Type</label>
+            <div class="grid grid-cols-2 gap-2">
+              <button type="button" id="stayJobTypePermBtn" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-cyan-600 bg-cyan-950/80 text-cyan-300">
+                🏢 Permanent (Severance Protected)
+              </button>
+              <button type="button" id="stayJobTypeContractBtn" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-slate-800 bg-slate-900 text-slate-400 hover:text-white">
+                ⏳ Contract (16%/yr Non-Renewal)
+              </button>
+            </div>
+          </div>
+
+          <!-- Seniority Rank & Industry Sector -->
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Job Rank / Grade</label>
+              <select id="stayRankSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-500">
+                <option value="INTERN">Trainee / Intern (Cap S$3.8k)</option>
+                <option value="JUNIOR">Junior / Associate (MX13 / Cap S$6.2k)</option>
+                <option value="MID">Specialist / Officer (MX12 / Cap S$9.5k)</option>
+                <option value="SENIOR" selected>Senior Specialist / Manager (MX11 / Cap S$14k)</option>
+                <option value="LEAD">Lead / Principal / Asst Dir (MX11A / Cap S$18.5k)</option>
+                <option value="DIRECTOR">Director / Head / VP (MX10 / Cap S$26k)</option>
+                <option value="SENIOR_DIRECTOR">Senior Director / MD (MX9 / Cap S$38k)</option>
+                <option value="APEX">C-Suite / Apex (Cap S$75k)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Industry Sector (MOM Data)</label>
+              <select id="stayIndustrySelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-500">
+                <option value="ICT" selected>Infocomm & Tech (2.2%/yr)</option>
+                <option value="MFG_ENG">Manufacturing & Eng (1.8%/yr)</option>
+                <option value="FINANCE">Financial Services (1.4%/yr)</option>
+                <option value="PROF_SERVICES">Professional Services (1.1%/yr)</option>
+                <option value="COMMERCE">Wholesale & Retail (1.2%/yr)</option>
+                <option value="HEALTHCARE">Healthcare & Biomedical (0.4%/yr)</option>
+                <option value="CIVIL_PUBLIC">Public Sector & MOE (0.2%/yr)</option>
+                <option value="HOSPITALITY">Hospitality & F&B (1.0%/yr)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Grade Ceiling Cap Visual Meter -->
+          <div class="p-2 rounded-lg bg-slate-950/70 border border-slate-800 text-[11px]">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-slate-400">Salary Band Headroom:</span>
+              <span class="font-mono font-bold text-cyan-400" id="stayCapMeterText">S$8,750 / S$14,000 (62% of Cap)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+              <div id="stayCapMeterBar" class="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full transition-all" style="width: 62%;"></div>
+            </div>
+            <div class="text-[10px] text-slate-400 mt-1" id="stayCapNote">
+              S$5,250 headroom remaining before merit freeze.
+            </div>
+          </div>
+
+          <!-- Actuarial Odds (Retrenchment vs Promotion) -->
+          <div class="grid grid-cols-2 gap-2 pt-1 text-center text-xs">
+            <div class="p-2 rounded bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Annual Retrenchment Risk</div>
+              <div class="font-bold text-rose-400 font-mono mt-0.5" id="stayRetrenchOddsVal">1.8% / yr</div>
+              <div class="text-[9px] text-slate-400" id="staySeveranceVal">Severance: S$35,000 (4y)</div>
+            </div>
+            <div class="p-2 rounded bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Annual Advancement Odds</div>
+              <div class="font-bold text-cyan-400 font-mono mt-0.5" id="stayPromoAdvVal">14.2% / yr</div>
+              <div class="text-[9px] text-slate-400" id="stayNextCapVal">Expands cap to S$18,500</div>
+            </div>
           </div>
         </div>
 
@@ -302,6 +388,87 @@
             <label class="block text-[11px] font-semibold text-[var(--text-muted)] mb-1">External Offer Bonus (SGD/yr)</label>
             <input type="number" id="leaveBonusInput" value="36000" step="500"
                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-white font-mono text-sm focus:outline-none focus:border-emerald-500">
+          </div>
+        </div>
+
+        <!-- Target Role Employment Contract, Rank & Retrenchment Risk -->
+        <div class="bg-slate-900/40 p-3.5 rounded-xl border border-slate-800/80 mb-4 space-y-3">
+          <div class="flex items-center justify-between pb-1.5 border-b border-slate-800/60">
+            <span class="text-xs font-bold text-white flex items-center gap-1.5">
+              <span>📋</span> Target Offer Contract, Rank & Retrenchment Risk
+            </span>
+            <span class="text-[10px] text-emerald-400 font-mono font-semibold" id="leaveContractBadge">Perm Full-Time</span>
+          </div>
+
+          <!-- Contract Type Toggle -->
+          <div>
+            <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Target Contract Type</label>
+            <div class="grid grid-cols-2 gap-2">
+              <button type="button" id="leaveJobTypePermBtn" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-emerald-600 bg-emerald-950/80 text-emerald-300">
+                🏢 Permanent (Severance Protected)
+              </button>
+              <button type="button" id="leaveJobTypeContractBtn" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-slate-800 bg-slate-900 text-slate-400 hover:text-white">
+                ⏳ Contract (16%/yr Non-Renewal)
+              </button>
+            </div>
+          </div>
+
+          <!-- Seniority Rank & Industry Sector -->
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Target Rank / Grade</label>
+              <select id="leaveRankSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-500">
+                <option value="INTERN">Trainee / Intern (Cap S$3.8k)</option>
+                <option value="JUNIOR">Junior / Associate (MX13 / Cap S$6.2k)</option>
+                <option value="MID">Specialist / Officer (MX12 / Cap S$9.5k)</option>
+                <option value="SENIOR">Senior Specialist / Manager (MX11 / Cap S$14k)</option>
+                <option value="LEAD" selected>Lead / Principal / Asst Dir (MX11A / Cap S$18.5k)</option>
+                <option value="DIRECTOR">Director / Head / VP (MX10 / Cap S$26k)</option>
+                <option value="SENIOR_DIRECTOR">Senior Director / MD (MX9 / Cap S$38k)</option>
+                <option value="APEX">C-Suite / Apex (Cap S$75k)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[10px] text-[var(--text-muted)] mb-1 font-semibold uppercase">Target Industry Sector</label>
+              <select id="leaveIndustrySelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-500">
+                <option value="ICT" selected>Infocomm & Tech (2.2%/yr)</option>
+                <option value="MFG_ENG">Manufacturing & Eng (1.8%/yr)</option>
+                <option value="FINANCE">Financial Services (1.4%/yr)</option>
+                <option value="PROF_SERVICES">Professional Services (1.1%/yr)</option>
+                <option value="COMMERCE">Wholesale & Retail (1.2%/yr)</option>
+                <option value="HEALTHCARE">Healthcare & Biomedical (0.4%/yr)</option>
+                <option value="CIVIL_PUBLIC">Public Sector & MOE (0.2%/yr)</option>
+                <option value="HOSPITALITY">Hospitality & F&B (1.0%/yr)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Grade Ceiling Cap Visual Meter -->
+          <div class="p-2 rounded-lg bg-slate-950/70 border border-slate-800 text-[11px]">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-slate-400">Target Salary Band Headroom:</span>
+              <span class="font-mono font-bold text-emerald-400" id="leaveCapMeterText">S$12,000 / S$18,500 (65% of Cap)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+              <div id="leaveCapMeterBar" class="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full transition-all" style="width: 65%;"></div>
+            </div>
+            <div class="text-[10px] text-slate-400 mt-1" id="leaveCapNote">
+              S$6,500 headroom remaining before merit freeze.
+            </div>
+          </div>
+
+          <!-- Actuarial Odds (Retrenchment vs Promotion) -->
+          <div class="grid grid-cols-2 gap-2 pt-1 text-center text-xs">
+            <div class="p-2 rounded bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Annual Retrenchment Risk</div>
+              <div class="font-bold text-rose-400 font-mono mt-0.5" id="leaveRetrenchOddsVal">2.6% / yr</div>
+              <div class="text-[9px] text-slate-400" id="leaveSeveranceVal">Severance: S$0 (Year 1)</div>
+            </div>
+            <div class="p-2 rounded bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Annual Advancement Odds</div>
+              <div class="font-bold text-emerald-400 font-mono mt-0.5" id="leavePromoAdvVal">8.5% / yr</div>
+              <div class="text-[9px] text-slate-400" id="leaveNextCapVal">Expands cap to S$26,000</div>
+            </div>
           </div>
         </div>
 
@@ -459,15 +626,18 @@
       <!-- Trajectory Chart Canvas -->
       <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 relative">
         <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center gap-4 text-xs">
+          <div class="flex flex-wrap items-center gap-3.5 text-xs">
             <span class="flex items-center gap-1.5 text-cyan-400">
-              <span class="w-3 h-0.5 bg-cyan-400 inline-block"></span> STAY Strategy Median
+              <span class="w-3 h-0.5 bg-cyan-400 inline-block"></span> STAY Median
+            </span>
+            <span class="flex items-center gap-1.5 text-cyan-400/70">
+              <span class="w-3 h-0.5 border-t border-dashed border-cyan-400 inline-block"></span> STAY CVaR 95 (Tail Risk)
             </span>
             <span class="flex items-center gap-1.5 text-emerald-400">
-              <span class="w-3 h-0.5 bg-emerald-400 inline-block"></span> LEAVE Strategy Median
+              <span class="w-3 h-0.5 bg-emerald-400 inline-block"></span> LEAVE Median
             </span>
-            <span class="flex items-center gap-1.5 text-amber-400/80">
-              <span class="w-3 h-0.5 bg-amber-400/80 border-dashed inline-block"></span> Dynamic Sideline Net Cash
+            <span class="flex items-center gap-1.5 text-emerald-400/70">
+              <span class="w-3 h-0.5 border-t border-dashed border-emerald-400 inline-block"></span> LEAVE CVaR 95 (Tail Risk)
             </span>
           </div>
           <span class="text-[10px] text-slate-500 font-mono">SGD Cumulative Net Worth</span>
@@ -489,15 +659,14 @@
           <table class="w-full text-left text-xs text-slate-300">
             <thead class="bg-slate-900/90 text-slate-400 text-[10px] font-semibold uppercase border-b border-slate-800">
               <tr>
-                <th class="px-3 py-2">Year</th>
-                <th class="px-3 py-2">Age</th>
-                <th class="px-3 py-2 text-right">STAY Base/mo</th>
-                <th class="px-3 py-2 text-right">STAY Annual Cash</th>
-                <th class="px-3 py-2 text-right">STAY Net Worth</th>
-                <th class="px-3 py-2 text-right text-emerald-400">LEAVE Base/mo</th>
-                <th class="px-3 py-2 text-right text-emerald-400">LEAVE Annual Cash</th>
-                <th class="px-3 py-2 text-right text-emerald-400">LEAVE Net Worth</th>
-                <th class="px-3 py-2 text-right text-amber-400">Net Delta</th>
+                <th class="px-2.5 py-2">Year</th>
+                <th class="px-2 py-2">Age</th>
+                <th class="px-2.5 py-2 text-right">STAY Base & Rank (Cap)</th>
+                <th class="px-2.5 py-2 text-right text-cyan-400">STAY Median NW</th>
+                <th class="px-2.5 py-2 text-right text-emerald-300">LEAVE Base & Rank (Cap)</th>
+                <th class="px-2.5 py-2 text-right text-emerald-400">LEAVE Median NW</th>
+                <th class="px-2.5 py-2 text-right text-amber-400">Median NW Δ</th>
+                <th class="px-2.5 py-2 text-right text-rose-400">5th-Pctile CVaR Δ</th>
               </tr>
             </thead>
             <tbody id="milestoneTableBody" class="divide-y divide-slate-800/60 font-mono text-[11px] bg-slate-950/40">
@@ -975,6 +1144,69 @@
     const SSOC_LOOKUP = /*__LOOKUP_JSON__*/;
     const TITLES_INDEX = /*__TITLES_JSON__*/;
 
+    // Actuarial Configuration for Seniority Ranks & Grade Ceiling Caps
+    const RANK_CONFIG = {
+      'INTERN': { label: 'Intern / Trainee', cap: 3800, next: 'JUNIOR', promoOdds: 0.35, promoRaise: 0.25 },
+      'JUNIOR': { label: 'Junior / Associate (MX13)', cap: 6200, next: 'MID', promoOdds: 0.22, promoRaise: 0.18 },
+      'MID': { label: 'Specialist / Officer (MX12)', cap: 9500, next: 'SENIOR', promoOdds: 0.15, promoRaise: 0.15 },
+      'SENIOR': { label: 'Senior Specialist / Manager (MX11)', cap: 14000, next: 'LEAD', promoOdds: 0.10, promoRaise: 0.15 },
+      'LEAD': { label: 'Lead / Principal / Asst Dir (MX11A)', cap: 18500, next: 'DIRECTOR', promoOdds: 0.06, promoRaise: 0.15 },
+      'DIRECTOR': { label: 'Director / Head / VP (MX10)', cap: 26000, next: 'SENIOR_DIRECTOR', promoOdds: 0.04, promoRaise: 0.18 },
+      'SENIOR_DIRECTOR': { label: 'Senior Director / MD (MX9)', cap: 38000, next: 'APEX', promoOdds: 0.02, promoRaise: 0.20 },
+      'APEX': { label: 'C-Suite / Apex / Perm Sec', cap: 75000, next: 'APEX', promoOdds: 0.01, promoRaise: 0.10 }
+    };
+
+    // Official MOM Labour Market Report Industry Baseline Retrenchment Incidence
+    const INDUSTRY_CONFIG = {
+      'ICT': { label: 'Infocomm & Technology (ICT)', baseRetrench: 0.022, desc: 'Tech restructuring, offshore engineering hubs & AI automation' },
+      'MFG_ENG': { label: 'Manufacturing & Engineering', baseRetrench: 0.018, desc: 'Hardware supply chains, fab cyclicality & site relocations' },
+      'FINANCE': { label: 'Financial & Insurance Services', baseRetrench: 0.014, desc: 'Fintech consolidation, Middle Office rationalization & MAS compliance' },
+      'PROF_SERVICES': { label: 'Professional Services, Legal & Consulting', baseRetrench: 0.011, desc: 'Client deal advisory cycles & professional billing realization' },
+      'COMMERCE': { label: 'Wholesale, Retail & E-Commerce', baseRetrench: 0.012, desc: 'Consumer demand shifts & regional logistics realignment' },
+      'HEALTHCARE': { label: 'Healthcare & Biomedical Sciences', baseRetrench: 0.004, desc: 'Structural clinical manpower deficit & patient care demand' },
+      'CIVIL_PUBLIC': { label: 'Public Sector, Statutory Boards & MOE', baseRetrench: 0.002, desc: 'High tenured statutory stability & PSD employment framework' },
+      'HOSPITALITY': { label: 'Hospitality, F&B & Services', baseRetrench: 0.010, desc: 'Tourism visitor cycles & manpower dependency ratios' }
+    };
+
+    function getAgeRetrenchMultiplier(age) {
+      if (age < 30) return 0.65;
+      if (age <= 39) return 1.00;
+      if (age <= 49) return 1.45;
+      if (age <= 59) return 1.90;
+      return 2.20;
+    }
+
+    function getRankRetrenchMultiplier(rank) {
+      if (rank === 'INTERN' || rank === 'JUNIOR') return 0.80;
+      if (rank === 'MID') return 1.00;
+      if (rank === 'SENIOR' || rank === 'LEAD') return 1.50; // Middle management flattening
+      if (rank === 'DIRECTOR') return 1.25;
+      return 0.90;
+    }
+
+    function detectRankFromTitleAndBase(title, base) {
+      const t = title.toLowerCase();
+      if (/\b(intern|trainee|apprentice|pupil|cadet)\b/.test(t)) return 'INTERN';
+      if (/\b(chief|ceo|cfo|cto|coo|cio|managing director|senior partner|president|minister|attorney general|judge)\b/.test(t) || base >= 36000) return 'APEX';
+      if (/\b(senior director|managing director|svp|evp|partner)\b/.test(t) || base >= 25000) return 'SENIOR_DIRECTOR';
+      if (/\b(director|vice-president|vice president|vp\b|head of|head,)\b/.test(t) || base >= 17000) return 'DIRECTOR';
+      if (/\b(lead|principal|architect|assistant director|senior manager|avp)\b/.test(t) || base >= 12500) return 'LEAD';
+      if (/\b(manager|senior|specialist|consultant)\b/.test(t) || base >= 8500) return 'SENIOR';
+      if (/\b(administrator|officer|analyst|engineer|developer|designer|accountant)\b/.test(t) || base >= 5500) return 'MID';
+      return 'JUNIOR';
+    }
+
+    function detectIndustryFromCode(code) {
+      if (code.startsWith('25') || code === '12210' || code === '13301') return 'ICT';
+      if (code.startsWith('214') || code.startsWith('215') || code.startsWith('311') || code.startsWith('7') || code.startsWith('8')) return 'MFG_ENG';
+      if (code.startsWith('241') || code.startsWith('331') || code.startsWith('1211') || code === '21211') return 'FINANCE';
+      if (code.startsWith('22') || code.startsWith('32')) return 'HEALTHCARE';
+      if (code.startsWith('23') || code.startsWith('111') || code.startsWith('0') || code.startsWith('X')) return 'CIVIL_PUBLIC';
+      if (code.startsWith('242') || code.startsWith('261') || code.startsWith('21221')) return 'PROF_SERVICES';
+      if (code.startsWith('5')) return 'HOSPITALITY';
+      return 'COMMERCE';
+    }
+
     let state = {
       role1Code: "25121",
       role1Title: "Software developer",
@@ -1002,6 +1234,14 @@
       showAllYears: false,
       stayMajor: "2",
       leaveMajor: "1",
+      // Retrenchment, Seniority Rank, Grade Ceiling Caps & Contract Types
+      stayJobType: "PERM", // 'PERM' or 'CONTRACT'
+      leaveJobType: "PERM",
+      stayRank: "SENIOR",
+      leaveRank: "LEAD",
+      stayIndustry: "ICT",
+      leaveIndustry: "ICT",
+      stayTenure: 4,
       // Dynamic Sideline Configurations
       staySideline: {
         archetype: "MICRO_SAAS",
@@ -1429,6 +1669,9 @@
         state.role1Bm = selectedItem.bm;
         state.role1CalibType = selectedItem.calibType;
         state.role1CalibNote = selectedItem.calibNote;
+
+        state.stayRank = detectRankFromTitleAndBase(selectedItem.title, selectedItem.base);
+        state.stayIndustry = detectIndustryFromCode(selectedItem.code);
         
         document.getElementById('stayBaseInput').value = selectedItem.base;
         document.getElementById('stayBonusInput').value = Math.round(selectedItem.base * selectedItem.bm);
@@ -1446,6 +1689,9 @@
         state.role2Bm = selectedItem.bm;
         state.role2CalibType = selectedItem.calibType;
         state.role2CalibNote = selectedItem.calibNote;
+
+        state.leaveRank = detectRankFromTitleAndBase(selectedItem.title, selectedItem.base);
+        state.leaveIndustry = detectIndustryFromCode(selectedItem.code);
         
         document.getElementById('leaveBaseInput').value = selectedItem.base;
         document.getElementById('leaveBonusInput').value = Math.round(selectedItem.base * selectedItem.bm);
@@ -1589,6 +1835,226 @@
       }
     }
 
+    function syncContractRankUI(side) {
+      const isStay = side === 'stay';
+      const jobType = isStay ? state.stayJobType : state.leaveJobType;
+      const rank = isStay ? state.stayRank : state.leaveRank;
+      const ind = isStay ? state.stayIndustry : state.leaveIndustry;
+      const base = isStay ? state.role1Base : state.role2Base;
+      const age = state.currentAge;
+      const tenure = isStay ? state.stayTenure : 1;
+
+      const permBtn = document.getElementById(isStay ? 'stayJobTypePermBtn' : 'leaveJobTypePermBtn');
+      const contractBtn = document.getElementById(isStay ? 'stayJobTypeContractBtn' : 'leaveJobTypeContractBtn');
+      const badge = document.getElementById(isStay ? 'stayContractBadge' : 'leaveContractBadge');
+
+      if (permBtn && contractBtn && badge) {
+        if (jobType === 'PERM') {
+          permBtn.className = isStay ? "px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-cyan-600 bg-cyan-950/80 text-cyan-300" : "px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-emerald-600 bg-emerald-950/80 text-emerald-300";
+          contractBtn.className = "px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-slate-800 bg-slate-900 text-slate-400 hover:text-white";
+          badge.textContent = "Perm Full-Time";
+          badge.className = isStay ? "text-[10px] text-cyan-400 font-mono font-semibold" : "text-[10px] text-emerald-400 font-mono font-semibold";
+        } else {
+          contractBtn.className = isStay ? "px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-cyan-600 bg-cyan-950/80 text-cyan-300" : "px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-emerald-600 bg-emerald-950/80 text-emerald-300";
+          permBtn.className = "px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all border-slate-800 bg-slate-900 text-slate-400 hover:text-white";
+          badge.textContent = "Fixed Contract";
+          badge.className = "text-[10px] text-amber-400 font-mono font-semibold";
+        }
+      }
+
+      const rankSelect = document.getElementById(isStay ? 'stayRankSelect' : 'leaveRankSelect');
+      const indSelect = document.getElementById(isStay ? 'stayIndustrySelect' : 'leaveIndustrySelect');
+      if (rankSelect) rankSelect.value = rank;
+      if (indSelect) indSelect.value = ind;
+
+      const rCfg = RANK_CONFIG[rank] || RANK_CONFIG['MID'];
+      const cap = rCfg.cap;
+      const pct = Math.min(100, Math.round((base / cap) * 100));
+      const headroom = Math.max(0, cap - base);
+
+      const meterText = document.getElementById(isStay ? 'stayCapMeterText' : 'leaveCapMeterText');
+      const meterBar = document.getElementById(isStay ? 'stayCapMeterBar' : 'leaveCapMeterBar');
+      const capNote = document.getElementById(isStay ? 'stayCapNote' : 'leaveCapNote');
+
+      if (meterText && meterBar && capNote) {
+        meterText.textContent = `S$${base.toLocaleString()} / S$${cap.toLocaleString()} (${pct}% of Cap)`;
+        meterBar.style.width = `${pct}%`;
+        if (pct >= 100) {
+          meterBar.className = "bg-gradient-to-r from-rose-500 to-amber-500 h-full rounded-full transition-all";
+          capNote.innerHTML = `<span class="text-rose-400 font-semibold">⚠️ Capped at Band Max:</span> 0% merit increments until promoted to ${rCfg.next}.`;
+        } else {
+          meterBar.className = isStay ? "bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full transition-all" : "bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full transition-all";
+          capNote.textContent = `S$${headroom.toLocaleString()} headroom remaining before merit freeze.`;
+        }
+      }
+
+      const indCfg = INDUSTRY_CONFIG[ind] || INDUSTRY_CONFIG['ICT'];
+      let retrenchOdds = 0;
+      let severanceCash = 0;
+
+      if (jobType === 'PERM') {
+        retrenchOdds = indCfg.baseRetrench * getAgeRetrenchMultiplier(age) * getRankRetrenchMultiplier(rank);
+        severanceCash = Math.min(tenure, 25) * base;
+      } else {
+        retrenchOdds = 0.16;
+        severanceCash = 0;
+      }
+
+      const retrenchEl = document.getElementById(isStay ? 'stayRetrenchOddsVal' : 'leaveRetrenchOddsVal');
+      const sevEl = document.getElementById(isStay ? 'staySeveranceVal' : 'leaveSeveranceVal');
+      if (retrenchEl) retrenchEl.textContent = `${(retrenchOdds * 100).toFixed(1)}% / yr`;
+      if (sevEl) sevEl.textContent = jobType === 'PERM' ? `Severance: S$${severanceCash.toLocaleString()} (${tenure}y)` : "Severance: S$0 (Contract)";
+
+      const lmxFactor = isStay ? (0.3 + 0.7 * (state.bossLmx / 7.0)) : 0.85;
+      const skipFactor = isStay ? (0.5 + 0.5 * (state.skipBoss / 5.0)) : 0.85;
+      const typeFactor = jobType === 'CONTRACT' ? 0.05 : 1.0;
+      const promoProb = rCfg.promoOdds * lmxFactor * skipFactor * typeFactor;
+
+      const promoEl = document.getElementById(isStay ? 'stayPromoAdvVal' : 'leavePromoAdvVal');
+      const nextCapEl = document.getElementById(isStay ? 'stayNextCapVal' : 'leaveNextCapVal');
+      if (promoEl) promoEl.textContent = `${(promoProb * 100).toFixed(1)}% / yr`;
+      const nextCfg = RANK_CONFIG[rCfg.next] || rCfg;
+      if (nextCapEl) nextCapEl.textContent = `Expands cap to S$${nextCfg.cap.toLocaleString()}`;
+    }
+
+    function runMonteCarloCareer(params, numSims = 500) {
+      const {
+        base0, bm0, age0, horizon, jobType, industry, rank0,
+        bossLmx, skipBoss, startTenure, startLiquid, startCpf,
+        annualLivingCost, sidelineNet
+      } = params;
+
+      let allFinalNW = [];
+      let yearlyTracks = [];
+      for (let t = 1; t <= horizon; t++) {
+        yearlyTracks.push({
+          year: t, age: age0 + t, bases: [], grosses: [], nws: [],
+          taxes: [], ranks: [], caps: []
+        });
+      }
+
+      for (let s = 0; s < numSims; s++) {
+        let curBase = base0;
+        let curRank = rank0;
+        let curTenure = startTenure;
+        let liquid = startLiquid;
+        let cpf = startCpf;
+
+        for (let t = 1; t <= horizon; t++) {
+          const age = age0 + t;
+          const rankCfg = RANK_CONFIG[curRank] || RANK_CONFIG['MID'];
+          const indCfg = INDUSTRY_CONFIG[industry] || INDUSTRY_CONFIG['ICT'];
+
+          let retrenchOdds = 0;
+          if (jobType === 'PERM') {
+            retrenchOdds = indCfg.baseRetrench * getAgeRetrenchMultiplier(age) * getRankRetrenchMultiplier(curRank);
+          } else {
+            retrenchOdds = 0.16;
+          }
+
+          const isDisplaced = Math.random() < retrenchOdds;
+          let annualGross = 0;
+
+          if (isDisplaced) {
+            let severance = 0;
+            let unempMths = 4;
+            if (jobType === 'PERM') {
+              severance = Math.min(curTenure, 25) * curBase;
+              unempMths = age >= 45 ? 5 : 4;
+            } else {
+              severance = 0;
+              unempMths = 3;
+            }
+            annualGross = curBase * (12 - unempMths) + severance;
+            const cut = age >= 45 ? 0.90 : 0.96;
+            curBase = Math.round(curBase * cut);
+            curTenure = 1;
+          } else {
+            curTenure++;
+            const lmxFactor = 0.3 + 0.7 * (bossLmx / 7.0);
+            const skipFactor = 0.5 + 0.5 * (skipBoss / 5.0);
+            const typeFactor = jobType === 'CONTRACT' ? 0.05 : 1.0;
+            const promoProb = rankCfg.promoOdds * lmxFactor * skipFactor * typeFactor;
+
+            if (Math.random() < promoProb) {
+              curBase = Math.round(curBase * (1 + rankCfg.promoRaise));
+              curRank = rankCfg.next;
+            } else {
+              if (curBase < rankCfg.cap) {
+                const meritRate = (bossLmx <= 2 && skipBoss <= 2) ? 0.015 : 0.038;
+                curBase = Math.min(rankCfg.cap, Math.round(curBase * (1 + meritRate)));
+              } else {
+                curBase = Math.round(curBase * 1.005);
+              }
+            }
+            annualGross = curBase * 12 + Math.round(curBase * bm0);
+          }
+
+          const cpfContrib = calcCpf2026(curBase, Math.round(curBase * bm0), age);
+          const tax = calcIrasTaxYA2026(Math.max(0, annualGross - cpfContrib.ee));
+          const netTakeHome = (annualGross - cpfContrib.ee - tax) + sidelineNet - annualLivingCost;
+
+          liquid = Math.round(liquid * 1.045 + Math.max(0, netTakeHome));
+          cpf = Math.round(cpf * 1.030 + cpfContrib.total);
+          const totalNW = liquid + cpf;
+
+          yearlyTracks[t - 1].bases.push(curBase);
+          yearlyTracks[t - 1].grosses.push(annualGross);
+          yearlyTracks[t - 1].nws.push(totalNW);
+          yearlyTracks[t - 1].taxes.push(tax);
+          yearlyTracks[t - 1].ranks.push(curRank);
+          yearlyTracks[t - 1].caps.push(rankCfg.cap);
+
+          if (t === horizon) {
+            allFinalNW.push(totalNW);
+          }
+        }
+      }
+
+      allFinalNW.sort((a, b) => a - b);
+      const medIdx = Math.floor(allFinalNW.length * 0.50);
+      const cvar5Count = Math.max(1, Math.floor(allFinalNW.length * 0.05));
+      const cvar5 = Math.round(allFinalNW.slice(0, cvar5Count).reduce((a, b) => a + b, 0) / cvar5Count);
+
+      const trajectory = yearlyTracks.map(yr => {
+        yr.nws.sort((a, b) => a - b);
+        yr.bases.sort((a, b) => a - b);
+        yr.grosses.sort((a, b) => a - b);
+        yr.taxes.sort((a, b) => a - b);
+
+        const rankCounts = {};
+        yr.ranks.forEach(r => rankCounts[r] = (rankCounts[r] || 0) + 1);
+        let topRank = yr.ranks[0];
+        let maxCount = 0;
+        for (const [r, count] of Object.entries(rankCounts)) {
+          if (count > maxCount) { maxCount = count; topRank = r; }
+        }
+
+        const cvar5YrCount = Math.max(1, Math.floor(yr.nws.length * 0.05));
+        const cvar5Yr = Math.round(yr.nws.slice(0, cvar5YrCount).reduce((a, b) => a + b, 0) / cvar5YrCount);
+
+        return {
+          year: yr.year,
+          age: yr.age,
+          base: yr.bases[Math.floor(yr.bases.length * 0.5)],
+          gross: yr.grosses[Math.floor(yr.grosses.length * 0.5)],
+          tax: yr.taxes[Math.floor(yr.taxes.length * 0.5)],
+          nw: yr.nws[Math.floor(yr.nws.length * 0.5)],
+          cvar5: cvar5Yr,
+          rank: topRank,
+          cap: (RANK_CONFIG[topRank] || RANK_CONFIG['MID']).cap
+        };
+      });
+
+      return {
+        medianNW: allFinalNW[medIdx],
+        cvar5NW: cvar5,
+        p95NW: allFinalNW[Math.floor(allFinalNW.length * 0.95)],
+        trajectory
+      };
+    }
+
+
     function syncUIFromState() {
       const r1 = getRoleData(state.role1Code);
       const r2 = getRoleData(state.role2Code);
@@ -1650,6 +2116,10 @@
       // Sync Sideline Interactive Panels
       syncSidelineUI('stay');
       syncSidelineUI('leave');
+
+      // Sync Contract & Rank Parameters
+      syncContractRankUI('stay');
+      syncContractRankUI('leave');
     }
 
     function attachEventListeners() {
@@ -1673,6 +2143,56 @@
         const b = parseFloat(e.target.value) || 0;
         state.role2Bm = state.role2Base > 0 ? (b / state.role2Base) : 0;
         syncUIFromState();
+        runSimulation();
+      });
+
+      // Contract Type & Rank Listeners
+      document.getElementById('stayJobTypePermBtn').addEventListener('click', () => {
+        state.stayJobType = 'PERM';
+        syncContractRankUI('stay');
+        runSimulation();
+      });
+      document.getElementById('stayJobTypeContractBtn').addEventListener('click', () => {
+        state.stayJobType = 'CONTRACT';
+        syncContractRankUI('stay');
+        runSimulation();
+      });
+      document.getElementById('leaveJobTypePermBtn').addEventListener('click', () => {
+        state.leaveJobType = 'PERM';
+        syncContractRankUI('leave');
+        runSimulation();
+      });
+      document.getElementById('leaveJobTypeContractBtn').addEventListener('click', () => {
+        state.leaveJobType = 'CONTRACT';
+        syncContractRankUI('leave');
+        runSimulation();
+      });
+
+      document.getElementById('stayRankSelect').addEventListener('change', (e) => {
+        state.stayRank = e.target.value;
+        syncContractRankUI('stay');
+        runSimulation();
+      });
+      document.getElementById('leaveRankSelect').addEventListener('change', (e) => {
+        state.leaveRank = e.target.value;
+        syncContractRankUI('leave');
+        runSimulation();
+      });
+
+      document.getElementById('stayIndustrySelect').addEventListener('change', (e) => {
+        state.stayIndustry = e.target.value;
+        syncContractRankUI('stay');
+        runSimulation();
+      });
+      document.getElementById('leaveIndustrySelect').addEventListener('change', (e) => {
+        state.leaveIndustry = e.target.value;
+        syncContractRankUI('leave');
+        runSimulation();
+      });
+
+      document.getElementById('stayTenureInput').addEventListener('input', (e) => {
+        state.stayTenure = parseInt(e.target.value) || 0;
+        syncContractRankUI('stay');
         runSimulation();
       });
 
@@ -1826,23 +2346,19 @@
       runSimulation();
     }
 
-    // Actuarial Engine Simulation
+    // Actuarial Engine Simulation (Monte Carlo Multi-Path Career Engine)
     function runSimulation() {
       const maxYears = state.selectedHorizon === 0 ? Math.max(1, state.retireAge - state.currentAge) : state.selectedHorizon;
 
       // SCM Promotion & Boss Trap
       const bossFactor = (state.bossLmx / 7.0);
       const skipFactor = (state.skipBoss / 5.0);
-      const flightRisk = 0.15; // default perceived flight risk if staying
+      const flightRisk = 0.15;
       const promoProb = Math.min(0.35, 0.04 + 0.12 * bossFactor + 0.15 * skipFactor);
       const trapIndex = Math.round((0.65 * 0.85 + 0.35 * 0.70) * (1 - flightRisk) * (1 - 0.7 * promoProb) * 100);
 
       const politicalCap = (state.bossLmx <= 2 && state.skipBoss <= 2) ? 0.015 : 0.042;
       updateScmDisplay(politicalCap, promoProb, trapIndex);
-
-      // Compensation setup
-      const r1 = getRoleData(state.role1Code);
-      const r2 = getRoleData(state.role2Code);
 
       const stayBase0 = state.role1Base;
       const stayBonus0 = Math.round(state.role1Base * state.role1Bm);
@@ -1856,7 +2372,6 @@
       const staySidelineNet = (state.sidelineMode === 'both' || state.sidelineMode === 'stay_only') ? stayFin.netCash : 0;
       const leaveSidelineNet = (state.sidelineMode === 'both' || state.sidelineMode === 'leave_only') ? leaveFin.netCash : 0;
 
-      // Housing costs per year
       const housingCosts = {
         'HDB_3Room': 14000,
         'HDB_4Room': 18000,
@@ -1867,68 +2382,52 @@
       };
       const annualLivingCost = housingCosts[state.housingType] || 20000;
 
-      // Year-by-year CTMC life-path simulation
-      let stayLiquid = state.startLiquid;
-      let stayCpf = state.startCpf;
-      let leaveLiquid = state.startLiquid;
-      let leaveCpf = state.startCpf;
+      // Run Monte Carlo Life-Path Simulation (500 Stochastic Paths each)
+      const staySim = runMonteCarloCareer({
+        base0: stayBase0,
+        bm0: state.role1Bm,
+        age0: state.currentAge,
+        horizon: maxYears,
+        jobType: state.stayJobType,
+        industry: state.stayIndustry,
+        rank0: state.stayRank,
+        bossLmx: state.bossLmx,
+        skipBoss: state.skipBoss,
+        startTenure: state.stayTenure,
+        startLiquid: state.startLiquid,
+        startCpf: state.startCpf,
+        annualLivingCost: annualLivingCost,
+        sidelineNet: staySidelineNet
+      }, 500);
 
-      let stayYearly = [];
-      let leaveYearly = [];
+      const leaveSim = runMonteCarloCareer({
+        base0: leaveBase0,
+        bm0: state.role2Bm,
+        age0: state.currentAge,
+        horizon: maxYears,
+        jobType: state.leaveJobType,
+        industry: state.leaveIndustry,
+        rank0: state.leaveRank,
+        bossLmx: 5,
+        skipBoss: 4,
+        startTenure: 1,
+        startLiquid: state.startLiquid,
+        startCpf: state.startCpf,
+        annualLivingCost: annualLivingCost,
+        sidelineNet: leaveSidelineNet
+      }, 500);
 
-      for (let t = 1; t <= maxYears; t++) {
-        const age = state.currentAge + t;
+      const stayYearly = staySim.trajectory;
+      const leaveYearly = leaveSim.trajectory;
 
-        // Wage growth with jump probability
-        const stayRaise = (Math.random() < promoProb ? 0.08 : politicalCap);
-        const stayBase = Math.round(stayBase0 * Math.pow(1 + stayRaise, t - 1));
-        const stayBonus = Math.round(stayBase * state.role1Bm);
-        const stayAnnualGross = stayBase * 12 + stayBonus;
-
-        const leaveBase = Math.round(leaveBase0 * Math.pow(1 + 0.038, t - 1));
-        const leaveBonus = Math.round(leaveBase * state.role2Bm);
-        const leaveAnnualGross = leaveBase * 12 + leaveBonus;
-
-        // 1 Jan 2026 CPF Rules
-        const stayCpfContrib = calcCpf2026(stayBase, stayBonus, age);
-        const leaveCpfContrib = calcCpf2026(leaveBase, leaveBonus, age);
-
-        // IRAS YA2026 Tax
-        const stayTax = calcIrasTaxYA2026(stayAnnualGross - stayCpfContrib.ee);
-        const leaveTax = calcIrasTaxYA2026(leaveAnnualGross - leaveCpfContrib.ee);
-
-        // Take-home cash including dynamic sideline net cashflow
-        const stayNetTakeHome = (stayAnnualGross - stayCpfContrib.ee - stayTax) + staySidelineNet - annualLivingCost;
-        const leaveNetTakeHome = (leaveAnnualGross - leaveCpfContrib.ee - leaveTax) + leaveSidelineNet - annualLivingCost;
-
-        // Asset returns (Liquid 4.5% p.a., CPF 2.5% - 4.0% blended)
-        stayLiquid = Math.round(stayLiquid * 1.045 + Math.max(0, stayNetTakeHome));
-        stayCpf = Math.round(stayCpf * 1.030 + stayCpfContrib.total);
-        const stayTotalNW = stayLiquid + stayCpf;
-
-        leaveLiquid = Math.round(leaveLiquid * 1.045 + Math.max(0, leaveNetTakeHome));
-        leaveCpf = Math.round(leaveCpf * 1.030 + leaveCpfContrib.total);
-        const leaveTotalNW = leaveLiquid + leaveCpf;
-
-        stayYearly.push({
-          year: t, age, base: stayBase, gross: stayAnnualGross, netTakeHome: stayNetTakeHome,
-          tax: stayTax, liquid: stayLiquid, cpf: stayCpf, nw: stayTotalNW
-        });
-
-        leaveYearly.push({
-          year: t, age, base: leaveBase, gross: leaveAnnualGross, netTakeHome: leaveNetTakeHome,
-          tax: leaveTax, liquid: leaveLiquid, cpf: leaveCpf, nw: leaveTotalNW
-        });
-      }
-
-      // Bellman Indifference Counteroffer Solver factoring in sideline differentials
-      const deltaNW = leaveYearly[leaveYearly.length - 1].nw - stayYearly[stayYearly.length - 1].nw;
+      // Bellman Indifference Counteroffer Solver factoring in downside tail risk
+      const deltaNW = leaveSim.medianNW - staySim.medianNW;
       const annualAnnuityNeeded = Math.max(0, deltaNW / Math.max(1, maxYears));
       const reqCounterBase = Math.round(stayBase0 + annualAnnuityNeeded / 14.5);
       const reqCounterRaisePct = stayBase0 > 0 ? ((reqCounterBase - stayBase0) / stayBase0 * 100).toFixed(1) : "0.0";
 
       updateBellmanDisplay(stayBase0, stayBonus0, leaveBase0, leaveBonus0, reqCounterBase, reqCounterRaisePct, deltaNW);
-      updateHorizonSummaryCards(stayYearly, leaveYearly, maxYears);
+      updateHorizonSummaryCards(staySim, leaveSim, stayYearly, leaveYearly, maxYears);
       renderMilestoneTable({ stay: stayYearly, leave: leaveYearly, maxYears });
       drawChart({ stay: stayYearly, leave: leaveYearly, maxYears });
     }
@@ -1990,12 +2489,10 @@
       document.getElementById('bellmanBaseDisplay').textContent = `S$${reqCounterBase.toLocaleString()} / mo`;
     }
 
-    function updateHorizonSummaryCards(stayYearly, leaveYearly, maxYears) {
+    function updateHorizonSummaryCards(staySim, leaveSim, stayYearly, leaveYearly, maxYears) {
       const finalStay = stayYearly[stayYearly.length - 1];
-      const finalLeave = leaveYearly[leaveYearly.length - 1];
-
-      const deltaNW = finalLeave.nw - finalStay.nw;
-      const cvarDelta = Math.round(deltaNW * 0.55);
+      const deltaNW = leaveSim.medianNW - staySim.medianNW;
+      const cvarDelta = leaveSim.cvar5NW - staySim.cvar5NW;
 
       let totStayCash = 0;
       let totLeaveCash = 0;
@@ -2011,9 +2508,9 @@
 
       document.getElementById('nwDeltaDisplay').textContent = (deltaNW >= 0 ? '+' : '') + `S$${Math.round(deltaNW).toLocaleString()}`;
       document.getElementById('nwDeltaSub').textContent = `At Year ${maxYears} (Age ${finalStay.age})`;
-      document.getElementById('cvarDeltaDisplay').textContent = (cvarDelta >= 0 ? '+' : '') + `S$${cvarDelta.toLocaleString()}`;
-      document.getElementById('totCashDeltaDisplay').textContent = `+S$${Math.round(totLeaveCash - totStayCash).toLocaleString()}`;
-      document.getElementById('taxDeltaDisplay').textContent = `+S$${Math.round(totLeaveTax - totStayTax).toLocaleString()}`;
+      document.getElementById('cvarDeltaDisplay').textContent = (cvarDelta >= 0 ? '+' : '') + `S$${Math.round(cvarDelta).toLocaleString()}`;
+      document.getElementById('totCashDeltaDisplay').textContent = (totLeaveCash >= totStayCash ? '+' : '') + `S$${Math.round(totLeaveCash - totStayCash).toLocaleString()}`;
+      document.getElementById('taxDeltaDisplay').textContent = (totLeaveTax >= totStayTax ? '+' : '') + `S$${Math.round(totLeaveTax - totStayTax).toLocaleString()}`;
     }
 
     function renderMilestoneTable(results) {
@@ -2029,19 +2526,29 @@
         if (!state.showAllYears && !isMilestone) continue;
 
         const delta = l.nw - s.nw;
-        const deltaColor = delta >= 0 ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold';
+        const deltaColor = delta >= 0 ? 'text-emerald-400 font-bold font-mono' : 'text-rose-400 font-bold font-mono';
+        const cvarDelta = l.cvar5 - s.cvar5;
+        const cvarColor = cvarDelta >= 0 ? 'text-emerald-400 font-mono text-xs' : 'text-rose-400 font-mono text-xs';
+
+        const sRankLabel = RANK_CONFIG[s.rank] ? RANK_CONFIG[s.rank].label.split('(')[0].trim() : s.rank;
+        const lRankLabel = RANK_CONFIG[l.rank] ? RANK_CONFIG[l.rank].label.split('(')[0].trim() : l.rank;
 
         rowsHtml += `
-          <tr class="hover:bg-slate-900/60 transition-colors border-b border-slate-800/40">
-            <td class="px-3 py-2 font-bold text-white">Y${s.year}</td>
-            <td class="px-3 py-2 text-slate-400">${s.age}</td>
-            <td class="px-3 py-2 text-right">S$${s.base.toLocaleString()}</td>
-            <td class="px-3 py-2 text-right">S$${s.gross.toLocaleString()}</td>
-            <td class="px-3 py-2 text-right text-cyan-400 font-semibold">S$${s.nw.toLocaleString()}</td>
-            <td class="px-3 py-2 text-right text-emerald-300">S$${l.base.toLocaleString()}</td>
-            <td class="px-3 py-2 text-right text-emerald-300">S$${l.gross.toLocaleString()}</td>
-            <td class="px-3 py-2 text-right text-emerald-400 font-semibold">S$${l.nw.toLocaleString()}</td>
-            <td class="px-3 py-2 text-right ${deltaColor}">${delta >= 0 ? '+' : ''}S$${delta.toLocaleString()}</td>
+          <tr class="hover:bg-slate-900/60 transition-colors border-b border-slate-800/40 text-xs">
+            <td class="px-2.5 py-2 font-bold text-white">Y${s.year}</td>
+            <td class="px-2 py-2 text-slate-400">${s.age}</td>
+            <td class="px-2.5 py-2 text-right">
+              <div class="font-mono text-slate-200">S$${s.base.toLocaleString()}</div>
+              <div class="text-[9px] text-slate-400">${sRankLabel} (Cap: S$${(s.cap/1000).toFixed(0)}k)</div>
+            </td>
+            <td class="px-2.5 py-2 text-right text-cyan-400 font-semibold font-mono">S$${s.nw.toLocaleString()}</td>
+            <td class="px-2.5 py-2 text-right">
+              <div class="font-mono text-emerald-300">S$${l.base.toLocaleString()}</div>
+              <div class="text-[9px] text-slate-400">${lRankLabel} (Cap: S$${(l.cap/1000).toFixed(0)}k)</div>
+            </td>
+            <td class="px-2.5 py-2 text-right text-emerald-400 font-semibold font-mono">S$${l.nw.toLocaleString()}</td>
+            <td class="px-2.5 py-2 text-right ${deltaColor}">${delta >= 0 ? '+' : ''}S$${delta.toLocaleString()}</td>
+            <td class="px-2.5 py-2 text-right ${cvarColor}">${cvarDelta >= 0 ? '+' : ''}S$${cvarDelta.toLocaleString()}</td>
           </tr>
         `;
       }
@@ -2120,11 +2627,18 @@
         ctx.setLineDash([]);
       }
 
-      // STAY curve
+      // STAY & LEAVE 5th-Percentile CVaR Downside Curves (Dashed)
+      const stayCvarValues = stay.map(d => d.cvar5);
+      drawCurve(stayCvarValues, 'rgba(56, 189, 248, 0.45)', [4, 4], 1.5);
+
+      const leaveCvarValues = leave.map(d => d.cvar5);
+      drawCurve(leaveCvarValues, 'rgba(16, 185, 129, 0.45)', [4, 4], 1.5);
+
+      // STAY curve (Median Solid)
       const stayValues = stay.map(d => d.nw);
       drawCurve(stayValues, '#38bdf8', [], 2.5);
 
-      // LEAVE curve
+      // LEAVE curve (Median Solid)
       const leaveValues = leave.map(d => d.nw);
       drawCurve(leaveValues, '#10b981', [], 2.5);
 
