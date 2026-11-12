@@ -217,6 +217,14 @@ def build_app():
     with open(json_path, "r", encoding="utf-8") as f:
         master_data = json.load(f)
 
+    mcf_path = os.path.join(base_dir, "data_mcf_2026_ssoc_summary.json")
+    mcf_benchmarks = {}
+    if os.path.exists(mcf_path):
+        with open(mcf_path, "r", encoding="utf-8") as f:
+            mcf_payload = json.load(f)
+            mcf_benchmarks = mcf_payload.get("ssoc_benchmarks", {})
+        print(f"Loaded MyCareersFuture benchmarks for {len(mcf_benchmarks)} SSOC codes ({mcf_payload.get('total_unique_postings', 0):,} live postings).")
+
     master_lookup = {}
     for r in master_data:
         code = str(r["ssoc_code"]).strip()
@@ -266,6 +274,17 @@ def build_app():
             "rb75": r.get("official_reported_p75_sgd"),
             "rg50": r.get("official_reported_gross_p50_sgd")
         }
+        mcf_row = mcf_benchmarks.get(code)
+        if mcf_row and mcf_row.get("vacancies", 0) > 0:
+            ssoc_dict[code]["mcf"] = [
+                int(mcf_row.get("vacancies", 0)),
+                int(mcf_row.get("salary_samples", 0)),
+                int(mcf_row.get("p25_min_sgd", 0)),
+                int(mcf_row.get("p50_offer_sgd", 0)),
+                int(mcf_row.get("p75_max_sgd", 0)),
+                float(mcf_row.get("avg_apps_per_vacancy", 0.0)),
+                float(mcf_row.get("perm_share_pct", 0.0))
+            ]
 
     lookup_json = json.dumps(ssoc_dict, separators=(',', ':'), ensure_ascii=False)
     titles_json = json.dumps(titles_index, separators=(',', ':'), ensure_ascii=False)

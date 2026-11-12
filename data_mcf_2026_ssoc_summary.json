@@ -1,0 +1,7275 @@
+{
+  "harvest_timestamp_utc": "2026-11-12T21:54:17.257406+00:00",
+  "source": "MyCareersFuture v2 API (https://api.mycareersfuture.gov.sg/v2/jobs)",
+  "total_unique_postings": 86665,
+  "ssoc_codes_with_postings": 808,
+  "ssoc_codes_with_clean_salaries": 803,
+  "salary_type_distribution": {
+    "Monthly": 86665
+  },
+  "filter_stats": {
+    "out_of_range_monthly": 1447,
+    "duplicate": 25,
+    "fcf_wide_band_gt_2.5x": 692
+  },
+  "methodology": "Excludes hidden salaries, non-Monthly/Annual units, bounds <S$500 or >S$200k, and wide FCF compliance padding bands (max/min > 2.5x). Clearing estimate = min + 0.40*(max - min).",
+  "ssoc_benchmarks": {
+    "11121": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 13.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 8250,
+      "p50_offer_sgd": 12000,
+      "p75_max_sgd": 15500
+    },
+    "11150": {
+      "vacancies": 155,
+      "salary_samples": 153,
+      "avg_apps_per_vacancy": 18.1,
+      "perm_share_pct": 85.8,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4500
+    },
+    "11201": {
+      "vacancies": 96,
+      "salary_samples": 96,
+      "avg_apps_per_vacancy": 31.9,
+      "perm_share_pct": 99.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 5710,
+      "p75_max_sgd": 16450
+    },
+    "11202": {
+      "vacancies": 201,
+      "salary_samples": 196,
+      "avg_apps_per_vacancy": 22.6,
+      "perm_share_pct": 98.5,
+      "p25_min_sgd": 8000,
+      "p50_offer_sgd": 12200,
+      "p75_max_sgd": 21162
+    },
+    "11203": {
+      "vacancies": 258,
+      "salary_samples": 258,
+      "avg_apps_per_vacancy": 23.2,
+      "perm_share_pct": 96.5,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 8650,
+      "p75_max_sgd": 15000
+    },
+    "12111": {
+      "vacancies": 524,
+      "salary_samples": 516,
+      "avg_apps_per_vacancy": 50.6,
+      "perm_share_pct": 92.6,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6800,
+      "p75_max_sgd": 12000
+    },
+    "12112": {
+      "vacancies": 149,
+      "salary_samples": 148,
+      "avg_apps_per_vacancy": 46.0,
+      "perm_share_pct": 94.6,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4911,
+      "p75_max_sgd": 8000
+    },
+    "12113": {
+      "vacancies": 59,
+      "salary_samples": 59,
+      "avg_apps_per_vacancy": 10.7,
+      "perm_share_pct": 98.3,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 8400,
+      "p75_max_sgd": 13500
+    },
+    "12121": {
+      "vacancies": 270,
+      "salary_samples": 267,
+      "avg_apps_per_vacancy": 36.4,
+      "perm_share_pct": 97.8,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5600,
+      "p75_max_sgd": 8750
+    },
+    "12122": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 11.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 7360,
+      "p75_max_sgd": 10200
+    },
+    "12123": {
+      "vacancies": 63,
+      "salary_samples": 61,
+      "avg_apps_per_vacancy": 14.9,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 5400,
+      "p75_max_sgd": 9000
+    },
+    "12131": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 8.2,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 6750,
+      "p50_offer_sgd": 13300,
+      "p75_max_sgd": 19500
+    },
+    "12132": {
+      "vacancies": 53,
+      "salary_samples": 52,
+      "avg_apps_per_vacancy": 16.4,
+      "perm_share_pct": 88.7,
+      "p25_min_sgd": 5750,
+      "p50_offer_sgd": 9050,
+      "p75_max_sgd": 15000
+    },
+    "12133": {
+      "vacancies": 58,
+      "salary_samples": 58,
+      "avg_apps_per_vacancy": 19.0,
+      "perm_share_pct": 84.5,
+      "p25_min_sgd": 5500,
+      "p50_offer_sgd": 9350,
+      "p75_max_sgd": 15750
+    },
+    "12191": {
+      "vacancies": 154,
+      "salary_samples": 154,
+      "avg_apps_per_vacancy": 15.6,
+      "perm_share_pct": 97.4,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5400,
+      "p75_max_sgd": 8000
+    },
+    "12192": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 3.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4500
+    },
+    "12193": {
+      "vacancies": 94,
+      "salary_samples": 94,
+      "avg_apps_per_vacancy": 15.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3350,
+      "p50_offer_sgd": 8960,
+      "p75_max_sgd": 13500
+    },
+    "12194": {
+      "vacancies": 23,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 25.9,
+      "perm_share_pct": 91.3,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6600,
+      "p75_max_sgd": 8500
+    },
+    "12195": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4800,
+      "p50_offer_sgd": 5280,
+      "p75_max_sgd": 6000
+    },
+    "12199": {
+      "vacancies": 1938,
+      "salary_samples": 1925,
+      "avg_apps_per_vacancy": 11.2,
+      "perm_share_pct": 94.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6600,
+      "p75_max_sgd": 10000
+    },
+    "12211": {
+      "vacancies": 2684,
+      "salary_samples": 2655,
+      "avg_apps_per_vacancy": 4.9,
+      "perm_share_pct": 99.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4280,
+      "p75_max_sgd": 7000
+    },
+    "12212": {
+      "vacancies": 661,
+      "salary_samples": 648,
+      "avg_apps_per_vacancy": 13.5,
+      "perm_share_pct": 97.4,
+      "p25_min_sgd": 4150,
+      "p50_offer_sgd": 6640,
+      "p75_max_sgd": 11500
+    },
+    "12213": {
+      "vacancies": 66,
+      "salary_samples": 64,
+      "avg_apps_per_vacancy": 12.3,
+      "perm_share_pct": 97.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4700,
+      "p75_max_sgd": 10000
+    },
+    "12214": {
+      "vacancies": 13,
+      "salary_samples": 13,
+      "avg_apps_per_vacancy": 8.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 4820,
+      "p75_max_sgd": 8000
+    },
+    "12215": {
+      "vacancies": 30,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 15.5,
+      "perm_share_pct": 90.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4550,
+      "p75_max_sgd": 8450
+    },
+    "12221": {
+      "vacancies": 46,
+      "salary_samples": 46,
+      "avg_apps_per_vacancy": 11.1,
+      "perm_share_pct": 97.8,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6750,
+      "p75_max_sgd": 9750
+    },
+    "12222": {
+      "vacancies": 611,
+      "salary_samples": 607,
+      "avg_apps_per_vacancy": 14.5,
+      "perm_share_pct": 96.7,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4700,
+      "p75_max_sgd": 9000
+    },
+    "12230": {
+      "vacancies": 257,
+      "salary_samples": 255,
+      "avg_apps_per_vacancy": 3.3,
+      "perm_share_pct": 80.5,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6650,
+      "p75_max_sgd": 11500
+    },
+    "12241": {
+      "vacancies": 134,
+      "salary_samples": 134,
+      "avg_apps_per_vacancy": 15.4,
+      "perm_share_pct": 97.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4080,
+      "p75_max_sgd": 6500
+    },
+    "12242": {
+      "vacancies": 19,
+      "salary_samples": 15,
+      "avg_apps_per_vacancy": 6.6,
+      "perm_share_pct": 63.2,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 4320,
+      "p75_max_sgd": 4800
+    },
+    "13100": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4625,
+      "p50_offer_sgd": 7050,
+      "p75_max_sgd": 9625
+    },
+    "13210": {
+      "vacancies": 390,
+      "salary_samples": 390,
+      "avg_apps_per_vacancy": 3.1,
+      "perm_share_pct": 99.5,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 7200,
+      "p75_max_sgd": 9000
+    },
+    "13230": {
+      "vacancies": 973,
+      "salary_samples": 972,
+      "avg_apps_per_vacancy": 7.3,
+      "perm_share_pct": 98.0,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 7200,
+      "p75_max_sgd": 12000
+    },
+    "13241": {
+      "vacancies": 252,
+      "salary_samples": 252,
+      "avg_apps_per_vacancy": 24.0,
+      "perm_share_pct": 97.2,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 6600,
+      "p75_max_sgd": 12000
+    },
+    "13242": {
+      "vacancies": 169,
+      "salary_samples": 169,
+      "avg_apps_per_vacancy": 21.8,
+      "perm_share_pct": 93.5,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 7200,
+      "p75_max_sgd": 11000
+    },
+    "13243": {
+      "vacancies": 30,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 16.0,
+      "perm_share_pct": 93.3,
+      "p25_min_sgd": 3425,
+      "p50_offer_sgd": 4950,
+      "p75_max_sgd": 9500
+    },
+    "13244": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3650,
+      "p50_offer_sgd": 4460,
+      "p75_max_sgd": 5500
+    },
+    "13245": {
+      "vacancies": 34,
+      "salary_samples": 34,
+      "avg_apps_per_vacancy": 16.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4625,
+      "p50_offer_sgd": 7080,
+      "p75_max_sgd": 10000
+    },
+    "13291": {
+      "vacancies": 242,
+      "salary_samples": 242,
+      "avg_apps_per_vacancy": 5.4,
+      "perm_share_pct": 97.1,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 7600,
+      "p75_max_sgd": 11000
+    },
+    "13292": {
+      "vacancies": 180,
+      "salary_samples": 180,
+      "avg_apps_per_vacancy": 8.8,
+      "perm_share_pct": 97.8,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6900,
+      "p75_max_sgd": 10000
+    },
+    "13299": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 7000
+    },
+    "13301": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 38.4,
+      "perm_share_pct": 88.2,
+      "p25_min_sgd": 9500,
+      "p50_offer_sgd": 13500,
+      "p75_max_sgd": 20000
+    },
+    "13302": {
+      "vacancies": 433,
+      "salary_samples": 429,
+      "avg_apps_per_vacancy": 25.0,
+      "perm_share_pct": 79.0,
+      "p25_min_sgd": 6000,
+      "p50_offer_sgd": 8200,
+      "p75_max_sgd": 12000
+    },
+    "13303": {
+      "vacancies": 60,
+      "salary_samples": 60,
+      "avg_apps_per_vacancy": 19.2,
+      "perm_share_pct": 81.7,
+      "p25_min_sgd": 4875,
+      "p50_offer_sgd": 7000,
+      "p75_max_sgd": 11000
+    },
+    "13304": {
+      "vacancies": 258,
+      "salary_samples": 249,
+      "avg_apps_per_vacancy": 28.5,
+      "perm_share_pct": 91.9,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 7800,
+      "p75_max_sgd": 12000
+    },
+    "13410": {
+      "vacancies": 37,
+      "salary_samples": 37,
+      "avg_apps_per_vacancy": 16.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 6200,
+      "p75_max_sgd": 8000
+    },
+    "13420": {
+      "vacancies": 90,
+      "salary_samples": 89,
+      "avg_apps_per_vacancy": 12.7,
+      "perm_share_pct": 96.7,
+      "p25_min_sgd": 3700,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 8000
+    },
+    "13430": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 16.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 5800,
+      "p75_max_sgd": 7750
+    },
+    "13441": {
+      "vacancies": 62,
+      "salary_samples": 60,
+      "avg_apps_per_vacancy": 18.2,
+      "perm_share_pct": 91.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3100,
+      "p75_max_sgd": 4500
+    },
+    "13442": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 16.0,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 2100,
+      "p50_offer_sgd": 2936,
+      "p75_max_sgd": 3455
+    },
+    "13451": {
+      "vacancies": 31,
+      "salary_samples": 31,
+      "avg_apps_per_vacancy": 16.7,
+      "perm_share_pct": 93.5,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5600,
+      "p75_max_sgd": 9000
+    },
+    "13459": {
+      "vacancies": 23,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 12.3,
+      "perm_share_pct": 95.7,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 4900,
+      "p75_max_sgd": 5500
+    },
+    "13461": {
+      "vacancies": 110,
+      "salary_samples": 93,
+      "avg_apps_per_vacancy": 9.9,
+      "perm_share_pct": 93.6,
+      "p25_min_sgd": 3800,
+      "p50_offer_sgd": 5900,
+      "p75_max_sgd": 11000
+    },
+    "13462": {
+      "vacancies": 21,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 7.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5800,
+      "p75_max_sgd": 8000
+    },
+    "13463": {
+      "vacancies": 60,
+      "salary_samples": 58,
+      "avg_apps_per_vacancy": 27.9,
+      "perm_share_pct": 90.0,
+      "p25_min_sgd": 6000,
+      "p50_offer_sgd": 8940,
+      "p75_max_sgd": 14000
+    },
+    "13491": {
+      "vacancies": 2,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 13.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5500,
+      "p50_offer_sgd": 5700,
+      "p75_max_sgd": 6000
+    },
+    "13492": {
+      "vacancies": 30,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 18.0,
+      "perm_share_pct": 86.7,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 7200,
+      "p75_max_sgd": 7500
+    },
+    "13493": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 5.8,
+      "perm_share_pct": 88.9,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 5300
+    },
+    "13499": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 5.9,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 4080,
+      "p75_max_sgd": 6000
+    },
+    "14110": {
+      "vacancies": 73,
+      "salary_samples": 73,
+      "avg_apps_per_vacancy": 16.5,
+      "perm_share_pct": 98.6,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5400
+    },
+    "14121": {
+      "vacancies": 442,
+      "salary_samples": 435,
+      "avg_apps_per_vacancy": 7.3,
+      "perm_share_pct": 98.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4080,
+      "p75_max_sgd": 6400
+    },
+    "14122": {
+      "vacancies": 15,
+      "salary_samples": 15,
+      "avg_apps_per_vacancy": 4.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2900,
+      "p50_offer_sgd": 4300,
+      "p75_max_sgd": 9250
+    },
+    "14123": {
+      "vacancies": 154,
+      "salary_samples": 152,
+      "avg_apps_per_vacancy": 11.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4100,
+      "p75_max_sgd": 8000
+    },
+    "14201": {
+      "vacancies": 309,
+      "salary_samples": 309,
+      "avg_apps_per_vacancy": 6.8,
+      "perm_share_pct": 99.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 7000
+    },
+    "14202": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 39.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 7000,
+      "p50_offer_sgd": 9700,
+      "p75_max_sgd": 13500
+    },
+    "14310": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 18.2,
+      "perm_share_pct": 91.7,
+      "p25_min_sgd": 3075,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 6000
+    },
+    "14321": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 6500,
+      "p50_offer_sgd": 6700,
+      "p75_max_sgd": 7000
+    },
+    "14322": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 6500,
+      "p50_offer_sgd": 7300,
+      "p75_max_sgd": 8500
+    },
+    "14323": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 13.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 6300,
+      "p75_max_sgd": 13000
+    },
+    "14324": {
+      "vacancies": 63,
+      "salary_samples": 63,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 98.4,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5160,
+      "p75_max_sgd": 10000
+    },
+    "14329": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2575,
+      "p50_offer_sgd": 3180,
+      "p75_max_sgd": 4975
+    },
+    "14330": {
+      "vacancies": 11,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 15.7,
+      "perm_share_pct": 81.8,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3490,
+      "p75_max_sgd": 6275
+    },
+    "14391": {
+      "vacancies": 671,
+      "salary_samples": 667,
+      "avg_apps_per_vacancy": 2.1,
+      "perm_share_pct": 99.1,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 5000
+    },
+    "14392": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 6.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5750,
+      "p50_offer_sgd": 10100,
+      "p75_max_sgd": 15250
+    },
+    "14399": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3610,
+      "p75_max_sgd": 4450
+    },
+    "21110": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 3.8,
+      "perm_share_pct": 88.9,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 6800,
+      "p75_max_sgd": 11000
+    },
+    "21120": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 7.4,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 7300,
+      "p50_offer_sgd": 8300,
+      "p75_max_sgd": 10000
+    },
+    "21130": {
+      "vacancies": 67,
+      "salary_samples": 67,
+      "avg_apps_per_vacancy": 12.6,
+      "perm_share_pct": 95.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3480,
+      "p75_max_sgd": 7000
+    },
+    "21141": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 4190,
+      "p75_max_sgd": 5275
+    },
+    "21142": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4125,
+      "p50_offer_sgd": 4850,
+      "p75_max_sgd": 5875
+    },
+    "21149": {
+      "vacancies": 3,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 4.3,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 6625,
+      "p50_offer_sgd": 7450,
+      "p75_max_sgd": 8500
+    },
+    "21211": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 7300,
+      "p50_offer_sgd": 8300,
+      "p75_max_sgd": 9800
+    },
+    "21212": {
+      "vacancies": 84,
+      "salary_samples": 84,
+      "avg_apps_per_vacancy": 19.0,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5290,
+      "p75_max_sgd": 10625
+    },
+    "21213": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 9.3,
+      "perm_share_pct": 91.7,
+      "p25_min_sgd": 3800,
+      "p50_offer_sgd": 6550,
+      "p75_max_sgd": 11500
+    },
+    "21221": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 6.6,
+      "perm_share_pct": 82.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4400,
+      "p75_max_sgd": 9000
+    },
+    "21222": {
+      "vacancies": 441,
+      "salary_samples": 441,
+      "avg_apps_per_vacancy": 25.8,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 7200,
+      "p75_max_sgd": 12000
+    },
+    "21231": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 2650,
+      "p50_offer_sgd": 4140,
+      "p75_max_sgd": 7750
+    },
+    "21311": {
+      "vacancies": 26,
+      "salary_samples": 26,
+      "avg_apps_per_vacancy": 17.0,
+      "perm_share_pct": 96.2,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6010,
+      "p75_max_sgd": 11350
+    },
+    "21312": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2900,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 4500
+    },
+    "21319": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 20.6,
+      "perm_share_pct": 82.4,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 4000
+    },
+    "21321": {
+      "vacancies": 37,
+      "salary_samples": 35,
+      "avg_apps_per_vacancy": 1.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 4900
+    },
+    "21329": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 14.6,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 3910,
+      "p75_max_sgd": 7000
+    },
+    "21331": {
+      "vacancies": 31,
+      "salary_samples": 31,
+      "avg_apps_per_vacancy": 6.2,
+      "perm_share_pct": 87.1,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4400,
+      "p75_max_sgd": 6000
+    },
+    "21332": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4050,
+      "p50_offer_sgd": 5420,
+      "p75_max_sgd": 7550
+    },
+    "21339": {
+      "vacancies": 14,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 20.6,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 3050,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 7725
+    },
+    "21341": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4300,
+      "p75_max_sgd": 5500
+    },
+    "21342": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 4.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5210,
+      "p75_max_sgd": 6950
+    },
+    "21343": {
+      "vacancies": 20,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 15.4,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5560,
+      "p75_max_sgd": 9000
+    },
+    "21346": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 6.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 5900,
+      "p75_max_sgd": 8000
+    },
+    "21347": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6700,
+      "p75_max_sgd": 13250
+    },
+    "21349": {
+      "vacancies": 25,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 11.1,
+      "perm_share_pct": 72.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 6625
+    },
+    "21411": {
+      "vacancies": 344,
+      "salary_samples": 344,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 98.3,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4900,
+      "p75_max_sgd": 6500
+    },
+    "21412": {
+      "vacancies": 165,
+      "salary_samples": 165,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 94.5,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4080,
+      "p75_max_sgd": 5500
+    },
+    "21413": {
+      "vacancies": 214,
+      "salary_samples": 214,
+      "avg_apps_per_vacancy": 4.6,
+      "perm_share_pct": 92.5,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 7000
+    },
+    "21414": {
+      "vacancies": 639,
+      "salary_samples": 639,
+      "avg_apps_per_vacancy": 3.3,
+      "perm_share_pct": 95.9,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 6000
+    },
+    "21415": {
+      "vacancies": 318,
+      "salary_samples": 317,
+      "avg_apps_per_vacancy": 4.1,
+      "perm_share_pct": 96.9,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 8000
+    },
+    "21421": {
+      "vacancies": 239,
+      "salary_samples": 239,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 97.9,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5300,
+      "p75_max_sgd": 7250
+    },
+    "21422": {
+      "vacancies": 1155,
+      "salary_samples": 1153,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 98.8,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4700,
+      "p75_max_sgd": 7000
+    },
+    "21430": {
+      "vacancies": 64,
+      "salary_samples": 64,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 95.3,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4280,
+      "p75_max_sgd": 5000
+    },
+    "21441": {
+      "vacancies": 705,
+      "salary_samples": 703,
+      "avg_apps_per_vacancy": 3.5,
+      "perm_share_pct": 96.9,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 4480,
+      "p75_max_sgd": 7000
+    },
+    "21442": {
+      "vacancies": 81,
+      "salary_samples": 81,
+      "avg_apps_per_vacancy": 2.4,
+      "perm_share_pct": 96.3,
+      "p25_min_sgd": 3300,
+      "p50_offer_sgd": 4400,
+      "p75_max_sgd": 6500
+    },
+    "21443": {
+      "vacancies": 133,
+      "salary_samples": 133,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 99.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 8500
+    },
+    "21451": {
+      "vacancies": 22,
+      "salary_samples": 22,
+      "avg_apps_per_vacancy": 6.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4125,
+      "p50_offer_sgd": 5250,
+      "p75_max_sgd": 9000
+    },
+    "21452": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3350,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 5750
+    },
+    "21453": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 22.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3375,
+      "p50_offer_sgd": 5450,
+      "p75_max_sgd": 10000
+    },
+    "21454": {
+      "vacancies": 31,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 11.5,
+      "perm_share_pct": 87.1,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 5290,
+      "p75_max_sgd": 8500
+    },
+    "21460": {
+      "vacancies": 41,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 0.8,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 6000
+    },
+    "21471": {
+      "vacancies": 97,
+      "salary_samples": 96,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 95.9,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4500,
+      "p75_max_sgd": 6000
+    },
+    "21472": {
+      "vacancies": 14,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 3.8,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3850,
+      "p75_max_sgd": 6375
+    },
+    "21473": {
+      "vacancies": 28,
+      "salary_samples": 28,
+      "avg_apps_per_vacancy": 8.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 5300,
+      "p75_max_sgd": 8000
+    },
+    "21474": {
+      "vacancies": 19,
+      "salary_samples": 19,
+      "avg_apps_per_vacancy": 3.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3650,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 8500
+    },
+    "21475": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 4.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4250,
+      "p50_offer_sgd": 4700,
+      "p75_max_sgd": 5375
+    },
+    "21491": {
+      "vacancies": 42,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 3.1,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 6000,
+      "p50_offer_sgd": 7200,
+      "p75_max_sgd": 9000
+    },
+    "21492": {
+      "vacancies": 35,
+      "salary_samples": 35,
+      "avg_apps_per_vacancy": 4.9,
+      "perm_share_pct": 94.3,
+      "p25_min_sgd": 3100,
+      "p50_offer_sgd": 4300,
+      "p75_max_sgd": 8250
+    },
+    "21493": {
+      "vacancies": 79,
+      "salary_samples": 78,
+      "avg_apps_per_vacancy": 11.3,
+      "perm_share_pct": 96.2,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5620,
+      "p75_max_sgd": 9725
+    },
+    "21494": {
+      "vacancies": 1281,
+      "salary_samples": 1277,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 99.1,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4300,
+      "p75_max_sgd": 6500
+    },
+    "21495": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 7.4,
+      "perm_share_pct": 90.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4860,
+      "p75_max_sgd": 8875
+    },
+    "21496": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 9.5,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 3750,
+      "p50_offer_sgd": 6000,
+      "p75_max_sgd": 11000
+    },
+    "21497": {
+      "vacancies": 63,
+      "salary_samples": 63,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4400,
+      "p50_offer_sgd": 5500,
+      "p75_max_sgd": 7000
+    },
+    "21498": {
+      "vacancies": 54,
+      "salary_samples": 54,
+      "avg_apps_per_vacancy": 14.3,
+      "perm_share_pct": 87.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4750,
+      "p75_max_sgd": 8375
+    },
+    "21499": {
+      "vacancies": 3146,
+      "salary_samples": 3129,
+      "avg_apps_per_vacancy": 4.5,
+      "perm_share_pct": 94.6,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4620,
+      "p75_max_sgd": 7000
+    },
+    "21511": {
+      "vacancies": 706,
+      "salary_samples": 704,
+      "avg_apps_per_vacancy": 2.4,
+      "perm_share_pct": 98.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4430,
+      "p75_max_sgd": 6500
+    },
+    "21512": {
+      "vacancies": 140,
+      "salary_samples": 140,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 95.7,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 8000
+    },
+    "21513": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 2.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3500,
+      "p75_max_sgd": 5400
+    },
+    "21521": {
+      "vacancies": 246,
+      "salary_samples": 246,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 93.5,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 9000
+    },
+    "21522": {
+      "vacancies": 984,
+      "salary_samples": 975,
+      "avg_apps_per_vacancy": 10.5,
+      "perm_share_pct": 81.3,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6600,
+      "p75_max_sgd": 11000
+    },
+    "21523": {
+      "vacancies": 163,
+      "salary_samples": 161,
+      "avg_apps_per_vacancy": 6.1,
+      "perm_share_pct": 88.3,
+      "p25_min_sgd": 3800,
+      "p50_offer_sgd": 6000,
+      "p75_max_sgd": 10000
+    },
+    "21524": {
+      "vacancies": 27,
+      "salary_samples": 27,
+      "avg_apps_per_vacancy": 3.1,
+      "perm_share_pct": 96.3,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 5400,
+      "p75_max_sgd": 6500
+    },
+    "21525": {
+      "vacancies": 81,
+      "salary_samples": 81,
+      "avg_apps_per_vacancy": 3.9,
+      "perm_share_pct": 91.4,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5600,
+      "p75_max_sgd": 8500
+    },
+    "21531": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3750,
+      "p50_offer_sgd": 6300,
+      "p75_max_sgd": 10000
+    },
+    "21532": {
+      "vacancies": 95,
+      "salary_samples": 95,
+      "avg_apps_per_vacancy": 2.9,
+      "perm_share_pct": 95.8,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 7000
+    },
+    "21610": {
+      "vacancies": 222,
+      "salary_samples": 221,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 98.6,
+      "p25_min_sgd": 3600,
+      "p50_offer_sgd": 5400,
+      "p75_max_sgd": 8500
+    },
+    "21621": {
+      "vacancies": 22,
+      "salary_samples": 22,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 95.5,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 6000
+    },
+    "21622": {
+      "vacancies": 21,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 4500
+    },
+    "21631": {
+      "vacancies": 19,
+      "salary_samples": 19,
+      "avg_apps_per_vacancy": 10.2,
+      "perm_share_pct": 94.7,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3040,
+      "p75_max_sgd": 4000
+    },
+    "21632": {
+      "vacancies": 37,
+      "salary_samples": 37,
+      "avg_apps_per_vacancy": 6.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 4700,
+      "p75_max_sgd": 6500
+    },
+    "21641": {
+      "vacancies": 8,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 87.5,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5800,
+      "p75_max_sgd": 8300
+    },
+    "21649": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 5.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3420,
+      "p75_max_sgd": 5575
+    },
+    "21651": {
+      "vacancies": 47,
+      "salary_samples": 47,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5000,
+      "p75_max_sgd": 7000
+    },
+    "21652": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4800,
+      "p50_offer_sgd": 5000,
+      "p75_max_sgd": 5300
+    },
+    "21659": {
+      "vacancies": 39,
+      "salary_samples": 38,
+      "avg_apps_per_vacancy": 3.3,
+      "perm_share_pct": 79.5,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4050,
+      "p75_max_sgd": 6375
+    },
+    "21661": {
+      "vacancies": 129,
+      "salary_samples": 129,
+      "avg_apps_per_vacancy": 34.6,
+      "perm_share_pct": 77.5,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4500
+    },
+    "21662": {
+      "vacancies": 69,
+      "salary_samples": 69,
+      "avg_apps_per_vacancy": 5.6,
+      "perm_share_pct": 91.3,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3820,
+      "p75_max_sgd": 5000
+    },
+    "21663": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 21.9,
+      "perm_share_pct": 72.7,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 5000
+    },
+    "21664": {
+      "vacancies": 71,
+      "salary_samples": 71,
+      "avg_apps_per_vacancy": 26.0,
+      "perm_share_pct": 71.8,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 6200,
+      "p75_max_sgd": 9000
+    },
+    "21670": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 11.5,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4000,
+      "p75_max_sgd": 6625
+    },
+    "21711": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 7375
+    },
+    "21712": {
+      "vacancies": 113,
+      "salary_samples": 113,
+      "avg_apps_per_vacancy": 6.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 6500,
+      "p50_offer_sgd": 9500,
+      "p75_max_sgd": 16000
+    },
+    "21713": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 91.7,
+      "p25_min_sgd": 3600,
+      "p50_offer_sgd": 5450,
+      "p75_max_sgd": 7200
+    },
+    "21714": {
+      "vacancies": 44,
+      "salary_samples": 44,
+      "avg_apps_per_vacancy": 5.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 7480,
+      "p75_max_sgd": 14000
+    },
+    "21721": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 8500,
+      "p50_offer_sgd": 11400,
+      "p75_max_sgd": 16500
+    },
+    "21722": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 23000,
+      "p50_offer_sgd": 25800,
+      "p75_max_sgd": 30000
+    },
+    "22110": {
+      "vacancies": 92,
+      "salary_samples": 87,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 76.1,
+      "p25_min_sgd": 6500,
+      "p50_offer_sgd": 10800,
+      "p75_max_sgd": 19500
+    },
+    "22122": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 11.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 13500,
+      "p50_offer_sgd": 19400,
+      "p75_max_sgd": 25000
+    },
+    "22124": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 600,
+      "p50_offer_sgd": 680,
+      "p75_max_sgd": 800
+    },
+    "22125": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 10250,
+      "p50_offer_sgd": 14900,
+      "p75_max_sgd": 21000
+    },
+    "22128": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3350,
+      "p50_offer_sgd": 4720,
+      "p75_max_sgd": 8250
+    },
+    "22129": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4375,
+      "p50_offer_sgd": 5650,
+      "p75_max_sgd": 7125
+    },
+    "22142": {
+      "vacancies": 1,
+      "salary_samples": 0,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 0.0
+    },
+    "22145": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 10000,
+      "p50_offer_sgd": 15600,
+      "p75_max_sgd": 24000
+    },
+    "22146": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 9.8,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 2900,
+      "p50_offer_sgd": 3540,
+      "p75_max_sgd": 4500
+    },
+    "22150": {
+      "vacancies": 18,
+      "salary_samples": 18,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 8150,
+      "p50_offer_sgd": 18500,
+      "p75_max_sgd": 25000
+    },
+    "22200": {
+      "vacancies": 1587,
+      "salary_samples": 1492,
+      "avg_apps_per_vacancy": 2.4,
+      "perm_share_pct": 86.8,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "22301": {
+      "vacancies": 35,
+      "salary_samples": 31,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 91.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 9000
+    },
+    "22302": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6200,
+      "p75_max_sgd": 8000
+    },
+    "22500": {
+      "vacancies": 26,
+      "salary_samples": 25,
+      "avg_apps_per_vacancy": 0.2,
+      "perm_share_pct": 80.8,
+      "p25_min_sgd": 5500,
+      "p50_offer_sgd": 9000,
+      "p75_max_sgd": 15000
+    },
+    "22611": {
+      "vacancies": 12,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5800,
+      "p75_max_sgd": 8000
+    },
+    "22612": {
+      "vacancies": 13,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 53.8,
+      "p25_min_sgd": 6800,
+      "p50_offer_sgd": 9000,
+      "p75_max_sgd": 12000
+    },
+    "22621": {
+      "vacancies": 189,
+      "salary_samples": 187,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 56.1,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4100,
+      "p75_max_sgd": 6000
+    },
+    "22631": {
+      "vacancies": 24,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 15.6,
+      "perm_share_pct": 95.8,
+      "p25_min_sgd": 2950,
+      "p50_offer_sgd": 4300,
+      "p75_max_sgd": 6200
+    },
+    "22632": {
+      "vacancies": 60,
+      "salary_samples": 59,
+      "avg_apps_per_vacancy": 18.2,
+      "perm_share_pct": 93.3,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5800,
+      "p75_max_sgd": 9000
+    },
+    "22640": {
+      "vacancies": 232,
+      "salary_samples": 223,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 88.4,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 7500
+    },
+    "22651": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 1.9,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 3450,
+      "p50_offer_sgd": 4930,
+      "p75_max_sgd": 7100
+    },
+    "22652": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 3325
+    },
+    "22661": {
+      "vacancies": 56,
+      "salary_samples": 56,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 4500
+    },
+    "22662": {
+      "vacancies": 67,
+      "salary_samples": 60,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 74.6,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 7350
+    },
+    "22670": {
+      "vacancies": 82,
+      "salary_samples": 80,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 95.1,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "22680": {
+      "vacancies": 165,
+      "salary_samples": 158,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 7300
+    },
+    "22691": {
+      "vacancies": 12,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 0.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 7000,
+      "p75_max_sgd": 10000
+    },
+    "22692": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 3510,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 8000
+    },
+    "22693": {
+      "vacancies": 128,
+      "salary_samples": 124,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 88.3,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 8000
+    },
+    "22694": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 0.2,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 7000
+    },
+    "22699": {
+      "vacancies": 65,
+      "salary_samples": 52,
+      "avg_apps_per_vacancy": 5.7,
+      "perm_share_pct": 40.0,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 3490,
+      "p75_max_sgd": 4500
+    },
+    "23101": {
+      "vacancies": 45,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 11.4,
+      "perm_share_pct": 71.1,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 8779,
+      "p75_max_sgd": 16500
+    },
+    "23102": {
+      "vacancies": 5,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 18.6,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 3875,
+      "p50_offer_sgd": 6150,
+      "p75_max_sgd": 8875
+    },
+    "23103": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 4.7,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 13500
+    },
+    "23109": {
+      "vacancies": 18,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 18.2,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3560,
+      "p75_max_sgd": 6000
+    },
+    "23200": {
+      "vacancies": 16,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 4.3,
+      "perm_share_pct": 87.5,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 3650,
+      "p75_max_sgd": 7125
+    },
+    "23300": {
+      "vacancies": 36,
+      "salary_samples": 31,
+      "avg_apps_per_vacancy": 5.7,
+      "perm_share_pct": 30.6,
+      "p25_min_sgd": 1190,
+      "p50_offer_sgd": 2640,
+      "p75_max_sgd": 4250
+    },
+    "23400": {
+      "vacancies": 179,
+      "salary_samples": 165,
+      "avg_apps_per_vacancy": 11.7,
+      "perm_share_pct": 77.7,
+      "p25_min_sgd": 3600,
+      "p50_offer_sgd": 5400,
+      "p75_max_sgd": 9000
+    },
+    "23500": {
+      "vacancies": 165,
+      "salary_samples": 146,
+      "avg_apps_per_vacancy": 14.4,
+      "perm_share_pct": 78.2,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 5500
+    },
+    "23611": {
+      "vacancies": 85,
+      "salary_samples": 82,
+      "avg_apps_per_vacancy": 13.0,
+      "perm_share_pct": 83.5,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 3620,
+      "p75_max_sgd": 5875
+    },
+    "23612": {
+      "vacancies": 33,
+      "salary_samples": 33,
+      "avg_apps_per_vacancy": 11.9,
+      "perm_share_pct": 63.6,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4020,
+      "p75_max_sgd": 6500
+    },
+    "23622": {
+      "vacancies": 69,
+      "salary_samples": 67,
+      "avg_apps_per_vacancy": 16.1,
+      "perm_share_pct": 88.4,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 5350
+    },
+    "23629": {
+      "vacancies": 37,
+      "salary_samples": 36,
+      "avg_apps_per_vacancy": 21.1,
+      "perm_share_pct": 89.2,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 4275
+    },
+    "24111": {
+      "vacancies": 308,
+      "salary_samples": 302,
+      "avg_apps_per_vacancy": 30.0,
+      "perm_share_pct": 92.2,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4700,
+      "p75_max_sgd": 6500
+    },
+    "24112": {
+      "vacancies": 201,
+      "salary_samples": 201,
+      "avg_apps_per_vacancy": 8.7,
+      "perm_share_pct": 95.5,
+      "p25_min_sgd": 3300,
+      "p50_offer_sgd": 4241,
+      "p75_max_sgd": 6500
+    },
+    "24113": {
+      "vacancies": 74,
+      "salary_samples": 72,
+      "avg_apps_per_vacancy": 8.6,
+      "perm_share_pct": 97.3,
+      "p25_min_sgd": 6000,
+      "p50_offer_sgd": 9500,
+      "p75_max_sgd": 12500
+    },
+    "24121": {
+      "vacancies": 452,
+      "salary_samples": 414,
+      "avg_apps_per_vacancy": 7.9,
+      "perm_share_pct": 96.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6400,
+      "p75_max_sgd": 12000
+    },
+    "24122": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 14.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5125,
+      "p50_offer_sgd": 7750,
+      "p75_max_sgd": 10625
+    },
+    "24131": {
+      "vacancies": 196,
+      "salary_samples": 191,
+      "avg_apps_per_vacancy": 40.6,
+      "perm_share_pct": 83.7,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5680,
+      "p75_max_sgd": 9250
+    },
+    "24132": {
+      "vacancies": 197,
+      "salary_samples": 195,
+      "avg_apps_per_vacancy": 28.3,
+      "perm_share_pct": 64.5,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 8000
+    },
+    "24133": {
+      "vacancies": 45,
+      "salary_samples": 44,
+      "avg_apps_per_vacancy": 25.5,
+      "perm_share_pct": 91.1,
+      "p25_min_sgd": 5875,
+      "p50_offer_sgd": 10375,
+      "p75_max_sgd": 18000
+    },
+    "24134": {
+      "vacancies": 28,
+      "salary_samples": 28,
+      "avg_apps_per_vacancy": 21.0,
+      "perm_share_pct": 92.9,
+      "p25_min_sgd": 6438,
+      "p50_offer_sgd": 8800,
+      "p75_max_sgd": 15750
+    },
+    "24135": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 11.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 7000,
+      "p50_offer_sgd": 8200,
+      "p75_max_sgd": 21000
+    },
+    "24139": {
+      "vacancies": 24,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 13.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4750,
+      "p50_offer_sgd": 8650,
+      "p75_max_sgd": 12750
+    },
+    "24141": {
+      "vacancies": 24,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 29.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3800,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 9750
+    },
+    "24142": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 44.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 10800,
+      "p75_max_sgd": 18750
+    },
+    "24143": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 41.9,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 7250,
+      "p50_offer_sgd": 16600,
+      "p75_max_sgd": 23500
+    },
+    "24151": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 5.8,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 8500,
+      "p50_offer_sgd": 12400,
+      "p75_max_sgd": 24000
+    },
+    "24152": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 26.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5600,
+      "p75_max_sgd": 20000
+    },
+    "24153": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 32.7,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 5500,
+      "p50_offer_sgd": 7400,
+      "p75_max_sgd": 15400
+    },
+    "24154": {
+      "vacancies": 53,
+      "salary_samples": 47,
+      "avg_apps_per_vacancy": 31.2,
+      "perm_share_pct": 96.2,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 10800,
+      "p75_max_sgd": 16500
+    },
+    "24160": {
+      "vacancies": 28,
+      "salary_samples": 28,
+      "avg_apps_per_vacancy": 14.6,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6250,
+      "p75_max_sgd": 10550
+    },
+    "24211": {
+      "vacancies": 25,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 25.4,
+      "perm_share_pct": 96.0,
+      "p25_min_sgd": 5375,
+      "p50_offer_sgd": 8120,
+      "p75_max_sgd": 14250
+    },
+    "24212": {
+      "vacancies": 398,
+      "salary_samples": 388,
+      "avg_apps_per_vacancy": 19.4,
+      "perm_share_pct": 80.4,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 6200,
+      "p75_max_sgd": 10500
+    },
+    "24213": {
+      "vacancies": 795,
+      "salary_samples": 790,
+      "avg_apps_per_vacancy": 10.3,
+      "perm_share_pct": 92.5,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 6750,
+      "p75_max_sgd": 10000
+    },
+    "24220": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 19.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4125,
+      "p50_offer_sgd": 5550,
+      "p75_max_sgd": 7375
+    },
+    "24231": {
+      "vacancies": 563,
+      "salary_samples": 561,
+      "avg_apps_per_vacancy": 23.6,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 6000
+    },
+    "24232": {
+      "vacancies": 325,
+      "salary_samples": 277,
+      "avg_apps_per_vacancy": 6.0,
+      "perm_share_pct": 92.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3540,
+      "p75_max_sgd": 7000
+    },
+    "24233": {
+      "vacancies": 731,
+      "salary_samples": 718,
+      "avg_apps_per_vacancy": 16.7,
+      "perm_share_pct": 75.8,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4500
+    },
+    "24240": {
+      "vacancies": 131,
+      "salary_samples": 117,
+      "avg_apps_per_vacancy": 10.2,
+      "perm_share_pct": 75.6,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3500,
+      "p75_max_sgd": 5000
+    },
+    "24251": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 3.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 10200,
+      "p75_max_sgd": 16000
+    },
+    "24291": {
+      "vacancies": 103,
+      "salary_samples": 103,
+      "avg_apps_per_vacancy": 15.9,
+      "perm_share_pct": 66.0,
+      "p25_min_sgd": 3600,
+      "p50_offer_sgd": 5140,
+      "p75_max_sgd": 8000
+    },
+    "24311": {
+      "vacancies": 30,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 19.0,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 7750
+    },
+    "24312": {
+      "vacancies": 25,
+      "salary_samples": 25,
+      "avg_apps_per_vacancy": 20.8,
+      "perm_share_pct": 76.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 10000
+    },
+    "24313": {
+      "vacancies": 87,
+      "salary_samples": 86,
+      "avg_apps_per_vacancy": 11.6,
+      "perm_share_pct": 86.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4400,
+      "p75_max_sgd": 7750
+    },
+    "24314": {
+      "vacancies": 398,
+      "salary_samples": 373,
+      "avg_apps_per_vacancy": 15.7,
+      "perm_share_pct": 83.4,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 5000
+    },
+    "24315": {
+      "vacancies": 20,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 8.9,
+      "perm_share_pct": 95.0,
+      "p25_min_sgd": 3350,
+      "p50_offer_sgd": 5250,
+      "p75_max_sgd": 7500
+    },
+    "24320": {
+      "vacancies": 345,
+      "salary_samples": 342,
+      "avg_apps_per_vacancy": 9.9,
+      "perm_share_pct": 88.4,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "24331": {
+      "vacancies": 692,
+      "salary_samples": 685,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 99.6,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "24332": {
+      "vacancies": 69,
+      "salary_samples": 68,
+      "avg_apps_per_vacancy": 6.3,
+      "perm_share_pct": 97.1,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "24333": {
+      "vacancies": 75,
+      "salary_samples": 71,
+      "avg_apps_per_vacancy": 7.7,
+      "perm_share_pct": 94.7,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 8000
+    },
+    "24334": {
+      "vacancies": 8,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 10.6,
+      "perm_share_pct": 87.5,
+      "p25_min_sgd": 2250,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 10250
+    },
+    "24339": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 7.4,
+      "perm_share_pct": 87.5,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 3460,
+      "p75_max_sgd": 4250
+    },
+    "24351": {
+      "vacancies": 14,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 31.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6700,
+      "p75_max_sgd": 10750
+    },
+    "24352": {
+      "vacancies": 19,
+      "salary_samples": 19,
+      "avg_apps_per_vacancy": 42.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 10800,
+      "p75_max_sgd": 15500
+    },
+    "24353": {
+      "vacancies": 33,
+      "salary_samples": 33,
+      "avg_apps_per_vacancy": 6.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 9000
+    },
+    "24361": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 3.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5125
+    },
+    "24362": {
+      "vacancies": 21,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 26.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4375,
+      "p50_offer_sgd": 7550,
+      "p75_max_sgd": 13500
+    },
+    "25111": {
+      "vacancies": 483,
+      "salary_samples": 482,
+      "avg_apps_per_vacancy": 13.4,
+      "perm_share_pct": 68.7,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5830,
+      "p75_max_sgd": 10000
+    },
+    "25112": {
+      "vacancies": 279,
+      "salary_samples": 272,
+      "avg_apps_per_vacancy": 28.3,
+      "perm_share_pct": 77.8,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 7600,
+      "p75_max_sgd": 12500
+    },
+    "25113": {
+      "vacancies": 138,
+      "salary_samples": 137,
+      "avg_apps_per_vacancy": 7.8,
+      "perm_share_pct": 79.7,
+      "p25_min_sgd": 8000,
+      "p50_offer_sgd": 10800,
+      "p75_max_sgd": 15000
+    },
+    "25121": {
+      "vacancies": 1543,
+      "salary_samples": 1532,
+      "avg_apps_per_vacancy": 11.6,
+      "perm_share_pct": 76.2,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 7100,
+      "p75_max_sgd": 11775
+    },
+    "25122": {
+      "vacancies": 32,
+      "salary_samples": 32,
+      "avg_apps_per_vacancy": 9.3,
+      "perm_share_pct": 81.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 5550,
+      "p75_max_sgd": 7625
+    },
+    "25123": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 11.0,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 1000,
+      "p50_offer_sgd": 3760,
+      "p75_max_sgd": 8000
+    },
+    "25140": {
+      "vacancies": 85,
+      "salary_samples": 84,
+      "avg_apps_per_vacancy": 7.8,
+      "perm_share_pct": 77.6,
+      "p25_min_sgd": 3875,
+      "p50_offer_sgd": 7000,
+      "p75_max_sgd": 11250
+    },
+    "25151": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 9.3,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 4625,
+      "p50_offer_sgd": 7480,
+      "p75_max_sgd": 12500
+    },
+    "25152": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 15.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5500,
+      "p50_offer_sgd": 8160,
+      "p75_max_sgd": 12000
+    },
+    "25190": {
+      "vacancies": 383,
+      "salary_samples": 380,
+      "avg_apps_per_vacancy": 16.9,
+      "perm_share_pct": 80.2,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 8400,
+      "p75_max_sgd": 15000
+    },
+    "25211": {
+      "vacancies": 51,
+      "salary_samples": 51,
+      "avg_apps_per_vacancy": 4.4,
+      "perm_share_pct": 84.3,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6800,
+      "p75_max_sgd": 8000
+    },
+    "25212": {
+      "vacancies": 14,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 7.6,
+      "perm_share_pct": 92.9,
+      "p25_min_sgd": 6250,
+      "p50_offer_sgd": 10200,
+      "p75_max_sgd": 17000
+    },
+    "25220": {
+      "vacancies": 41,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 13.4,
+      "perm_share_pct": 78.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 6600,
+      "p75_max_sgd": 10000
+    },
+    "25231": {
+      "vacancies": 241,
+      "salary_samples": 241,
+      "avg_apps_per_vacancy": 11.0,
+      "perm_share_pct": 82.2,
+      "p25_min_sgd": 4800,
+      "p50_offer_sgd": 7020,
+      "p75_max_sgd": 12000
+    },
+    "25232": {
+      "vacancies": 474,
+      "salary_samples": 474,
+      "avg_apps_per_vacancy": 7.6,
+      "perm_share_pct": 84.8,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5990,
+      "p75_max_sgd": 10000
+    },
+    "25241": {
+      "vacancies": 154,
+      "salary_samples": 154,
+      "avg_apps_per_vacancy": 12.4,
+      "perm_share_pct": 83.8,
+      "p25_min_sgd": 6000,
+      "p50_offer_sgd": 7900,
+      "p75_max_sgd": 12000
+    },
+    "25242": {
+      "vacancies": 14,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 10.3,
+      "perm_share_pct": 92.9,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5810,
+      "p75_max_sgd": 9000
+    },
+    "25243": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 22.1,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 4950,
+      "p50_offer_sgd": 6900,
+      "p75_max_sgd": 10000
+    },
+    "25244": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 7500,
+      "p50_offer_sgd": 8740,
+      "p75_max_sgd": 12000
+    },
+    "25245": {
+      "vacancies": 319,
+      "salary_samples": 317,
+      "avg_apps_per_vacancy": 9.3,
+      "perm_share_pct": 80.3,
+      "p25_min_sgd": 4400,
+      "p50_offer_sgd": 6800,
+      "p75_max_sgd": 10000
+    },
+    "25249": {
+      "vacancies": 13,
+      "salary_samples": 13,
+      "avg_apps_per_vacancy": 4.5,
+      "perm_share_pct": 76.9,
+      "p25_min_sgd": 6000,
+      "p50_offer_sgd": 8400,
+      "p75_max_sgd": 14000
+    },
+    "25291": {
+      "vacancies": 84,
+      "salary_samples": 84,
+      "avg_apps_per_vacancy": 9.9,
+      "perm_share_pct": 88.1,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 10000
+    },
+    "25299": {
+      "vacancies": 19,
+      "salary_samples": 19,
+      "avg_apps_per_vacancy": 16.6,
+      "perm_share_pct": 89.5,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5400,
+      "p75_max_sgd": 9100
+    },
+    "26111": {
+      "vacancies": 41,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 4.4,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 5500,
+      "p50_offer_sgd": 7100,
+      "p75_max_sgd": 14980
+    },
+    "26112": {
+      "vacancies": 176,
+      "salary_samples": 176,
+      "avg_apps_per_vacancy": 12.1,
+      "perm_share_pct": 92.6,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 8750,
+      "p75_max_sgd": 15250
+    },
+    "26119": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 8.0,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 6250,
+      "p50_offer_sgd": 7600,
+      "p75_max_sgd": 10000
+    },
+    "26211": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 12.5,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 1425,
+      "p50_offer_sgd": 1690,
+      "p75_max_sgd": 2050
+    },
+    "26212": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 16.8,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 5125,
+      "p50_offer_sgd": 6400,
+      "p75_max_sgd": 10250
+    },
+    "26213": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 10.5,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 4750,
+      "p50_offer_sgd": 6200,
+      "p75_max_sgd": 7875
+    },
+    "26221": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 23.3,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 3380,
+      "p75_max_sgd": 4425
+    },
+    "26321": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 4250,
+      "p50_offer_sgd": 6300,
+      "p75_max_sgd": 8750
+    },
+    "26322": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 2812,
+      "p50_offer_sgd": 4575,
+      "p75_max_sgd": 6688
+    },
+    "26341": {
+      "vacancies": 24,
+      "salary_samples": 22,
+      "avg_apps_per_vacancy": 7.1,
+      "perm_share_pct": 95.8,
+      "p25_min_sgd": 4505,
+      "p50_offer_sgd": 6000,
+      "p75_max_sgd": 7525
+    },
+    "26342": {
+      "vacancies": 24,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 11.2,
+      "perm_share_pct": 79.2,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5172,
+      "p75_max_sgd": 6500
+    },
+    "26343": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3375,
+      "p50_offer_sgd": 4350,
+      "p75_max_sgd": 6125
+    },
+    "26349": {
+      "vacancies": 14,
+      "salary_samples": 13,
+      "avg_apps_per_vacancy": 9.8,
+      "perm_share_pct": 71.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4900,
+      "p75_max_sgd": 7000
+    },
+    "26351": {
+      "vacancies": 244,
+      "salary_samples": 240,
+      "avg_apps_per_vacancy": 14.0,
+      "perm_share_pct": 95.1,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4300,
+      "p75_max_sgd": 5500
+    },
+    "26352": {
+      "vacancies": 103,
+      "salary_samples": 84,
+      "avg_apps_per_vacancy": 11.5,
+      "perm_share_pct": 76.7,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3030,
+      "p75_max_sgd": 3600
+    },
+    "26353": {
+      "vacancies": 54,
+      "salary_samples": 54,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 96.3,
+      "p25_min_sgd": 3612,
+      "p50_offer_sgd": 5000,
+      "p75_max_sgd": 6725
+    },
+    "26359": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5120,
+      "p75_max_sgd": 6800
+    },
+    "26361": {
+      "vacancies": 10,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 70.0,
+      "p25_min_sgd": 3750,
+      "p50_offer_sgd": 4910,
+      "p75_max_sgd": 6100
+    },
+    "26369": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2320,
+      "p75_max_sgd": 3250
+    },
+    "26371": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 16.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5500,
+      "p75_max_sgd": 7125
+    },
+    "26373": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 21.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3970,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 5500
+    },
+    "26374": {
+      "vacancies": 33,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 17.3,
+      "perm_share_pct": 54.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 5250
+    },
+    "26375": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 7.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2150,
+      "p50_offer_sgd": 3020,
+      "p75_max_sgd": 6750
+    },
+    "26379": {
+      "vacancies": 2,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 32.0,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 4800,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 5800
+    },
+    "26411": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 10.2,
+      "perm_share_pct": 62.5,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3525
+    },
+    "26412": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 15000,
+      "p50_offer_sgd": 17000,
+      "p75_max_sgd": 20000
+    },
+    "26413": {
+      "vacancies": 22,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 14.3,
+      "perm_share_pct": 72.7,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 5000
+    },
+    "26414": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 3.7,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 4750,
+      "p50_offer_sgd": 8160,
+      "p75_max_sgd": 12675
+    },
+    "26419": {
+      "vacancies": 29,
+      "salary_samples": 28,
+      "avg_apps_per_vacancy": 11.9,
+      "perm_share_pct": 89.7,
+      "p25_min_sgd": 2738,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 5000
+    },
+    "26421": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 5.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3375,
+      "p50_offer_sgd": 4890,
+      "p75_max_sgd": 7250
+    },
+    "26422": {
+      "vacancies": 9,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 14.2,
+      "perm_share_pct": 88.9,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4310,
+      "p75_max_sgd": 14750
+    },
+    "26431": {
+      "vacancies": 12,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 13.8,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3490,
+      "p75_max_sgd": 4450
+    },
+    "26432": {
+      "vacancies": 1,
+      "salary_samples": 0,
+      "avg_apps_per_vacancy": 6.0,
+      "perm_share_pct": 0.0
+    },
+    "26511": {
+      "vacancies": 2,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 3500
+    },
+    "26519": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 4400,
+      "p75_max_sgd": 5000
+    },
+    "26521": {
+      "vacancies": 3,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2875,
+      "p50_offer_sgd": 4550,
+      "p75_max_sgd": 7250
+    },
+    "26523": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 3.3,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 4500
+    },
+    "26524": {
+      "vacancies": 25,
+      "salary_samples": 25,
+      "avg_apps_per_vacancy": 1.4,
+      "perm_share_pct": 96.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4500,
+      "p75_max_sgd": 6000
+    },
+    "26530": {
+      "vacancies": 8,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 87.5,
+      "p25_min_sgd": 3350,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 10750
+    },
+    "26541": {
+      "vacancies": 41,
+      "salary_samples": 40,
+      "avg_apps_per_vacancy": 10.6,
+      "perm_share_pct": 78.0,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3710,
+      "p75_max_sgd": 5800
+    },
+    "26542": {
+      "vacancies": 9,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 9.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 10000,
+      "p50_offer_sgd": 12000,
+      "p75_max_sgd": 15000
+    },
+    "26543": {
+      "vacancies": 24,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 14.5,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 3425,
+      "p50_offer_sgd": 4550,
+      "p75_max_sgd": 7000
+    },
+    "26544": {
+      "vacancies": 34,
+      "salary_samples": 34,
+      "avg_apps_per_vacancy": 12.2,
+      "perm_share_pct": 70.6,
+      "p25_min_sgd": 2125,
+      "p50_offer_sgd": 3000,
+      "p75_max_sgd": 4500
+    },
+    "26549": {
+      "vacancies": 72,
+      "salary_samples": 70,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 97.2,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4620,
+      "p75_max_sgd": 7000
+    },
+    "26550": {
+      "vacancies": 2,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 800,
+      "p50_offer_sgd": 1080,
+      "p75_max_sgd": 1500
+    },
+    "26561": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 6.8,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "31001": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3980,
+      "p75_max_sgd": 5750
+    },
+    "31002": {
+      "vacancies": 31,
+      "salary_samples": 31,
+      "avg_apps_per_vacancy": 2.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3120,
+      "p75_max_sgd": 4100
+    },
+    "31003": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2612,
+      "p50_offer_sgd": 4015,
+      "p75_max_sgd": 5500
+    },
+    "31004": {
+      "vacancies": 142,
+      "salary_samples": 142,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 93.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3280,
+      "p75_max_sgd": 5000
+    },
+    "31005": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 9.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 3480,
+      "p75_max_sgd": 8100
+    },
+    "31006": {
+      "vacancies": 109,
+      "salary_samples": 109,
+      "avg_apps_per_vacancy": 3.8,
+      "perm_share_pct": 89.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3280,
+      "p75_max_sgd": 5000
+    },
+    "31009": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2100,
+      "p50_offer_sgd": 2660,
+      "p75_max_sgd": 3500
+    },
+    "31111": {
+      "vacancies": 160,
+      "salary_samples": 154,
+      "avg_apps_per_vacancy": 6.2,
+      "perm_share_pct": 62.5,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2660,
+      "p75_max_sgd": 3500
+    },
+    "31112": {
+      "vacancies": 31,
+      "salary_samples": 31,
+      "avg_apps_per_vacancy": 3.2,
+      "perm_share_pct": 93.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "31121": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4490,
+      "p75_max_sgd": 5500
+    },
+    "31122": {
+      "vacancies": 48,
+      "salary_samples": 48,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 97.9,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 3010,
+      "p75_max_sgd": 4350
+    },
+    "31123": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2580,
+      "p75_max_sgd": 3000
+    },
+    "31124": {
+      "vacancies": 232,
+      "salary_samples": 232,
+      "avg_apps_per_vacancy": 4.7,
+      "perm_share_pct": 82.3,
+      "p25_min_sgd": 4500,
+      "p50_offer_sgd": 5620,
+      "p75_max_sgd": 7000
+    },
+    "31131": {
+      "vacancies": 85,
+      "salary_samples": 85,
+      "avg_apps_per_vacancy": 1.2,
+      "perm_share_pct": 95.3,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3280,
+      "p75_max_sgd": 4800
+    },
+    "31132": {
+      "vacancies": 30,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 1.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "31141": {
+      "vacancies": 208,
+      "salary_samples": 208,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 4000
+    },
+    "31142": {
+      "vacancies": 55,
+      "salary_samples": 54,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 98.2,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2740,
+      "p75_max_sgd": 3500
+    },
+    "31143": {
+      "vacancies": 34,
+      "salary_samples": 34,
+      "avg_apps_per_vacancy": 7.6,
+      "perm_share_pct": 85.3,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3120,
+      "p75_max_sgd": 4500
+    },
+    "31144": {
+      "vacancies": 235,
+      "salary_samples": 234,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 98.7,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2710,
+      "p75_max_sgd": 4000
+    },
+    "31151": {
+      "vacancies": 186,
+      "salary_samples": 186,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 98.4,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2960,
+      "p75_max_sgd": 4500
+    },
+    "31152": {
+      "vacancies": 18,
+      "salary_samples": 18,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2250,
+      "p50_offer_sgd": 2790,
+      "p75_max_sgd": 4600
+    },
+    "31153": {
+      "vacancies": 71,
+      "salary_samples": 70,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 93.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2640,
+      "p75_max_sgd": 4000
+    },
+    "31161": {
+      "vacancies": 70,
+      "salary_samples": 70,
+      "avg_apps_per_vacancy": 5.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 6000
+    },
+    "31162": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2250,
+      "p50_offer_sgd": 3060,
+      "p75_max_sgd": 4450
+    },
+    "31163": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2660,
+      "p75_max_sgd": 2900
+    },
+    "31164": {
+      "vacancies": 23,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 3.2,
+      "perm_share_pct": 91.3,
+      "p25_min_sgd": 1950,
+      "p50_offer_sgd": 2740,
+      "p75_max_sgd": 4250
+    },
+    "31171": {
+      "vacancies": 30,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3140,
+      "p75_max_sgd": 4500
+    },
+    "31172": {
+      "vacancies": 85,
+      "salary_samples": 85,
+      "avg_apps_per_vacancy": 1.6,
+      "perm_share_pct": 92.9,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 4000
+    },
+    "31173": {
+      "vacancies": 68,
+      "salary_samples": 68,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 95.6,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 3525
+    },
+    "31174": {
+      "vacancies": 49,
+      "salary_samples": 48,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 95.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3450,
+      "p75_max_sgd": 5000
+    },
+    "31175": {
+      "vacancies": 252,
+      "salary_samples": 252,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2520,
+      "p75_max_sgd": 3500
+    },
+    "31181": {
+      "vacancies": 21,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 3.2,
+      "perm_share_pct": 95.2,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3320,
+      "p75_max_sgd": 5000
+    },
+    "31182": {
+      "vacancies": 83,
+      "salary_samples": 83,
+      "avg_apps_per_vacancy": 1.6,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 5000
+    },
+    "31183": {
+      "vacancies": 448,
+      "salary_samples": 448,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 99.3,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "31184": {
+      "vacancies": 87,
+      "salary_samples": 87,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 95.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4000,
+      "p75_max_sgd": 5500
+    },
+    "31185": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 90.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3580,
+      "p75_max_sgd": 5000
+    },
+    "31189": {
+      "vacancies": 50,
+      "salary_samples": 50,
+      "avg_apps_per_vacancy": 4.9,
+      "perm_share_pct": 98.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3470,
+      "p75_max_sgd": 5000
+    },
+    "31211": {
+      "vacancies": 143,
+      "salary_samples": 143,
+      "avg_apps_per_vacancy": 1.9,
+      "perm_share_pct": 97.9,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3020,
+      "p75_max_sgd": 4000
+    },
+    "31212": {
+      "vacancies": 25,
+      "salary_samples": 25,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 88.0,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3800
+    },
+    "31213": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 4.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2700,
+      "p50_offer_sgd": 2780,
+      "p75_max_sgd": 3050
+    },
+    "31214": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4000
+    },
+    "31291": {
+      "vacancies": 22,
+      "salary_samples": 22,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 95.5,
+      "p25_min_sgd": 2050,
+      "p50_offer_sgd": 2890,
+      "p75_max_sgd": 4455
+    },
+    "31292": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2100,
+      "p50_offer_sgd": 2520,
+      "p75_max_sgd": 3750
+    },
+    "31293": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2100,
+      "p75_max_sgd": 2400
+    },
+    "31294": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "31295": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2740,
+      "p75_max_sgd": 3400
+    },
+    "31299": {
+      "vacancies": 20,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 2.4,
+      "perm_share_pct": 95.0,
+      "p25_min_sgd": 2700,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 3500
+    },
+    "31310": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 15.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "31324": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 0.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "31331": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 7.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 1920,
+      "p75_max_sgd": 2200
+    },
+    "31341": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2575,
+      "p50_offer_sgd": 2695,
+      "p75_max_sgd": 2875
+    },
+    "31392": {
+      "vacancies": 10,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 1.4,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3500
+    },
+    "31399": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 1.2,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 2325,
+      "p50_offer_sgd": 2770,
+      "p75_max_sgd": 3650
+    },
+    "31411": {
+      "vacancies": 34,
+      "salary_samples": 34,
+      "avg_apps_per_vacancy": 13.4,
+      "perm_share_pct": 70.6,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 4150
+    },
+    "31412": {
+      "vacancies": 52,
+      "salary_samples": 52,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 88.5,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 5000
+    },
+    "31419": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 20.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2075,
+      "p50_offer_sgd": 2520,
+      "p75_max_sgd": 3125
+    },
+    "31421": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 0.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "31423": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2100,
+      "p50_offer_sgd": 2360,
+      "p75_max_sgd": 3800
+    },
+    "31510": {
+      "vacancies": 13,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 13.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3150,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 6125
+    },
+    "31521": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 5.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 5600,
+      "p75_max_sgd": 6750
+    },
+    "31522": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 7.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3975,
+      "p50_offer_sgd": 5015,
+      "p75_max_sgd": 6281
+    },
+    "31560": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3360,
+      "p75_max_sgd": 4500
+    },
+    "31572": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2375,
+      "p50_offer_sgd": 2780,
+      "p75_max_sgd": 3288
+    },
+    "31573": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 6.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2625,
+      "p50_offer_sgd": 3650,
+      "p75_max_sgd": 4462
+    },
+    "31574": {
+      "vacancies": 21,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 35.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2700,
+      "p50_offer_sgd": 3780,
+      "p75_max_sgd": 6000
+    },
+    "31579": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2815,
+      "p75_max_sgd": 3312
+    },
+    "31592": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 7000,
+      "p50_offer_sgd": 9800,
+      "p75_max_sgd": 14000
+    },
+    "31593": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 20.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3020,
+      "p75_max_sgd": 3850
+    },
+    "31594": {
+      "vacancies": 92,
+      "salary_samples": 92,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3050,
+      "p75_max_sgd": 4000
+    },
+    "31595": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 11.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2360,
+      "p75_max_sgd": 2900
+    },
+    "31596": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 6.7,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2150,
+      "p50_offer_sgd": 3460,
+      "p75_max_sgd": 4350
+    },
+    "31597": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 35.1,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 2675,
+      "p50_offer_sgd": 3740,
+      "p75_max_sgd": 4450
+    },
+    "31599": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 12.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4100
+    },
+    "31601": {
+      "vacancies": 378,
+      "salary_samples": 376,
+      "avg_apps_per_vacancy": 9.8,
+      "perm_share_pct": 93.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3540,
+      "p75_max_sgd": 5000
+    },
+    "31602": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2588,
+      "p50_offer_sgd": 2905,
+      "p75_max_sgd": 3375
+    },
+    "31603": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 2960,
+      "p75_max_sgd": 3200
+    },
+    "31711": {
+      "vacancies": 306,
+      "salary_samples": 304,
+      "avg_apps_per_vacancy": 8.5,
+      "perm_share_pct": 94.4,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5620,
+      "p75_max_sgd": 7800
+    },
+    "31719": {
+      "vacancies": 19,
+      "salary_samples": 19,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 4480,
+      "p75_max_sgd": 6500
+    },
+    "31720": {
+      "vacancies": 16,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 8.0,
+      "perm_share_pct": 87.5,
+      "p25_min_sgd": 2675,
+      "p50_offer_sgd": 3520,
+      "p75_max_sgd": 5000
+    },
+    "32111": {
+      "vacancies": 47,
+      "salary_samples": 37,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 78.7,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 7000
+    },
+    "32112": {
+      "vacancies": 10,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 5000,
+      "p75_max_sgd": 7500
+    },
+    "32119": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2732,
+      "p50_offer_sgd": 3523,
+      "p75_max_sgd": 5125
+    },
+    "32120": {
+      "vacancies": 80,
+      "salary_samples": 72,
+      "avg_apps_per_vacancy": 15.6,
+      "perm_share_pct": 71.2,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3740,
+      "p75_max_sgd": 5500
+    },
+    "32130": {
+      "vacancies": 254,
+      "salary_samples": 186,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 61.8,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2660,
+      "p75_max_sgd": 3500
+    },
+    "32141": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4500,
+      "p75_max_sgd": 6000
+    },
+    "32142": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3120,
+      "p75_max_sgd": 3300
+    },
+    "32143": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 3300,
+      "p75_max_sgd": 5500
+    },
+    "32200": {
+      "vacancies": 135,
+      "salary_samples": 106,
+      "avg_apps_per_vacancy": 4.7,
+      "perm_share_pct": 71.9,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2690,
+      "p75_max_sgd": 4000
+    },
+    "32400": {
+      "vacancies": 51,
+      "salary_samples": 50,
+      "avg_apps_per_vacancy": 4.6,
+      "perm_share_pct": 98.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "32510": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3150,
+      "p75_max_sgd": 4500
+    },
+    "32530": {
+      "vacancies": 11,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 7.5,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 2125,
+      "p50_offer_sgd": 2520,
+      "p75_max_sgd": 3200
+    },
+    "32540": {
+      "vacancies": 31,
+      "salary_samples": 29,
+      "avg_apps_per_vacancy": 0.2,
+      "perm_share_pct": 87.1,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "32551": {
+      "vacancies": 272,
+      "salary_samples": 270,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 93.8,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4000,
+      "p75_max_sgd": 6000
+    },
+    "32559": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 2.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 7000
+    },
+    "32571": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 5.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3450,
+      "p50_offer_sgd": 5040,
+      "p75_max_sgd": 6625
+    },
+    "32572": {
+      "vacancies": 133,
+      "salary_samples": 133,
+      "avg_apps_per_vacancy": 12.1,
+      "perm_share_pct": 96.2,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 5600,
+      "p75_max_sgd": 8000
+    },
+    "32591": {
+      "vacancies": 26,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 4.5,
+      "perm_share_pct": 92.3,
+      "p25_min_sgd": 2438,
+      "p50_offer_sgd": 3512,
+      "p75_max_sgd": 4800
+    },
+    "32599": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 7.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2440,
+      "p75_max_sgd": 3000
+    },
+    "33121": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 21.8,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6800,
+      "p75_max_sgd": 14000
+    },
+    "33129": {
+      "vacancies": 42,
+      "salary_samples": 42,
+      "avg_apps_per_vacancy": 10.7,
+      "perm_share_pct": 76.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4085,
+      "p75_max_sgd": 6000
+    },
+    "33131": {
+      "vacancies": 720,
+      "salary_samples": 715,
+      "avg_apps_per_vacancy": 15.5,
+      "perm_share_pct": 91.2,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4500
+    },
+    "33132": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 15.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 3500,
+      "p75_max_sgd": 4500
+    },
+    "33133": {
+      "vacancies": 22,
+      "salary_samples": 22,
+      "avg_apps_per_vacancy": 6.4,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3660,
+      "p75_max_sgd": 4875
+    },
+    "33151": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3525,
+      "p50_offer_sgd": 4580,
+      "p75_max_sgd": 6500
+    },
+    "33152": {
+      "vacancies": 73,
+      "salary_samples": 73,
+      "avg_apps_per_vacancy": 7.3,
+      "perm_share_pct": 82.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "33211": {
+      "vacancies": 129,
+      "salary_samples": 110,
+      "avg_apps_per_vacancy": 4.7,
+      "perm_share_pct": 96.9,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 8000
+    },
+    "33221": {
+      "vacancies": 619,
+      "salary_samples": 603,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 96.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3860,
+      "p75_max_sgd": 5500
+    },
+    "33222": {
+      "vacancies": 252,
+      "salary_samples": 251,
+      "avg_apps_per_vacancy": 7.6,
+      "perm_share_pct": 96.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 5000
+    },
+    "33223": {
+      "vacancies": 132,
+      "salary_samples": 131,
+      "avg_apps_per_vacancy": 2.1,
+      "perm_share_pct": 98.5,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3620,
+      "p75_max_sgd": 5000
+    },
+    "33224": {
+      "vacancies": 143,
+      "salary_samples": 141,
+      "avg_apps_per_vacancy": 11.8,
+      "perm_share_pct": 93.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3240,
+      "p75_max_sgd": 4500
+    },
+    "33225": {
+      "vacancies": 490,
+      "salary_samples": 490,
+      "avg_apps_per_vacancy": 2.4,
+      "perm_share_pct": 98.4,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3920,
+      "p75_max_sgd": 6000
+    },
+    "33229": {
+      "vacancies": 2095,
+      "salary_samples": 2079,
+      "avg_apps_per_vacancy": 3.2,
+      "perm_share_pct": 94.4,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 5000
+    },
+    "33231": {
+      "vacancies": 163,
+      "salary_samples": 163,
+      "avg_apps_per_vacancy": 7.3,
+      "perm_share_pct": 89.6,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 6000
+    },
+    "33232": {
+      "vacancies": 229,
+      "salary_samples": 229,
+      "avg_apps_per_vacancy": 12.8,
+      "perm_share_pct": 79.0,
+      "p25_min_sgd": 2900,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4500
+    },
+    "33299": {
+      "vacancies": 23,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 5.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2900,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4350
+    },
+    "33311": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 3.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2020,
+      "p75_max_sgd": 3350
+    },
+    "33312": {
+      "vacancies": 29,
+      "salary_samples": 29,
+      "avg_apps_per_vacancy": 20.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3020,
+      "p75_max_sgd": 4300
+    },
+    "33320": {
+      "vacancies": 446,
+      "salary_samples": 432,
+      "avg_apps_per_vacancy": 4.6,
+      "perm_share_pct": 93.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3540,
+      "p75_max_sgd": 5000
+    },
+    "33330": {
+      "vacancies": 21,
+      "salary_samples": 18,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 76.2,
+      "p25_min_sgd": 2350,
+      "p50_offer_sgd": 3500,
+      "p75_max_sgd": 5000
+    },
+    "33340": {
+      "vacancies": 32,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 5.7,
+      "perm_share_pct": 96.9,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4180,
+      "p75_max_sgd": 6000
+    },
+    "33392": {
+      "vacancies": 11,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 2.7,
+      "perm_share_pct": 81.8,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3690,
+      "p75_max_sgd": 5000
+    },
+    "33393": {
+      "vacancies": 2,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 14.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1500,
+      "p50_offer_sgd": 1620,
+      "p75_max_sgd": 1800
+    },
+    "33394": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 24.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 6140,
+      "p75_max_sgd": 11315
+    },
+    "33399": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 11.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2250,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 4000
+    },
+    "33461": {
+      "vacancies": 692,
+      "salary_samples": 679,
+      "avg_apps_per_vacancy": 8.9,
+      "perm_share_pct": 89.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 5000
+    },
+    "33462": {
+      "vacancies": 25,
+      "salary_samples": 25,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 92.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 4640,
+      "p75_max_sgd": 5600
+    },
+    "33491": {
+      "vacancies": 344,
+      "salary_samples": 341,
+      "avg_apps_per_vacancy": 4.4,
+      "perm_share_pct": 98.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 7000
+    },
+    "33492": {
+      "vacancies": 413,
+      "salary_samples": 403,
+      "avg_apps_per_vacancy": 13.7,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 6000
+    },
+    "33493": {
+      "vacancies": 30,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 10.1,
+      "perm_share_pct": 96.7,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3410,
+      "p75_max_sgd": 5000
+    },
+    "33499": {
+      "vacancies": 3988,
+      "salary_samples": 3931,
+      "avg_apps_per_vacancy": 9.0,
+      "perm_share_pct": 90.2,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 5500
+    },
+    "33510": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2650,
+      "p50_offer_sgd": 3000,
+      "p75_max_sgd": 3400
+    },
+    "33551": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2275,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3150
+    },
+    "33591": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 8.2,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 3775,
+      "p50_offer_sgd": 4500,
+      "p75_max_sgd": 6500
+    },
+    "33593": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 8.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 10000,
+      "p50_offer_sgd": 10800,
+      "p75_max_sgd": 12000
+    },
+    "33611": {
+      "vacancies": 16,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 6.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2740,
+      "p75_max_sgd": 4050
+    },
+    "33612": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 3475,
+      "p50_offer_sgd": 5600,
+      "p75_max_sgd": 7000
+    },
+    "33613": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4125,
+      "p50_offer_sgd": 5150,
+      "p75_max_sgd": 7000
+    },
+    "33614": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 26.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2725,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4250
+    },
+    "34110": {
+      "vacancies": 56,
+      "salary_samples": 55,
+      "avg_apps_per_vacancy": 15.7,
+      "perm_share_pct": 89.3,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 4100,
+      "p75_max_sgd": 6000
+    },
+    "34121": {
+      "vacancies": 9,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 22.3,
+      "perm_share_pct": 55.6,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3040,
+      "p75_max_sgd": 3800
+    },
+    "34122": {
+      "vacancies": 187,
+      "salary_samples": 176,
+      "avg_apps_per_vacancy": 14.9,
+      "perm_share_pct": 71.1,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2960,
+      "p75_max_sgd": 4000
+    },
+    "34123": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 19.5,
+      "perm_share_pct": 58.3,
+      "p25_min_sgd": 2550,
+      "p50_offer_sgd": 3260,
+      "p75_max_sgd": 4050
+    },
+    "34210": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 88.9,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 4180,
+      "p75_max_sgd": 6000
+    },
+    "34221": {
+      "vacancies": 182,
+      "salary_samples": 97,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 46.2,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 6000
+    },
+    "34222": {
+      "vacancies": 5,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 0.8,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3140,
+      "p75_max_sgd": 4100
+    },
+    "34223": {
+      "vacancies": 85,
+      "salary_samples": 73,
+      "avg_apps_per_vacancy": 5.8,
+      "perm_share_pct": 88.2,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 7000
+    },
+    "34224": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 15.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3240,
+      "p75_max_sgd": 3950
+    },
+    "34229": {
+      "vacancies": 5,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 16.8,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 2425,
+      "p50_offer_sgd": 2760,
+      "p75_max_sgd": 3725
+    },
+    "34310": {
+      "vacancies": 27,
+      "salary_samples": 18,
+      "avg_apps_per_vacancy": 6.3,
+      "perm_share_pct": 51.9,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3000,
+      "p75_max_sgd": 3700
+    },
+    "34321": {
+      "vacancies": 258,
+      "salary_samples": 238,
+      "avg_apps_per_vacancy": 3.4,
+      "perm_share_pct": 98.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 6000
+    },
+    "34322": {
+      "vacancies": 18,
+      "salary_samples": 18,
+      "avg_apps_per_vacancy": 4.9,
+      "perm_share_pct": 88.9,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5750
+    },
+    "34323": {
+      "vacancies": 22,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 14.7,
+      "perm_share_pct": 95.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3320,
+      "p75_max_sgd": 4200
+    },
+    "34331": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 65.9,
+      "perm_share_pct": 62.5,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2660,
+      "p75_max_sgd": 3075
+    },
+    "34332": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2360,
+      "p75_max_sgd": 2600
+    },
+    "34341": {
+      "vacancies": 1352,
+      "salary_samples": 1345,
+      "avg_apps_per_vacancy": 2.1,
+      "perm_share_pct": 99.2,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 6500
+    },
+    "34342": {
+      "vacancies": 13,
+      "salary_samples": 13,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 5500
+    },
+    "34343": {
+      "vacancies": 58,
+      "salary_samples": 56,
+      "avg_apps_per_vacancy": 2.1,
+      "perm_share_pct": 94.8,
+      "p25_min_sgd": 2290,
+      "p50_offer_sgd": 3280,
+      "p75_max_sgd": 5000
+    },
+    "34391": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2600,
+      "p75_max_sgd": 3500
+    },
+    "34399": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 90.0,
+      "p25_min_sgd": 2325,
+      "p50_offer_sgd": 3260,
+      "p75_max_sgd": 4000
+    },
+    "34401": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4200,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 5200
+    },
+    "34409": {
+      "vacancies": 1,
+      "salary_samples": 0,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0
+    },
+    "35110": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 5.6,
+      "perm_share_pct": 71.4,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3560,
+      "p75_max_sgd": 5750
+    },
+    "35121": {
+      "vacancies": 71,
+      "salary_samples": 70,
+      "avg_apps_per_vacancy": 14.9,
+      "perm_share_pct": 91.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 5725
+    },
+    "35122": {
+      "vacancies": 52,
+      "salary_samples": 52,
+      "avg_apps_per_vacancy": 13.4,
+      "perm_share_pct": 94.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3420,
+      "p75_max_sgd": 8000
+    },
+    "35123": {
+      "vacancies": 325,
+      "salary_samples": 324,
+      "avg_apps_per_vacancy": 26.7,
+      "perm_share_pct": 78.2,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3120,
+      "p75_max_sgd": 5000
+    },
+    "35140": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 4.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 11250
+    },
+    "35211": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3125,
+      "p50_offer_sgd": 3410,
+      "p75_max_sgd": 3725
+    },
+    "35212": {
+      "vacancies": 41,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 11.8,
+      "perm_share_pct": 85.4,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 4000
+    },
+    "35214": {
+      "vacancies": 2,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 7.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3720,
+      "p75_max_sgd": 4800
+    },
+    "35215": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 11.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6200,
+      "p75_max_sgd": 8000
+    },
+    "35219": {
+      "vacancies": 132,
+      "salary_samples": 125,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 82.6,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2320,
+      "p75_max_sgd": 3200
+    },
+    "35220": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 2840,
+      "p75_max_sgd": 3200
+    },
+    "36100": {
+      "vacancies": 559,
+      "salary_samples": 535,
+      "avg_apps_per_vacancy": 14.1,
+      "perm_share_pct": 94.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3480,
+      "p75_max_sgd": 4500
+    },
+    "36201": {
+      "vacancies": 185,
+      "salary_samples": 179,
+      "avg_apps_per_vacancy": 6.5,
+      "perm_share_pct": 90.8,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 5000
+    },
+    "36202": {
+      "vacancies": 23,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 22.1,
+      "perm_share_pct": 69.6,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 4000
+    },
+    "36203": {
+      "vacancies": 43,
+      "salary_samples": 39,
+      "avg_apps_per_vacancy": 6.9,
+      "perm_share_pct": 69.8,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3100,
+      "p75_max_sgd": 3800
+    },
+    "36204": {
+      "vacancies": 54,
+      "salary_samples": 45,
+      "avg_apps_per_vacancy": 3.5,
+      "perm_share_pct": 79.6,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3480,
+      "p75_max_sgd": 5800
+    },
+    "36205": {
+      "vacancies": 26,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 69.2,
+      "p25_min_sgd": 1025,
+      "p50_offer_sgd": 3450,
+      "p75_max_sgd": 5000
+    },
+    "36206": {
+      "vacancies": 19,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 8.2,
+      "perm_share_pct": 47.4,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3120,
+      "p75_max_sgd": 4500
+    },
+    "36209": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 24.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 4888,
+      "p50_offer_sgd": 6013,
+      "p75_max_sgd": 7700
+    },
+    "36910": {
+      "vacancies": 301,
+      "salary_samples": 254,
+      "avg_apps_per_vacancy": 10.0,
+      "perm_share_pct": 78.7,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 6000
+    },
+    "36991": {
+      "vacancies": 36,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 18.1,
+      "perm_share_pct": 19.4,
+      "p25_min_sgd": 1400,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 4500
+    },
+    "39910": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 3800
+    },
+    "40000": {
+      "vacancies": 58,
+      "salary_samples": 58,
+      "avg_apps_per_vacancy": 10.4,
+      "perm_share_pct": 98.3,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3490,
+      "p75_max_sgd": 5000
+    },
+    "41101": {
+      "vacancies": 2134,
+      "salary_samples": 2051,
+      "avg_apps_per_vacancy": 26.7,
+      "perm_share_pct": 80.3,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3800
+    },
+    "41102": {
+      "vacancies": 99,
+      "salary_samples": 99,
+      "avg_apps_per_vacancy": 16.6,
+      "perm_share_pct": 78.8,
+      "p25_min_sgd": 2050,
+      "p50_offer_sgd": 2890,
+      "p75_max_sgd": 4000
+    },
+    "41109": {
+      "vacancies": 13,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 15.9,
+      "perm_share_pct": 76.9,
+      "p25_min_sgd": 1950,
+      "p50_offer_sgd": 2890,
+      "p75_max_sgd": 3575
+    },
+    "41201": {
+      "vacancies": 218,
+      "salary_samples": 215,
+      "avg_apps_per_vacancy": 34.9,
+      "perm_share_pct": 93.1,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 6000
+    },
+    "41310": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 15.4,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3100,
+      "p75_max_sgd": 4000
+    },
+    "41320": {
+      "vacancies": 38,
+      "salary_samples": 38,
+      "avg_apps_per_vacancy": 54.9,
+      "perm_share_pct": 65.8,
+      "p25_min_sgd": 1925,
+      "p50_offer_sgd": 2460,
+      "p75_max_sgd": 4000
+    },
+    "42111": {
+      "vacancies": 16,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 25.6,
+      "perm_share_pct": 68.8,
+      "p25_min_sgd": 2875,
+      "p50_offer_sgd": 3560,
+      "p75_max_sgd": 5625
+    },
+    "42119": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 20.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3875,
+      "p50_offer_sgd": 5950,
+      "p75_max_sgd": 9250
+    },
+    "42131": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3760,
+      "p75_max_sgd": 4900
+    },
+    "42132": {
+      "vacancies": 1,
+      "salary_samples": 0,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 100.0
+    },
+    "42141": {
+      "vacancies": 5,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 9.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 2870,
+      "p75_max_sgd": 3625
+    },
+    "42149": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 4500
+    },
+    "42210": {
+      "vacancies": 29,
+      "salary_samples": 25,
+      "avg_apps_per_vacancy": 21.4,
+      "perm_share_pct": 93.1,
+      "p25_min_sgd": 2639,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 5000
+    },
+    "42230": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 8.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2340,
+      "p50_offer_sgd": 2780,
+      "p75_max_sgd": 3175
+    },
+    "42241": {
+      "vacancies": 259,
+      "salary_samples": 241,
+      "avg_apps_per_vacancy": 22.8,
+      "perm_share_pct": 77.6,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2540,
+      "p75_max_sgd": 3200
+    },
+    "42242": {
+      "vacancies": 240,
+      "salary_samples": 234,
+      "avg_apps_per_vacancy": 7.6,
+      "perm_share_pct": 88.8,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3500
+    },
+    "42243": {
+      "vacancies": 622,
+      "salary_samples": 589,
+      "avg_apps_per_vacancy": 13.4,
+      "perm_share_pct": 68.5,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2500,
+      "p75_max_sgd": 3200
+    },
+    "42244": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 10.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1975,
+      "p50_offer_sgd": 2400,
+      "p75_max_sgd": 3200
+    },
+    "42245": {
+      "vacancies": 1537,
+      "salary_samples": 1510,
+      "avg_apps_per_vacancy": 10.7,
+      "perm_share_pct": 88.7,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 3020,
+      "p75_max_sgd": 4000
+    },
+    "42246": {
+      "vacancies": 97,
+      "salary_samples": 94,
+      "avg_apps_per_vacancy": 8.9,
+      "perm_share_pct": 71.1,
+      "p25_min_sgd": 2225,
+      "p50_offer_sgd": 2780,
+      "p75_max_sgd": 3500
+    },
+    "42247": {
+      "vacancies": 42,
+      "salary_samples": 42,
+      "avg_apps_per_vacancy": 7.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2425,
+      "p50_offer_sgd": 2920,
+      "p75_max_sgd": 3500
+    },
+    "42290": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 9.2,
+      "perm_share_pct": 64.7,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 4200
+    },
+    "43111": {
+      "vacancies": 37,
+      "salary_samples": 37,
+      "avg_apps_per_vacancy": 16.8,
+      "perm_share_pct": 62.2,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 4200
+    },
+    "43112": {
+      "vacancies": 784,
+      "salary_samples": 778,
+      "avg_apps_per_vacancy": 13.7,
+      "perm_share_pct": 90.7,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 2960,
+      "p75_max_sgd": 4000
+    },
+    "43113": {
+      "vacancies": 53,
+      "salary_samples": 53,
+      "avg_apps_per_vacancy": 7.9,
+      "perm_share_pct": 98.1,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4000
+    },
+    "43114": {
+      "vacancies": 41,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 16.5,
+      "perm_share_pct": 80.5,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3960,
+      "p75_max_sgd": 5000
+    },
+    "43115": {
+      "vacancies": 309,
+      "salary_samples": 308,
+      "avg_apps_per_vacancy": 4.7,
+      "perm_share_pct": 95.8,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3080,
+      "p75_max_sgd": 4200
+    },
+    "43116": {
+      "vacancies": 170,
+      "salary_samples": 169,
+      "avg_apps_per_vacancy": 8.5,
+      "perm_share_pct": 89.4,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4200
+    },
+    "43119": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3480,
+      "p75_max_sgd": 4500
+    },
+    "43121": {
+      "vacancies": 65,
+      "salary_samples": 65,
+      "avg_apps_per_vacancy": 26.1,
+      "perm_share_pct": 49.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4100,
+      "p75_max_sgd": 6000
+    },
+    "43122": {
+      "vacancies": 28,
+      "salary_samples": 27,
+      "avg_apps_per_vacancy": 6.8,
+      "perm_share_pct": 60.7,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 7500
+    },
+    "43123": {
+      "vacancies": 25,
+      "salary_samples": 24,
+      "avg_apps_per_vacancy": 6.8,
+      "perm_share_pct": 96.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4600,
+      "p75_max_sgd": 5500
+    },
+    "43129": {
+      "vacancies": 167,
+      "salary_samples": 165,
+      "avg_apps_per_vacancy": 12.0,
+      "perm_share_pct": 72.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3070,
+      "p75_max_sgd": 4100
+    },
+    "43141": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 6.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2225,
+      "p50_offer_sgd": 3190,
+      "p75_max_sgd": 5000
+    },
+    "43142": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 1250,
+      "p50_offer_sgd": 2790,
+      "p75_max_sgd": 3900
+    },
+    "43151": {
+      "vacancies": 16,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 55.2,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 2950,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 5000
+    },
+    "43211": {
+      "vacancies": 25,
+      "salary_samples": 25,
+      "avg_apps_per_vacancy": 2.9,
+      "perm_share_pct": 88.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2360,
+      "p75_max_sgd": 3000
+    },
+    "43212": {
+      "vacancies": 192,
+      "salary_samples": 189,
+      "avg_apps_per_vacancy": 3.9,
+      "perm_share_pct": 93.2,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2440,
+      "p75_max_sgd": 3500
+    },
+    "43219": {
+      "vacancies": 124,
+      "salary_samples": 124,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 61.3,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 3200
+    },
+    "43221": {
+      "vacancies": 18,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 9.4,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 5500
+    },
+    "43222": {
+      "vacancies": 62,
+      "salary_samples": 62,
+      "avg_apps_per_vacancy": 3.4,
+      "perm_share_pct": 90.3,
+      "p25_min_sgd": 2825,
+      "p50_offer_sgd": 3610,
+      "p75_max_sgd": 5000
+    },
+    "43229": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 2.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "43231": {
+      "vacancies": 228,
+      "salary_samples": 227,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 97.8,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2960,
+      "p75_max_sgd": 4000
+    },
+    "43232": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 5.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2490,
+      "p75_max_sgd": 3375
+    },
+    "43233": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4100,
+      "p75_max_sgd": 5000
+    },
+    "44110": {
+      "vacancies": 12,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 46.8,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 2625,
+      "p50_offer_sgd": 2760,
+      "p75_max_sgd": 3275
+    },
+    "44121": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 7.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4000
+    },
+    "44129": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 7.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2000,
+      "p75_max_sgd": 2400
+    },
+    "44170": {
+      "vacancies": 37,
+      "salary_samples": 37,
+      "avg_apps_per_vacancy": 7.8,
+      "perm_share_pct": 89.2,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 5500
+    },
+    "44191": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 8.7,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 4080,
+      "p75_max_sgd": 5000
+    },
+    "51112": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 34.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 4000
+    },
+    "51129": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3225,
+      "p50_offer_sgd": 3890,
+      "p75_max_sgd": 4625
+    },
+    "51131": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2780,
+      "p75_max_sgd": 3500
+    },
+    "51132": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 15.9,
+      "perm_share_pct": 57.1,
+      "p25_min_sgd": 1700,
+      "p50_offer_sgd": 2380,
+      "p75_max_sgd": 3050
+    },
+    "51201": {
+      "vacancies": 366,
+      "salary_samples": 361,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 97.3,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 3680,
+      "p75_max_sgd": 6000
+    },
+    "51202": {
+      "vacancies": 345,
+      "salary_samples": 345,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 99.1,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5200
+    },
+    "51311": {
+      "vacancies": 549,
+      "salary_samples": 537,
+      "avg_apps_per_vacancy": 1.6,
+      "perm_share_pct": 96.9,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3300,
+      "p75_max_sgd": 5000
+    },
+    "51312": {
+      "vacancies": 691,
+      "salary_samples": 587,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 80.2,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2480,
+      "p75_max_sgd": 3200
+    },
+    "51313": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 2.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4080,
+      "p75_max_sgd": 6500
+    },
+    "51321": {
+      "vacancies": 116,
+      "salary_samples": 114,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 97.4,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3975
+    },
+    "51322": {
+      "vacancies": 161,
+      "salary_samples": 149,
+      "avg_apps_per_vacancy": 9.6,
+      "perm_share_pct": 91.9,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2620,
+      "p75_max_sgd": 3400
+    },
+    "51330": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3100,
+      "p75_max_sgd": 3850
+    },
+    "51390": {
+      "vacancies": 15,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 86.7,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2500
+    },
+    "51411": {
+      "vacancies": 156,
+      "salary_samples": 153,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 98.7,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "51412": {
+      "vacancies": 6,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 10000
+    },
+    "51419": {
+      "vacancies": 26,
+      "salary_samples": 26,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "51421": {
+      "vacancies": 449,
+      "salary_samples": 445,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 99.6,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 6000
+    },
+    "51422": {
+      "vacancies": 45,
+      "salary_samples": 45,
+      "avg_apps_per_vacancy": 0.6,
+      "perm_share_pct": 97.8,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 6000
+    },
+    "51423": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 2.7,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 5550
+    },
+    "51491": {
+      "vacancies": 71,
+      "salary_samples": 71,
+      "avg_apps_per_vacancy": 0.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5500
+    },
+    "51492": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 9.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 7000,
+      "p75_max_sgd": 10000
+    },
+    "51501": {
+      "vacancies": 93,
+      "salary_samples": 90,
+      "avg_apps_per_vacancy": 3.4,
+      "perm_share_pct": 97.8,
+      "p25_min_sgd": 2125,
+      "p50_offer_sgd": 2990,
+      "p75_max_sgd": 4200
+    },
+    "51502": {
+      "vacancies": 5,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 1.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 2770,
+      "p75_max_sgd": 4075
+    },
+    "51503": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 2880,
+      "p75_max_sgd": 3000
+    },
+    "51504": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 5400
+    },
+    "51505": {
+      "vacancies": 15,
+      "salary_samples": 15,
+      "avg_apps_per_vacancy": 9.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3320,
+      "p75_max_sgd": 4100
+    },
+    "51509": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 10.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 3750
+    },
+    "51701": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 5200,
+      "p75_max_sgd": 5500
+    },
+    "51702": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2680,
+      "p75_max_sgd": 2925
+    },
+    "51931": {
+      "vacancies": 14,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 3.8,
+      "perm_share_pct": 92.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "51932": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4000
+    },
+    "51941": {
+      "vacancies": 19,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 4.5,
+      "perm_share_pct": 78.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3290,
+      "p75_max_sgd": 4700
+    },
+    "51942": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 4.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6400,
+      "p75_max_sgd": 8500
+    },
+    "51943": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 2500
+    },
+    "51944": {
+      "vacancies": 10,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 13.5,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 1725,
+      "p50_offer_sgd": 2500,
+      "p75_max_sgd": 3500
+    },
+    "51949": {
+      "vacancies": 14,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 14.6,
+      "perm_share_pct": 64.3,
+      "p25_min_sgd": 900,
+      "p50_offer_sgd": 1990,
+      "p75_max_sgd": 2875
+    },
+    "51950": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 8.8,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 2700,
+      "p50_offer_sgd": 3420,
+      "p75_max_sgd": 4500
+    },
+    "51991": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 3.3,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 4920,
+      "p75_max_sgd": 8450
+    },
+    "52120": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3020,
+      "p75_max_sgd": 3550
+    },
+    "52201": {
+      "vacancies": 165,
+      "salary_samples": 164,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 99.4,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5200
+    },
+    "52202": {
+      "vacancies": 878,
+      "salary_samples": 790,
+      "avg_apps_per_vacancy": 6.9,
+      "perm_share_pct": 82.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2660,
+      "p75_max_sgd": 4000
+    },
+    "52301": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 14.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 13000,
+      "p50_offer_sgd": 15400,
+      "p75_max_sgd": 19000
+    },
+    "52302": {
+      "vacancies": 92,
+      "salary_samples": 86,
+      "avg_apps_per_vacancy": 7.2,
+      "perm_share_pct": 87.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2290,
+      "p75_max_sgd": 3000
+    },
+    "52303": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 18.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2325,
+      "p50_offer_sgd": 2690,
+      "p75_max_sgd": 3100
+    },
+    "52421": {
+      "vacancies": 1158,
+      "salary_samples": 1101,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 95.7,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "52422": {
+      "vacancies": 167,
+      "salary_samples": 161,
+      "avg_apps_per_vacancy": 3.1,
+      "perm_share_pct": 98.2,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3480,
+      "p75_max_sgd": 5000
+    },
+    "52440": {
+      "vacancies": 158,
+      "salary_samples": 149,
+      "avg_apps_per_vacancy": 6.2,
+      "perm_share_pct": 63.9,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2550,
+      "p75_max_sgd": 3500
+    },
+    "52491": {
+      "vacancies": 20,
+      "salary_samples": 15,
+      "avg_apps_per_vacancy": 1.2,
+      "perm_share_pct": 85.0,
+      "p25_min_sgd": 1750,
+      "p50_offer_sgd": 1840,
+      "p75_max_sgd": 3000
+    },
+    "52492": {
+      "vacancies": 18,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 11.8,
+      "perm_share_pct": 88.9,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2280,
+      "p75_max_sgd": 2800
+    },
+    "52499": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 15.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2125,
+      "p50_offer_sgd": 2950,
+      "p75_max_sgd": 4875
+    },
+    "53111": {
+      "vacancies": 14,
+      "salary_samples": 13,
+      "avg_apps_per_vacancy": 12.7,
+      "perm_share_pct": 78.6,
+      "p25_min_sgd": 1100,
+      "p50_offer_sgd": 2020,
+      "p75_max_sgd": 2900
+    },
+    "53112": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4000,
+      "p75_max_sgd": 5500
+    },
+    "53113": {
+      "vacancies": 128,
+      "salary_samples": 117,
+      "avg_apps_per_vacancy": 18.6,
+      "perm_share_pct": 86.7,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 2060,
+      "p75_max_sgd": 3000
+    },
+    "53114": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 9.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2505,
+      "p50_offer_sgd": 2802,
+      "p75_max_sgd": 3200
+    },
+    "53115": {
+      "vacancies": 49,
+      "salary_samples": 48,
+      "avg_apps_per_vacancy": 11.9,
+      "perm_share_pct": 93.9,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3040,
+      "p75_max_sgd": 4000
+    },
+    "53120": {
+      "vacancies": 141,
+      "salary_samples": 130,
+      "avg_apps_per_vacancy": 19.7,
+      "perm_share_pct": 71.6,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2240,
+      "p75_max_sgd": 3000
+    },
+    "53201": {
+      "vacancies": 527,
+      "salary_samples": 480,
+      "avg_apps_per_vacancy": 6.9,
+      "perm_share_pct": 61.3,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2400,
+      "p75_max_sgd": 3000
+    },
+    "53202": {
+      "vacancies": 88,
+      "salary_samples": 86,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 95.5,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 5400,
+      "p75_max_sgd": 7500
+    },
+    "53203": {
+      "vacancies": 191,
+      "salary_samples": 167,
+      "avg_apps_per_vacancy": 5.4,
+      "perm_share_pct": 75.9,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2600,
+      "p75_max_sgd": 3500
+    },
+    "53209": {
+      "vacancies": 53,
+      "salary_samples": 53,
+      "avg_apps_per_vacancy": 3.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 4500
+    },
+    "54110": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 3.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3660,
+      "p50_offer_sgd": 4902,
+      "p75_max_sgd": 6340
+    },
+    "54121": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 29.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2775,
+      "p50_offer_sgd": 3540,
+      "p75_max_sgd": 4042
+    },
+    "54123": {
+      "vacancies": 70,
+      "salary_samples": 69,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 98.6,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3860,
+      "p75_max_sgd": 5070
+    },
+    "54141": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 5.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3990,
+      "p50_offer_sgd": 4006,
+      "p75_max_sgd": 4140
+    },
+    "54142": {
+      "vacancies": 23,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 17.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3706,
+      "p75_max_sgd": 4000
+    },
+    "54143": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 6.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3068,
+      "p50_offer_sgd": 3409,
+      "p75_max_sgd": 3652
+    },
+    "54144": {
+      "vacancies": 219,
+      "salary_samples": 219,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 97.3,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2950,
+      "p75_max_sgd": 3500
+    },
+    "54150": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 6.7,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 1896,
+      "p50_offer_sgd": 3100,
+      "p75_max_sgd": 4525
+    },
+    "54191": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 18.0,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 3260,
+      "p75_max_sgd": 4375
+    },
+    "54199": {
+      "vacancies": 3,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 2850,
+      "p50_offer_sgd": 3100,
+      "p75_max_sgd": 3600
+    },
+    "61132": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 1760,
+      "p75_max_sgd": 2000
+    },
+    "61133": {
+      "vacancies": 13,
+      "salary_samples": 13,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2008,
+      "p75_max_sgd": 2500
+    },
+    "61221": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2660,
+      "p75_max_sgd": 2900
+    },
+    "61900": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 2400
+    },
+    "62211": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "62212": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2340,
+      "p75_max_sgd": 3100
+    },
+    "71000": {
+      "vacancies": 416,
+      "salary_samples": 415,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 97.8,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4120,
+      "p75_max_sgd": 6000
+    },
+    "71120": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3400,
+      "p50_offer_sgd": 3840,
+      "p75_max_sgd": 4500
+    },
+    "71130": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1775,
+      "p50_offer_sgd": 3170,
+      "p75_max_sgd": 4764
+    },
+    "71141": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 4500
+    },
+    "71151": {
+      "vacancies": 119,
+      "salary_samples": 116,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 95.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3960,
+      "p75_max_sgd": 6000
+    },
+    "71152": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2325,
+      "p50_offer_sgd": 3650,
+      "p75_max_sgd": 5000
+    },
+    "71191": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4300,
+      "p75_max_sgd": 5500
+    },
+    "71220": {
+      "vacancies": 47,
+      "salary_samples": 47,
+      "avg_apps_per_vacancy": 0.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 5200
+    },
+    "71230": {
+      "vacancies": 23,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 0.1,
+      "perm_share_pct": 91.3,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 4900
+    },
+    "71261": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 1.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3296,
+      "p50_offer_sgd": 4240,
+      "p75_max_sgd": 5475
+    },
+    "71262": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2340,
+      "p75_max_sgd": 3175
+    },
+    "71263": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3850,
+      "p50_offer_sgd": 4090,
+      "p75_max_sgd": 4450
+    },
+    "71272": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2888,
+      "p50_offer_sgd": 3535,
+      "p75_max_sgd": 4462
+    },
+    "71290": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 0.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2480,
+      "p75_max_sgd": 3400
+    },
+    "71311": {
+      "vacancies": 16,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3225,
+      "p50_offer_sgd": 3870,
+      "p75_max_sgd": 5000
+    },
+    "71322": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3125,
+      "p50_offer_sgd": 4250,
+      "p75_max_sgd": 5000
+    },
+    "71324": {
+      "vacancies": 5,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.4,
+      "perm_share_pct": 40.0,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 2560,
+      "p75_max_sgd": 4500
+    },
+    "71329": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 3225,
+      "p50_offer_sgd": 3750,
+      "p75_max_sgd": 4750
+    },
+    "71331": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 90.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4000
+    },
+    "72000": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3700,
+      "p75_max_sgd": 4900
+    },
+    "72120": {
+      "vacancies": 75,
+      "salary_samples": 75,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 92.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4080,
+      "p75_max_sgd": 6000
+    },
+    "72130": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 1.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 4625
+    },
+    "72140": {
+      "vacancies": 34,
+      "salary_samples": 34,
+      "avg_apps_per_vacancy": 0.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4200,
+      "p75_max_sgd": 6000
+    },
+    "72150": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "72221": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 0.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2340,
+      "p75_max_sgd": 3000
+    },
+    "72240": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 0.6,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 1700,
+      "p50_offer_sgd": 2020,
+      "p75_max_sgd": 2500
+    },
+    "72310": {
+      "vacancies": 82,
+      "salary_samples": 79,
+      "avg_apps_per_vacancy": 0.2,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4000
+    },
+    "72320": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2050,
+      "p50_offer_sgd": 2810,
+      "p75_max_sgd": 4700
+    },
+    "72330": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 4500
+    },
+    "72340": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1925,
+      "p50_offer_sgd": 2270,
+      "p75_max_sgd": 2700
+    },
+    "72350": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 6.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3420,
+      "p75_max_sgd": 4650
+    },
+    "72391": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3920,
+      "p75_max_sgd": 5300
+    },
+    "72392": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5500
+    },
+    "72399": {
+      "vacancies": 19,
+      "salary_samples": 19,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2450,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 4900
+    },
+    "73111": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 4400,
+      "p75_max_sgd": 5000
+    },
+    "73112": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2500
+    },
+    "73113": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3120,
+      "p75_max_sgd": 3600
+    },
+    "73119": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2800,
+      "p75_max_sgd": 3275
+    },
+    "73130": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3400,
+      "p50_offer_sgd": 4400,
+      "p75_max_sgd": 9500
+    },
+    "73140": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3550,
+      "p50_offer_sgd": 4160,
+      "p75_max_sgd": 5000
+    },
+    "73150": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2275,
+      "p50_offer_sgd": 2800,
+      "p75_max_sgd": 3850
+    },
+    "73210": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 3.2,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 3100,
+      "p75_max_sgd": 5000
+    },
+    "74001": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3760,
+      "p75_max_sgd": 5300
+    },
+    "74002": {
+      "vacancies": 78,
+      "salary_samples": 78,
+      "avg_apps_per_vacancy": 1.9,
+      "perm_share_pct": 96.2,
+      "p25_min_sgd": 2700,
+      "p50_offer_sgd": 3540,
+      "p75_max_sgd": 4800
+    },
+    "74110": {
+      "vacancies": 28,
+      "salary_samples": 28,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 96.4,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2750,
+      "p75_max_sgd": 4575
+    },
+    "74121": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2100,
+      "p50_offer_sgd": 2640,
+      "p75_max_sgd": 4250
+    },
+    "74122": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2656,
+      "p50_offer_sgd": 2938,
+      "p75_max_sgd": 3550
+    },
+    "74123": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2400,
+      "p75_max_sgd": 3000
+    },
+    "74132": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4000
+    },
+    "74212": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 5.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 4800,
+      "p50_offer_sgd": 5080,
+      "p75_max_sgd": 5500
+    },
+    "74224": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "75000": {
+      "vacancies": 1548,
+      "salary_samples": 1545,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 85.5,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 6000
+    },
+    "75110": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2840,
+      "p75_max_sgd": 4000
+    },
+    "75121": {
+      "vacancies": 81,
+      "salary_samples": 80,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 96.3,
+      "p25_min_sgd": 2175,
+      "p50_offer_sgd": 2680,
+      "p75_max_sgd": 3525
+    },
+    "75122": {
+      "vacancies": 14,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 92.9,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2552,
+      "p75_max_sgd": 3150
+    },
+    "75150": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2150,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 4250
+    },
+    "75190": {
+      "vacancies": 7,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 2.1,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 1850,
+      "p50_offer_sgd": 2290,
+      "p75_max_sgd": 2875
+    },
+    "75210": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2040,
+      "p75_max_sgd": 2400
+    },
+    "75220": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2750,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 4625
+    },
+    "75310": {
+      "vacancies": 6,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 14.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "75320": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1500,
+      "p50_offer_sgd": 2300,
+      "p75_max_sgd": 3500
+    },
+    "75340": {
+      "vacancies": 12,
+      "salary_samples": 12,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2114,
+      "p75_max_sgd": 3275
+    },
+    "75390": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3600,
+      "p50_offer_sgd": 6340,
+      "p75_max_sgd": 9875
+    },
+    "75410": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2700,
+      "p50_offer_sgd": 3540,
+      "p75_max_sgd": 5000
+    },
+    "75440": {
+      "vacancies": 21,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 7.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2570,
+      "p75_max_sgd": 3500
+    },
+    "75490": {
+      "vacancies": 30,
+      "salary_samples": 29,
+      "avg_apps_per_vacancy": 5.3,
+      "perm_share_pct": 86.7,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5000
+    },
+    "81000": {
+      "vacancies": 26,
+      "salary_samples": 26,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 3820,
+      "p75_max_sgd": 5150
+    },
+    "81220": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 12.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3200,
+      "p50_offer_sgd": 3244,
+      "p75_max_sgd": 3309
+    },
+    "81240": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 60.0,
+      "p25_min_sgd": 1500,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4800
+    },
+    "81251": {
+      "vacancies": 34,
+      "salary_samples": 33,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 94.1,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2320,
+      "p75_max_sgd": 4000
+    },
+    "81252": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 0.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 3400,
+      "p75_max_sgd": 4500
+    },
+    "81259": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2880,
+      "p75_max_sgd": 4500
+    },
+    "81311": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 4.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3160,
+      "p75_max_sgd": 6000
+    },
+    "81320": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1375,
+      "p50_offer_sgd": 1990,
+      "p75_max_sgd": 2575
+    },
+    "81420": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1950,
+      "p50_offer_sgd": 2780,
+      "p75_max_sgd": 4250
+    },
+    "81501": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1650,
+      "p50_offer_sgd": 1800,
+      "p75_max_sgd": 1975
+    },
+    "81502": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1808,
+      "p50_offer_sgd": 1989,
+      "p75_max_sgd": 2275
+    },
+    "81509": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2620,
+      "p75_max_sgd": 2800
+    },
+    "81601": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1550,
+      "p50_offer_sgd": 2320,
+      "p75_max_sgd": 3150
+    },
+    "81602": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2040,
+      "p75_max_sgd": 2400
+    },
+    "81609": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1450,
+      "p50_offer_sgd": 1820,
+      "p75_max_sgd": 2300
+    },
+    "81700": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2500
+    },
+    "81819": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2400,
+      "p75_max_sgd": 3000
+    },
+    "81821": {
+      "vacancies": 17,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5500
+    },
+    "81830": {
+      "vacancies": 37,
+      "salary_samples": 37,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 70.3,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 3000
+    },
+    "81841": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 1.5,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 2370,
+      "p50_offer_sgd": 2780,
+      "p75_max_sgd": 3650
+    },
+    "82000": {
+      "vacancies": 31,
+      "salary_samples": 30,
+      "avg_apps_per_vacancy": 0.8,
+      "perm_share_pct": 87.1,
+      "p25_min_sgd": 2325,
+      "p50_offer_sgd": 2950,
+      "p75_max_sgd": 3500
+    },
+    "82121": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 3.9,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2940,
+      "p75_max_sgd": 3900
+    },
+    "82122": {
+      "vacancies": 7,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 0.4,
+      "perm_share_pct": 85.7,
+      "p25_min_sgd": 2025,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3950
+    },
+    "82131": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 90.0,
+      "p25_min_sgd": 1850,
+      "p50_offer_sgd": 2800,
+      "p75_max_sgd": 4000
+    },
+    "82132": {
+      "vacancies": 13,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 1.1,
+      "perm_share_pct": 76.9,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2110,
+      "p75_max_sgd": 3025
+    },
+    "82190": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 2800
+    },
+    "83110": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2100,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2350
+    },
+    "83121": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 5000,
+      "p50_offer_sgd": 6200,
+      "p75_max_sgd": 8000
+    },
+    "83211": {
+      "vacancies": 276,
+      "salary_samples": 261,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 4000,
+      "p50_offer_sgd": 4800,
+      "p75_max_sgd": 6000
+    },
+    "83212": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2140,
+      "p75_max_sgd": 2650
+    },
+    "83222": {
+      "vacancies": 132,
+      "salary_samples": 127,
+      "avg_apps_per_vacancy": 21.5,
+      "perm_share_pct": 93.9,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 4000
+    },
+    "83223": {
+      "vacancies": 218,
+      "salary_samples": 213,
+      "avg_apps_per_vacancy": 6.7,
+      "perm_share_pct": 94.5,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2560,
+      "p75_max_sgd": 3500
+    },
+    "83224": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 3.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2460,
+      "p75_max_sgd": 3000
+    },
+    "83225": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 9.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 3000
+    },
+    "83226": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 34.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3150,
+      "p50_offer_sgd": 3440,
+      "p75_max_sgd": 3675
+    },
+    "83229": {
+      "vacancies": 59,
+      "salary_samples": 59,
+      "avg_apps_per_vacancy": 4.9,
+      "perm_share_pct": 93.2,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2400,
+      "p75_max_sgd": 3000
+    },
+    "83311": {
+      "vacancies": 76,
+      "salary_samples": 76,
+      "avg_apps_per_vacancy": 4.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3800,
+      "p75_max_sgd": 5500
+    },
+    "83312": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2500
+    },
+    "83321": {
+      "vacancies": 721,
+      "salary_samples": 712,
+      "avg_apps_per_vacancy": 2.1,
+      "perm_share_pct": 93.5,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3480,
+      "p75_max_sgd": 5000
+    },
+    "83322": {
+      "vacancies": 120,
+      "salary_samples": 119,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 5000
+    },
+    "83323": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 4000,
+      "p75_max_sgd": 5500
+    },
+    "83324": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 6.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3020,
+      "p50_offer_sgd": 3880,
+      "p75_max_sgd": 5250
+    },
+    "83329": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 4.1,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2925,
+      "p50_offer_sgd": 3900,
+      "p75_max_sgd": 4575
+    },
+    "83421": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2350,
+      "p50_offer_sgd": 3940,
+      "p75_max_sgd": 5075
+    },
+    "83423": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 4100,
+      "p75_max_sgd": 5000
+    },
+    "83424": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3750,
+      "p50_offer_sgd": 5500,
+      "p75_max_sgd": 8000
+    },
+    "83429": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2375,
+      "p50_offer_sgd": 3310,
+      "p75_max_sgd": 4825
+    },
+    "83431": {
+      "vacancies": 41,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 17.8,
+      "perm_share_pct": 97.6,
+      "p25_min_sgd": 2800,
+      "p50_offer_sgd": 3820,
+      "p75_max_sgd": 5000
+    },
+    "83432": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 24.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2625,
+      "p50_offer_sgd": 3210,
+      "p75_max_sgd": 4450
+    },
+    "83439": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2120,
+      "p75_max_sgd": 2750
+    },
+    "83441": {
+      "vacancies": 108,
+      "salary_samples": 108,
+      "avg_apps_per_vacancy": 1.3,
+      "perm_share_pct": 96.3,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2800
+    },
+    "83449": {
+      "vacancies": 11,
+      "salary_samples": 11,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 4082,
+      "p75_max_sgd": 5500
+    },
+    "83492": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 2.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 3210,
+      "p75_max_sgd": 4375
+    },
+    "83501": {
+      "vacancies": 8,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 4.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2550,
+      "p50_offer_sgd": 3000,
+      "p75_max_sgd": 3500
+    },
+    "83502": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 2.2,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 550,
+      "p50_offer_sgd": 1802,
+      "p75_max_sgd": 3800
+    },
+    "83509": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 6.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3750
+    },
+    "91000": {
+      "vacancies": 32,
+      "salary_samples": 32,
+      "avg_apps_per_vacancy": 10.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2400,
+      "p50_offer_sgd": 2885,
+      "p75_max_sgd": 4275
+    },
+    "91121": {
+      "vacancies": 46,
+      "salary_samples": 42,
+      "avg_apps_per_vacancy": 2.2,
+      "perm_share_pct": 95.7,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 2575
+    },
+    "91122": {
+      "vacancies": 27,
+      "salary_samples": 26,
+      "avg_apps_per_vacancy": 1.8,
+      "perm_share_pct": 96.3,
+      "p25_min_sgd": 1932,
+      "p50_offer_sgd": 2160,
+      "p75_max_sgd": 2500
+    },
+    "91131": {
+      "vacancies": 218,
+      "salary_samples": 201,
+      "avg_apps_per_vacancy": 3.7,
+      "perm_share_pct": 77.5,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 1960,
+      "p75_max_sgd": 2300
+    },
+    "91132": {
+      "vacancies": 23,
+      "salary_samples": 23,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 95.7,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2128,
+      "p75_max_sgd": 2498
+    },
+    "91133": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 6.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2700,
+      "p50_offer_sgd": 2820,
+      "p75_max_sgd": 3000
+    },
+    "91151": {
+      "vacancies": 15,
+      "salary_samples": 13,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 86.7,
+      "p25_min_sgd": 2080,
+      "p50_offer_sgd": 2620,
+      "p75_max_sgd": 5000
+    },
+    "91152": {
+      "vacancies": 40,
+      "salary_samples": 40,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2180,
+      "p50_offer_sgd": 2188,
+      "p75_max_sgd": 2200
+    },
+    "91153": {
+      "vacancies": 89,
+      "salary_samples": 82,
+      "avg_apps_per_vacancy": 1.7,
+      "perm_share_pct": 88.8,
+      "p25_min_sgd": 1912,
+      "p50_offer_sgd": 2360,
+      "p75_max_sgd": 2700
+    },
+    "91154": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2500
+    },
+    "91161": {
+      "vacancies": 20,
+      "salary_samples": 20,
+      "avg_apps_per_vacancy": 1.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2080,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 2175
+    },
+    "91162": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2550,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 2925
+    },
+    "91210": {
+      "vacancies": 29,
+      "salary_samples": 26,
+      "avg_apps_per_vacancy": 3.0,
+      "perm_share_pct": 89.7,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 1960,
+      "p75_max_sgd": 2500
+    },
+    "91220": {
+      "vacancies": 7,
+      "salary_samples": 7,
+      "avg_apps_per_vacancy": 2.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2380,
+      "p75_max_sgd": 3350
+    },
+    "91230": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3200,
+      "p75_max_sgd": 3500
+    },
+    "91291": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 2200
+    },
+    "91292": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2080,
+      "p50_offer_sgd": 2088,
+      "p75_max_sgd": 2175
+    },
+    "91300": {
+      "vacancies": 22,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 3.8,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2040,
+      "p75_max_sgd": 2500
+    },
+    "92142": {
+      "vacancies": 5,
+      "salary_samples": 5,
+      "avg_apps_per_vacancy": 1.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2095,
+      "p50_offer_sgd": 2120,
+      "p75_max_sgd": 2300
+    },
+    "92149": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 0.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3250,
+      "p50_offer_sgd": 4440,
+      "p75_max_sgd": 6675
+    },
+    "93100": {
+      "vacancies": 16,
+      "salary_samples": 16,
+      "avg_apps_per_vacancy": 0.9,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 3780,
+      "p75_max_sgd": 4775
+    },
+    "93201": {
+      "vacancies": 93,
+      "salary_samples": 83,
+      "avg_apps_per_vacancy": 9.5,
+      "perm_share_pct": 83.9,
+      "p25_min_sgd": 1600,
+      "p50_offer_sgd": 1880,
+      "p75_max_sgd": 2400
+    },
+    "93209": {
+      "vacancies": 32,
+      "salary_samples": 31,
+      "avg_apps_per_vacancy": 0.8,
+      "perm_share_pct": 68.8,
+      "p25_min_sgd": 1860,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 3400
+    },
+    "93310": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 0.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1550,
+      "p50_offer_sgd": 1960,
+      "p75_max_sgd": 3200
+    },
+    "93331": {
+      "vacancies": 10,
+      "salary_samples": 10,
+      "avg_apps_per_vacancy": 2.4,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3000,
+      "p50_offer_sgd": 3850,
+      "p75_max_sgd": 4800
+    },
+    "93332": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 0.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 2960,
+      "p75_max_sgd": 3600
+    },
+    "93333": {
+      "vacancies": 74,
+      "salary_samples": 74,
+      "avg_apps_per_vacancy": 2.0,
+      "perm_share_pct": 97.3,
+      "p25_min_sgd": 2425,
+      "p50_offer_sgd": 2700,
+      "p75_max_sgd": 4000
+    },
+    "93334": {
+      "vacancies": 990,
+      "salary_samples": 934,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 89.2,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2380,
+      "p75_max_sgd": 3500
+    },
+    "93335": {
+      "vacancies": 22,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 90.9,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2120,
+      "p75_max_sgd": 2500
+    },
+    "93336": {
+      "vacancies": 9,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 1.9,
+      "perm_share_pct": 55.6,
+      "p25_min_sgd": 500,
+      "p50_offer_sgd": 1940,
+      "p75_max_sgd": 2800
+    },
+    "93337": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2625,
+      "p50_offer_sgd": 3630,
+      "p75_max_sgd": 4350
+    },
+    "93339": {
+      "vacancies": 21,
+      "salary_samples": 21,
+      "avg_apps_per_vacancy": 2.2,
+      "perm_share_pct": 90.5,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2400,
+      "p75_max_sgd": 3000
+    },
+    "94101": {
+      "vacancies": 367,
+      "salary_samples": 347,
+      "avg_apps_per_vacancy": 2.3,
+      "perm_share_pct": 86.6,
+      "p25_min_sgd": 1900,
+      "p50_offer_sgd": 2440,
+      "p75_max_sgd": 3300
+    },
+    "94102": {
+      "vacancies": 41,
+      "salary_samples": 41,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 90.2,
+      "p25_min_sgd": 2200,
+      "p50_offer_sgd": 2680,
+      "p75_max_sgd": 3450
+    },
+    "94103": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2500,
+      "p50_offer_sgd": 2900,
+      "p75_max_sgd": 3500
+    },
+    "94104": {
+      "vacancies": 15,
+      "salary_samples": 9,
+      "avg_apps_per_vacancy": 5.7,
+      "perm_share_pct": 53.3,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2260,
+      "p75_max_sgd": 2800
+    },
+    "96111": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 2.7,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1625,
+      "p50_offer_sgd": 2390,
+      "p75_max_sgd": 3125
+    },
+    "96112": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 2.8,
+      "perm_share_pct": 75.0,
+      "p25_min_sgd": 2300,
+      "p50_offer_sgd": 2629,
+      "p75_max_sgd": 3000
+    },
+    "96211": {
+      "vacancies": 27,
+      "salary_samples": 26,
+      "avg_apps_per_vacancy": 4.6,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1812,
+      "p50_offer_sgd": 2136,
+      "p75_max_sgd": 2598
+    },
+    "96212": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 3.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 1960,
+      "p75_max_sgd": 2425
+    },
+    "96213": {
+      "vacancies": 6,
+      "salary_samples": 6,
+      "avg_apps_per_vacancy": 7.3,
+      "perm_share_pct": 83.3,
+      "p25_min_sgd": 1812,
+      "p50_offer_sgd": 2600,
+      "p75_max_sgd": 2950
+    },
+    "96251": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 14.3,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2600,
+      "p50_offer_sgd": 3600,
+      "p75_max_sgd": 4900
+    },
+    "96252": {
+      "vacancies": 66,
+      "salary_samples": 66,
+      "avg_apps_per_vacancy": 5.8,
+      "perm_share_pct": 54.5,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2120,
+      "p75_max_sgd": 2500
+    },
+    "96253": {
+      "vacancies": 159,
+      "salary_samples": 126,
+      "avg_apps_per_vacancy": 17.0,
+      "perm_share_pct": 65.4,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2410,
+      "p75_max_sgd": 3100
+    },
+    "96254": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 1.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1300,
+      "p50_offer_sgd": 1460,
+      "p75_max_sgd": 1700
+    },
+    "96255": {
+      "vacancies": 16,
+      "salary_samples": 15,
+      "avg_apps_per_vacancy": 10.9,
+      "perm_share_pct": 93.8,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2320,
+      "p75_max_sgd": 3200
+    },
+    "96256": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 50.0,
+      "p25_min_sgd": 925,
+      "p50_offer_sgd": 1310,
+      "p75_max_sgd": 1800
+    },
+    "96257": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 2.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2098,
+      "p50_offer_sgd": 2181,
+      "p75_max_sgd": 2292
+    },
+    "96259": {
+      "vacancies": 19,
+      "salary_samples": 17,
+      "avg_apps_per_vacancy": 4.1,
+      "perm_share_pct": 63.2,
+      "p25_min_sgd": 1800,
+      "p50_offer_sgd": 2080,
+      "p75_max_sgd": 2500
+    },
+    "96261": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 6.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1950,
+      "p50_offer_sgd": 2600,
+      "p75_max_sgd": 3775
+    },
+    "96262": {
+      "vacancies": 4,
+      "salary_samples": 4,
+      "avg_apps_per_vacancy": 3.8,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 1750,
+      "p50_offer_sgd": 2090,
+      "p75_max_sgd": 2625
+    },
+    "96271": {
+      "vacancies": 2,
+      "salary_samples": 2,
+      "avg_apps_per_vacancy": 9.0,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 3500,
+      "p50_offer_sgd": 3760,
+      "p75_max_sgd": 4325
+    },
+    "96272": {
+      "vacancies": 8,
+      "salary_samples": 8,
+      "avg_apps_per_vacancy": 11.5,
+      "perm_share_pct": 100.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2490,
+      "p75_max_sgd": 3125
+    },
+    "96291": {
+      "vacancies": 4,
+      "salary_samples": 0,
+      "avg_apps_per_vacancy": 7.0,
+      "perm_share_pct": 50.0
+    },
+    "96292": {
+      "vacancies": 1,
+      "salary_samples": 1,
+      "avg_apps_per_vacancy": 18.0,
+      "perm_share_pct": 0.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2200,
+      "p75_max_sgd": 2500
+    },
+    "96293": {
+      "vacancies": 15,
+      "salary_samples": 14,
+      "avg_apps_per_vacancy": 1.4,
+      "perm_share_pct": 80.0,
+      "p25_min_sgd": 2000,
+      "p50_offer_sgd": 2745,
+      "p75_max_sgd": 4375
+    },
+    "96299": {
+      "vacancies": 3,
+      "salary_samples": 3,
+      "avg_apps_per_vacancy": 0.0,
+      "perm_share_pct": 66.7,
+      "p25_min_sgd": 1750,
+      "p50_offer_sgd": 2120,
+      "p75_max_sgd": 3650
+    }
+  }
+}

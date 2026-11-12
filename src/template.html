@@ -2102,15 +2102,84 @@
       dropdown.classList.remove('hidden');
     }
 
-    function renderProvenanceUI(badgeEl, detailsEl, calibType, calibNote, rData) {
+    function applyMcfBenchmark(side, mcfBase) {
+      if (!mcfBase || mcfBase <= 0) return;
+      if (side === 'stay') {
+        state.role1Base = mcfBase;
+        state.stayRank = detectRankFromTitleAndBase(state.role1Title, mcfBase);
+        document.getElementById('stayBaseInput').value = mcfBase;
+        document.getElementById('stayBonusInput').value = Math.round(mcfBase * state.role1Bm);
+      } else {
+        state.role2Base = mcfBase;
+        state.leaveRank = detectRankFromTitleAndBase(state.role2Title, mcfBase);
+        document.getElementById('leaveBaseInput').value = mcfBase;
+        document.getElementById('leaveBonusInput').value = Math.round(mcfBase * state.role2Bm);
+      }
+      syncUIFromState();
+      runSimulation();
+    }
+
+    function buildMcfPulseHtml(rData, side) {
+      if (!rData || !Array.isArray(rData.mcf) || rData.mcf.length < 7) {
+        return `<div class="mt-1.5 pt-1.5 border-t border-slate-800/80 text-[10px] text-slate-500">📊 <strong>MyCareersFuture Portal Check:</strong> No active FCF postings mapped directly to SSOC ${rData ? rData.c : ''} in the latest snapshot (common for statutory, uniformed, or headhunter-only roles).</div>`;
+      }
+      const [vac, samples, mcfP25, mcfP50, mcfP75, appsPerJob, permPct] = rData.mcf;
+      let heatClass = 'text-emerald-300 bg-emerald-950/70 border-emerald-800/80';
+      let heatText = `🟢 ${appsPerJob} apps/job`;
+      if (appsPerJob >= 20) {
+        heatClass = 'text-rose-300 bg-rose-950/70 border-rose-800/80';
+        heatText = `🔴 ${appsPerJob} apps/job (Crowded)`;
+      } else if (appsPerJob >= 8) {
+        heatClass = 'text-amber-300 bg-amber-950/70 border-amber-800/80';
+        heatText = `🟡 ${appsPerJob} apps/job`;
+      }
+
+      if (samples < 3 || mcfP50 <= 0) {
+        return `<div class="mt-1.5 pt-1.5 border-t border-slate-800/80 text-[10px] text-slate-400 flex flex-wrap items-center gap-1.5">
+          <span>📊 <strong>MyCareersFuture Live (${vac.toLocaleString()} ads):</strong></span>
+          <span class="px-1.5 py-0.5 rounded border ${heatClass}">${heatText}</span>
+          <span class="text-slate-500">Thin salary sample (${samples} ads) · Retained MOM/Actuarial anchor.</span>
+        </div>`;
+      }
+
+      const gapPct = rData.p50 > 0 ? Math.round(((mcfP50 - rData.p50) / rData.p50) * 100) : 0;
+      const skewNote = gapPct <= -30
+        ? `Portal ads sit ${Math.abs(gapPct)}% below senior/MOM anchor (SME & FCF hiring skew vs corporate tiers).`
+        : (gapPct >= 25
+          ? `Active hiring market bids +${gapPct}% above survey baseline (tight external supply).`
+          : `Closely aligned (${gapPct >= 0 ? '+' : ''}${gapPct}% vs baseline).`);
+
+      return `
+        <div class="mt-1.5 pt-1.5 border-t border-slate-800/80 text-[10px] text-slate-300 space-y-1">
+          <div class="flex flex-wrap items-center justify-between gap-1.5">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="text-sky-300 font-semibold">📊 MCF Live (${vac.toLocaleString()} ads):</span>
+              <span class="font-mono font-bold text-white">P50 Offer S$${mcfP50.toLocaleString()}/mo</span>
+              <span class="text-slate-400 font-mono">(Band S$${mcfP25.toLocaleString()}–S$${mcfP75.toLocaleString()})</span>
+            </div>
+            <button type="button" data-mcf-apply="${side}" data-mcf-base="${mcfP50}" class="px-2 py-0.5 rounded bg-sky-950 hover:bg-sky-900 text-sky-300 border border-sky-700/80 font-semibold cursor-pointer">
+              Use MCF S$${mcfP50.toLocaleString()}
+            </button>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5 text-[10px]">
+            <span class="px-1.5 py-0.5 rounded border ${heatClass}">${heatText}</span>
+            <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${permPct}% Perm</span>
+            <span class="text-slate-400">${skewNote}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProvenanceUI(badgeEl, detailsEl, calibType, calibNote, rData, side = 'stay') {
+      const mcfHtml = buildMcfPulseHtml(rData, side);
       if (calibType === 'STAT') {
         badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-700';
         badgeEl.innerHTML = '🏛️ Official Statutory Benchmark';
-        detailsEl.innerHTML = `<strong>Singapore Statutory / Gazetted Benchmark:</strong> ${calibNote}`;
+        detailsEl.innerHTML = `<strong>Singapore Statutory / Gazetted Benchmark:</strong> ${calibNote}${mcfHtml}`;
       } else if (calibType === 'SEN') {
         badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-700';
         badgeEl.innerHTML = '⚡ Actuarially Calibrated Seniority';
-        detailsEl.innerHTML = `<strong>Actuarially Calibrated Seniority:</strong> ${calibNote}. Parent SSOC ${rData.c} group baseline: S$${rData.p50.toLocaleString()}/mo.`;
+        detailsEl.innerHTML = `<strong>Actuarially Calibrated Seniority:</strong> ${calibNote}. Parent SSOC ${rData.c} group baseline: S$${rData.p50.toLocaleString()}/mo.${mcfHtml}`;
       } else {
         if (rData.src === 'MOM_OWS_2024_REPORTED') {
           badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700';
@@ -2120,11 +2189,11 @@
           if (rData.rb50 && Math.abs(rData.p50 - rData.rb50) >= 1000) {
             deltaNote = `<div class="mt-1.5 pt-1.5 border-t border-slate-800 text-[10px] text-cyan-300">💡 <strong>Market Reality vs Survey Basket:</strong> MOM establishment table aggregates survey enumerators & field clerks under generic '${rData.t}' (Basic: S$${rData.rb50.toLocaleString()}/mo). The Calibrated Title Market Base (S$${rData.p50.toLocaleString()}/mo) captures specialized professional practice (e.g. clinical/pharma biostatistics, senior quantitative research, benchmarking against MOM Data Analyst record #494 at S$8,356–$12,106/mo).</div>`;
           }
-          detailsEl.innerHTML = `<strong>Official MOM OWS 2024 Survey:</strong> Data.gov.sg table <code>d_9917e751f7498502f70052a940a3f312</code>${extra}.${deltaNote}`;
+          detailsEl.innerHTML = `<strong>Official MOM OWS 2024 Survey:</strong> Data.gov.sg table <code>d_9917e751f7498502f70052a940a3f312</code>${extra}.${deltaNote}${mcfHtml}`;
         } else {
           badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded bg-yellow-950 text-yellow-300 border border-yellow-700';
           badgeEl.innerHTML = '🟡 Actuarially Imputed (MOM Suppressed)';
-          detailsEl.innerHTML = `<strong>Actuarially Imputed / Modelled:</strong> Suppressed by MOM due to sample size &lt;10 respondents; regressed via SingStat TableBuilder M182171 series & Sub-Major Group medians.`;
+          detailsEl.innerHTML = `<strong>Actuarially Imputed / Modelled:</strong> Suppressed by MOM due to sample size &lt;10 respondents; regressed via SingStat TableBuilder M182171 series & Sub-Major Group medians.${mcfHtml}`;
         }
       }
     }
@@ -2379,7 +2448,8 @@
         document.getElementById('stayProvenanceDetails'),
         state.role1CalibType,
         state.role1CalibNote,
-        r1
+        r1,
+        'stay'
       );
 
       // Role 2 UI
@@ -2398,7 +2468,8 @@
         document.getElementById('leaveProvenanceDetails'),
         state.role2CalibType,
         state.role2CalibNote,
-        r2
+        r2,
+        'leave'
       );
 
       // Demographics
@@ -2442,6 +2513,20 @@
         state.role2Bm = state.role2Base > 0 ? (b / state.role2Base) : 0;
         syncUIFromState();
         runSimulation();
+      });
+
+      // MyCareersFuture Live Market Pulse quick-apply buttons (delegated)
+      ['stayProvenanceDetails', 'leaveProvenanceDetails'].forEach((boxId) => {
+        const box = document.getElementById(boxId);
+        if (box) {
+          box.addEventListener('click', (e) => {
+            const btn = e.target && e.target.closest ? e.target.closest('[data-mcf-apply]') : null;
+            if (!btn) return;
+            const side = btn.getAttribute('data-mcf-apply');
+            const mcfBase = parseInt(btn.getAttribute('data-mcf-base'), 10);
+            applyMcfBenchmark(side, mcfBase);
+          });
+        }
       });
 
       // Contract Type & Rank Listeners
