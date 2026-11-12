@@ -1576,7 +1576,11 @@
           badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700';
           badgeEl.innerHTML = '🟢 Official MOM OWS Survey Reported';
           const extra = rData.rb50 ? ` (Median Basic: S$${rData.rb50.toLocaleString()}/mo · Median Gross: S$${rData.rg50.toLocaleString()}/mo)` : '';
-          detailsEl.innerHTML = `<strong>Official MOM OWS 2024 Survey:</strong> Data.gov.sg table <code>d_9917e751f7498502f70052a940a3f312</code>${extra}.`;
+          let deltaNote = '';
+          if (rData.rb50 && Math.abs(rData.p50 - rData.rb50) >= 1000) {
+            deltaNote = `<div class="mt-1.5 pt-1.5 border-t border-slate-800 text-[10px] text-cyan-300">💡 <strong>Market Reality vs Survey Basket:</strong> MOM establishment table aggregates survey enumerators & field clerks under generic '${rData.t}' (Basic: S$${rData.rb50.toLocaleString()}/mo). The Calibrated Title Market Base (S$${rData.p50.toLocaleString()}/mo) captures specialized professional practice (e.g. clinical/pharma biostatistics, senior quantitative research, benchmarking against MOM Data Analyst record #494 at S$8,356–$12,106/mo).</div>`;
+          }
+          detailsEl.innerHTML = `<strong>Official MOM OWS 2024 Survey:</strong> Data.gov.sg table <code>d_9917e751f7498502f70052a940a3f312</code>${extra}.${deltaNote}`;
         } else {
           badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded bg-yellow-950 text-yellow-300 border border-yellow-700';
           badgeEl.innerHTML = '🟡 Actuarially Imputed (MOM Suppressed)';
@@ -1604,7 +1608,7 @@
       document.getElementById('stayBonusDisplay').textContent = `${state.role1Bm} Months`;
       const totCash1 = Math.round(state.role1Base * 12 + state.role1Base * state.role1Bm);
       document.getElementById('stayTotCashDisplay').textContent = `S$${totCash1.toLocaleString()}`;
-      document.getElementById('stayParentInfo').textContent = `Parent Basket: SSOC ${r1.c} · ${r1.t} (MOM Group Median: S$${r1.p50.toLocaleString()}/mo)`;
+      document.getElementById('stayParentInfo').textContent = `Parent Basket: SSOC ${r1.c} · ${r1.t} (Market Benchmark: S$${r1.p50.toLocaleString()}/mo)`;
 
       renderProvenanceUI(
         document.getElementById('stayProvenanceBadge'),
@@ -1623,7 +1627,7 @@
       document.getElementById('leaveThreshDisplay').textContent = `+${r2.lp}%`;
       const totCash2 = Math.round(state.role2Base * 12 + state.role2Base * state.role2Bm);
       document.getElementById('leaveTotCashDisplay').textContent = `S$${totCash2.toLocaleString()}`;
-      document.getElementById('leaveParentInfo').textContent = `Parent Basket: SSOC ${r2.c} · ${r2.t} (MOM Group Median: S$${r2.p50.toLocaleString()}/mo)`;
+      document.getElementById('leaveParentInfo').textContent = `Parent Basket: SSOC ${r2.c} · ${r2.t} (Market Benchmark: S$${r2.p50.toLocaleString()}/mo)`;
 
       renderProvenanceUI(
         document.getElementById('leaveProvenanceBadge'),
