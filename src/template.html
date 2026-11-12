@@ -1236,9 +1236,19 @@
       const c = String(code || '');
       const t = String(title || '').toLowerCase();
 
+      // Specialized domain routing for SSOC 21221 (Statistician)
+      if (c === '21221') {
+        if (/\b(biostat|bioinform|biometr)/.test(t)) return 'BIOMED_PHARMA';
+        if (/\b(health|epidemiol|clinic|medic)/.test(t)) return 'HEALTHCARE_CLINICAL';
+        if (/\b(finan|quant|invest|deriv|risk)/.test(t)) return 'FIN_BANKING';
+        if (/\b(demograph|populat|census|vital|educat)/.test(t)) return 'CIVIL_SERVICE_EDU';
+        if (/\b(econ|market|survey|consult)/.test(t)) return 'STRAT_CONSULTING';
+        return 'STRAT_CONSULTING';
+      }
+
       // 1. Tech & Software (Section J)
       if (c.startsWith('25') || c.startsWith('133') || c === '12210' || c === '12230' || c.startsWith('351') || c.startsWith('352')) {
-        if (/\b(fintech|crypto|blockchain|web3|defi)\b/.test(t)) return 'FINTECH_WEB3';
+        if (/\b(fintech|crypto|blockchain|web3|defi)/.test(t)) return 'FINTECH_WEB3';
         return 'ICT';
       }
 
@@ -1248,7 +1258,7 @@
       }
 
       // 3. Biomedical Sciences & Pharma (Section C21)
-      if (c === '21311' || c === '21312' || c === '21319' || c === '21321' || c.startsWith('3141') || c.startsWith('3211') || c.startsWith('2145') || /\b(biostat|bioinform|pharma|biomed|clinical research|drug)\b/.test(t)) {
+      if (c === '21311' || c === '21312' || c === '21319' || c === '21321' || c.startsWith('3141') || c.startsWith('3211') || c.startsWith('2145') || /\b(biostat|bioinform|pharma|biomed|biotech|clinical trial|clinical research|drug discovery|genom)/.test(t)) {
         return 'BIOMED_PHARMA';
       }
 
@@ -1259,63 +1269,62 @@
 
       // 5. Banking & Financial Services (Section K64)
       if (c.startsWith('241') || c.startsWith('331') || c.startsWith('1211') || c === '21211' || c === '12133' || c === '33210') {
-        if (/\b(fintech|crypto|blockchain|digital bank)\b/.test(t)) return 'FINTECH_WEB3';
+        if (/\b(fintech|crypto|blockchain|digital bank)/.test(t)) return 'FINTECH_WEB3';
         return 'FIN_BANKING';
       }
 
       // 6. Legal, Accounting & Tax Advisory (Section M69)
-      if (c.startsWith('261') || c.startsWith('3411') || c === '24111' || c === '24112' || c === '33130' || /\b(lawyer|advocate|solicitor|paralegal|auditor|accountant|tax consultant|company secretary)\b/.test(t)) {
+      if (c.startsWith('261') || c.startsWith('3411') || c === '24111' || c === '24112' || c === '33130' || /\b(lawyer|advocate|solicitor|paralegal|auditor|account|tax|company secretary)/.test(t)) {
         return 'PROF_LEGAL_ACCT';
       }
 
       // 7. Management Consulting & Strategic Advisory (Section M70, M73)
-      if (c.startsWith('242') || c.startsWith('1212') || c.startsWith('1213') || c.startsWith('1222') || c === '21221') {
-        if (/\b(bio|health|clinical|epidemiol)\b/.test(t)) return 'BIOMED_PHARMA';
+      if (c.startsWith('242') || c.startsWith('1212') || c.startsWith('1213') || c.startsWith('1222')) {
         return 'STRAT_CONSULTING';
       }
 
       // 8. Aviation, Aerospace & Air Transport (Section H51, C30)
-      if (c.startsWith('3151') || c.startsWith('3153') || c.startsWith('3154') || c.startsWith('3155') || c.startsWith('5111') || c === '21442' || c === '13243' || c.startsWith('7232') || /\b(pilot|flight|aircraft|aerospace|air traffic|aviation|cabin crew)\b/.test(t)) {
+      if (c.startsWith('3151') || c.startsWith('3153') || c.startsWith('3154') || c.startsWith('3155') || c.startsWith('5111') || c === '21442' || c === '13243' || c.startsWith('7232') || /\b(pilot|flight|aircraft|aerospace|air traffic|aviation|cabin crew)/.test(t)) {
         return 'AVIATION_AEROSPACE';
       }
 
       // 9. Maritime, Shipping & Supply Chain (Section H50, H52)
-      if (c.startsWith('3152') || c.startsWith('8350') || c === '13241' || c === '13242' || c === '13245' || c === '33311' || /\b(maritime|ship|vessel|harbour|marine|port|seafarer|stevedore)\b/.test(t)) {
+      if (c.startsWith('3152') || c.startsWith('8350') || c === '13241' || c === '13242' || c === '13245' || c === '33311' || /\b(maritime|ship|vessel|harbour|marine|port|seafarer|stevedore)/.test(t)) {
         return 'MARITIME_LOGISTICS';
       }
 
       // 10. Real Estate, REITs & Property Development (Section L68)
-      if (c.startsWith('3334') || c === '12194' || c === '24341' || /\b(property|real estate|reit|leasing|landlord|estate agent|valuer)\b/.test(t)) {
+      if (c.startsWith('3334') || c === '12194' || c === '24341' || /\b(property|real estate|reit|leasing|landlord|estate agent|valuer)/.test(t)) {
         return 'REAL_ESTATE_REITS';
       }
 
       // 11. Civil Engineering & Built Environment (Section F41-43)
-      if (c.startsWith('216') || c.startsWith('312') || c.startsWith('71') || c.startsWith('2142') || c.startsWith('3112') || /\b(civil engineer|architect|surveyor|construction|site manager|m&e)\b/.test(t)) {
+      if (c.startsWith('216') || c.startsWith('312') || c.startsWith('71') || c.startsWith('2142') || c.startsWith('3112') || /\b(civil engineer|architect|surveyor|construction|site manager|m&e)/.test(t)) {
         return 'BUILT_ENVIRONMENT';
       }
 
       // 12. Healthcare, Clinical Medicine & Social Work (Section Q86-88)
-      if (c.startsWith('22') || c.startsWith('32') || c.startsWith('1342') || c.startsWith('1343') || c.startsWith('2634') || c.startsWith('2635') || c.startsWith('325') || /\b(doctor|physician|surgeon|nurse|therapist|pharmacist|medical|radiograph|clinic)\b/.test(t)) {
+      if (c.startsWith('22') || c.startsWith('32') || c.startsWith('1342') || c.startsWith('1343') || c.startsWith('2634') || c.startsWith('2635') || c.startsWith('325') || /\b(doctor|physician|surgeon|nurse|therapist|pharmacist|medical|radiograph|clinic)/.test(t)) {
         return 'HEALTHCARE_CLINICAL';
       }
 
       // 13. Public Administration, Civil Service & MOE (Section O84, P85)
-      if (c.startsWith('23') || c.startsWith('111') || c.startsWith('0') || c.startsWith('X') || c.startsWith('112') || c.startsWith('1341') || c.startsWith('231') || /\b(ministry|statutory board|civil service|police|armed forces|teacher|lecturer|professor|principal)\b/.test(t)) {
+      if (c.startsWith('23') || c.startsWith('111') || c.startsWith('0') || c.startsWith('X') || c.startsWith('112') || c.startsWith('1341') || c.startsWith('231') || /\b(ministry|statutory board|civil service|police|armed forces|teacher|lecturer|professor|principal)/.test(t)) {
         return 'CIVIL_SERVICE_EDU';
       }
 
       // 14. Hospitality, Tourism & Food Services (Section I55-56)
-      if (c.startsWith('51') || c.startsWith('141') || c.startsWith('3434') || c.startsWith('512') || c.startsWith('513') || /\b(hotel|chef|cook|waiter|bartender|hospitality|concierge|tour guide|f&b|restaurant)\b/.test(t)) {
+      if (c.startsWith('51') || c.startsWith('141') || c.startsWith('3434') || c.startsWith('512') || c.startsWith('513') || /\b(hotel|chef|cook|waiter|bartender|hospitality|concierge|tour guide|f&b|restaurant)/.test(t)) {
         return 'HOSPITALITY_FNB';
       }
 
       // 15. Retail, Consumer Goods & E-Commerce (Section G47)
-      if (c.startsWith('52') || c.startsWith('142') || c === '12214' || c === '12215' || /\b(retail|store|merchandiser|cashier|shop|boutique|e-commerce)\b/.test(t)) {
+      if (c.startsWith('52') || c.startsWith('142') || c === '12214' || c === '12215' || /\b(retail|store|merchandis|cashier|shop|boutique|e-commerce)/.test(t)) {
         return 'RETAIL_ECOMMERCE';
       }
 
       // 16. Wholesale & Global Commodity Trade (Section G46)
-      if (c.startsWith('332') || c.startsWith('333') || c.startsWith('1221') || c === '12220' || /\b(wholesale|commodity|trader|import|export|distributor|b2b)\b/.test(t)) {
+      if (c.startsWith('332') || c.startsWith('333') || c.startsWith('1221') || c === '12220' || /\b(wholesale|commodity|trader|import|export|distributor|b2b)/.test(t)) {
         return 'COMMODITY_WHOLESALE';
       }
 
