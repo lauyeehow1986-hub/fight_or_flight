@@ -219,6 +219,7 @@ def build_app():
 
     mcf_path = os.path.join(base_dir, "data_mcf_2026_ssoc_summary.json")
     mcf_benchmarks = {}
+    mcf_payload = {}
     if os.path.exists(mcf_path):
         with open(mcf_path, "r", encoding="utf-8") as f:
             mcf_payload = json.load(f)
@@ -286,6 +287,19 @@ def build_app():
                 float(mcf_row.get("perm_share_pct", 0.0))
             ]
 
+    mom_codes = sum(1 for v in ssoc_dict.values() if v.get("src") == "MOM_OWS_2024_REPORTED")
+    stat_codes = sum(1 for v in ssoc_dict.values() if v.get("src") == "STATUTORY_BENCHMARK")
+    imp_codes = sum(1 for v in ssoc_dict.values() if v.get("src") == "ACTUARIALLY_IMPUTED")
+    total_codes = max(1, len(ssoc_dict))
+    mcf_postings = int(mcf_payload.get("total_unique_postings", 0)) if os.path.exists(mcf_path) else 0
+    mcf_ssoc_cnt = sum(1 for v in ssoc_dict.values() if "mcf" in v)
+    mcf_date = str(mcf_payload.get("harvest_timestamp_utc", "2026-11-12"))[:10] if os.path.exists(mcf_path) else "N/A"
+
+    mom_badge = f"{mom_codes:,} Codes ({(mom_codes * 100.0 / total_codes):.1f}%)"
+    stat_badge = f"{stat_codes:,} Statutory Codes"
+    imp_badge = f"{imp_codes:,} Codes + Seniority"
+    mcf_badge = f"{mcf_postings:,} Ads / {mcf_ssoc_cnt:,} SSOC"
+
     lookup_json = json.dumps(ssoc_dict, separators=(',', ':'), ensure_ascii=False)
     titles_json = json.dumps(titles_index, separators=(',', ':'), ensure_ascii=False)
 
@@ -294,7 +308,16 @@ def build_app():
     with open(template_path, "r", encoding="utf-8") as f:
         template = f.read()
 
-    output_html = template.replace('/*__LOOKUP_JSON__*/', lookup_json).replace('/*__TITLES_JSON__*/', titles_json)
+    output_html = (
+        template
+        .replace('/*__LOOKUP_JSON__*/', lookup_json)
+        .replace('/*__TITLES_JSON__*/', titles_json)
+        .replace('__MOM_CODES_BADGE__', mom_badge)
+        .replace('__STAT_CODES_BADGE__', stat_badge)
+        .replace('__IMPUTED_CODES_BADGE__', imp_badge)
+        .replace('__MCF_PULSE_BADGE__', mcf_badge)
+        .replace('__MCF_HARVEST_DATE__', mcf_date)
+    )
 
     out_path = os.path.join(base_dir, "index.html")
     with open(out_path, "w", encoding="utf-8") as f:

@@ -25,17 +25,17 @@ def calculate_cpf_2026(monthly_ow: float, annual_aw: float, age: int) -> Dict[st
         er_rate = 0.17
         oa_ratio, sa_ratio, ma_ratio = 0.6217, 0.1621, 0.2162
     elif age <= 60:
-        ee_rate = 0.15
-        er_rate = 0.15
-        oa_ratio, sa_ratio, ma_ratio = 0.4000, 0.2667, 0.3333
+        ee_rate = 0.18
+        er_rate = 0.16
+        oa_ratio, sa_ratio, ma_ratio = 0.3529, 0.3382, 0.3089
     elif age <= 65:
-        ee_rate = 0.095
-        er_rate = 0.115
-        oa_ratio, sa_ratio, ma_ratio = 0.1667, 0.3571, 0.4762
+        ee_rate = 0.125
+        er_rate = 0.125
+        oa_ratio, sa_ratio, ma_ratio = 0.1400, 0.4400, 0.4200
     elif age <= 70:
-        ee_rate = 0.070
+        ee_rate = 0.075
         er_rate = 0.090
-        oa_ratio, sa_ratio, ma_ratio = 0.0625, 0.2813, 0.6562
+        oa_ratio, sa_ratio, ma_ratio = 0.0606, 0.3030, 0.6364
     else:
         ee_rate = 0.050
         er_rate = 0.075
@@ -262,7 +262,7 @@ def generate_singapore_sidelines(
             "projected_monthly_gross_sgd": 6500.0, "projected_annual_gross_sgd": 78000.0,
             "recommended_structure": "Exempt Private Limited (Pte Ltd)",
             "acra_tax_strategy": "Qualifies for IRAS Start-Up Tax Exemption (SUTE): effective rate ~4.3% on $78k profit.",
-            "cpf_se_medisave_rate": "9.5% on Net Trade Income", "estimated_annual_medisave_sgd": 7410.0, "net_annual_disposable_sgd": 67275.0,
+            "cpf_se_medisave_rate": "S$0 on single-tier corporate dividends (Pte Ltd)", "estimated_annual_medisave_sgd": 0.0, "net_annual_disposable_sgd": 74685.0,
             "compliance_protocol": "Execute master service agreements under corporate entity name with clear IP ring-fencing."
         },
         {
@@ -272,7 +272,7 @@ def generate_singapore_sidelines(
             "projected_monthly_gross_sgd": 4200.0, "projected_annual_gross_sgd": 50400.0,
             "recommended_structure": "ACRA Sole Proprietorship",
             "acra_tax_strategy": "100% deduction of work-from-home broadband, home office, and hardware.",
-            "cpf_se_medisave_rate": "8.5% on Net Trade Income > S$6,000", "estimated_annual_medisave_sgd": 4284.0, "net_annual_disposable_sgd": 41616.0,
+            "cpf_se_medisave_rate": "9.0% on Net Trade Income > S$18,000 (age 35-44 tier)", "estimated_annual_medisave_sgd": 4536.0, "net_annual_disposable_sgd": 45864.0,
             "compliance_protocol": "Brand strictly under personal professional identity."
         },
         {
@@ -282,7 +282,7 @@ def generate_singapore_sidelines(
             "projected_monthly_gross_sgd": 5500.0, "projected_annual_gross_sgd": 66000.0,
             "recommended_structure": "Exempt Private Limited (Pte Ltd)",
             "acra_tax_strategy": "Eligible for Enterprise Singapore EDG/PSG co-funding and corporate R&D deductions.",
-            "cpf_se_medisave_rate": "9.0% on Net Trade Income", "estimated_annual_medisave_sgd": 5940.0, "net_annual_disposable_sgd": 57255.0,
+            "cpf_se_medisave_rate": "S$0 on single-tier corporate dividends (Pte Ltd)", "estimated_annual_medisave_sgd": 0.0, "net_annual_disposable_sgd": 63195.0,
             "compliance_protocol": "Ensure codebase and copyright are registered exclusively under the Pte Ltd entity."
         }
     ]

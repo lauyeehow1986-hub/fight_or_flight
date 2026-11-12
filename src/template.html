@@ -591,7 +591,7 @@
             <span>📈</span> Stochastic Life-Path Simulation & Net Worth Trajectory
           </h2>
           <p class="text-xs text-[var(--text-muted)] mt-0.5">
-            Continuous-Time Semi-Markov Chain (CTMC) with 12 Hawkes life shocks, 1 Jan 2026 CPF caps, dynamic sideline cashflow, and IRAS YA2026 tax brackets.
+            Monte Carlo career-path simulation (500 paths) with MOM sector retrenchment shocks, promotion rank transitions, 1 Jan 2026 CPF caps, dynamic sideline cashflow, and IRAS YA2026 tax brackets.
           </p>
         </div>
 
@@ -1080,7 +1080,7 @@
               <span class="font-bold text-emerald-400 flex items-center gap-1.5">
                 <span>🟢</span> 1. MOM Survey Reported
               </span>
-              <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono text-[11px]">535 Codes (53.2%)</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono text-[11px]">__MOM_CODES_BADGE__</span>
             </div>
             <p class="text-slate-300 text-[11px] leading-relaxed">
               Directly reported by the <strong>Ministry of Manpower (MOM)</strong> in the Occupational Wage Survey (OWS) 2024 published on Data.gov.sg (resource <code>d_9917e751f7498502f70052a940a3f312</code>).
@@ -1097,14 +1097,14 @@
               <span class="font-bold text-amber-300 flex items-center gap-1.5">
                 <span>🏛️</span> 2. Statutory / Gazetted
               </span>
-              <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono text-[11px]">42 Apex Roles</span>
+              <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono text-[11px]">__STAT_CODES_BADGE__</span>
             </div>
             <p class="text-slate-300 text-[11px] leading-relaxed">
               Governed by official <strong>Singapore Parliamentary Statutes & Gazetted Frameworks</strong>, not surveyed in private commercial employer wage surveys.
             </p>
           </div>
           <div class="text-[10px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">
-            Includes Prime Minister (S$110k/mo base, S$2.2M benchmark), Cabinet Ministers (MR4 benchmark: S$55k/mo base + 7mo bonus), Members of Parliament (S$192,500/yr allowance = S$16,041/mo), Judges, and Senior Civil Servants.
+            Covers Legislator / Elected Parliamentarian (SSOC 11110), Senior Government Official / Administrative Service (SSOC 11121), and Judge (SSOC 26120), with statutory Prime Minister, MR4 Cabinet Minister, and Elected MP title calibrations.
           </div>
         </div>
 
@@ -1114,7 +1114,7 @@
               <span class="font-bold text-blue-300 flex items-center gap-1.5">
                 <span>🟡</span> 3. Actuarially Calibrated
               </span>
-              <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-mono text-[11px]">468 Codes + Seniority</span>
+              <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-mono text-[11px]">__IMPUTED_CODES_BADGE__</span>
             </div>
             <p class="text-slate-300 text-[11px] leading-relaxed">
               Statistical models for niche occupations suppressed by MOM (sample size &lt;10) and sub-title seniority multipliers within broad 5-digit occupational baskets.
@@ -1129,16 +1129,16 @@
           <div>
             <div class="flex items-center justify-between mb-2">
               <span class="font-bold text-cyan-300 flex items-center gap-1.5">
-                <span>🌐</span> 4. Live MCP Verification
+                <span>📊</span> 4. MCF 2026 Job Pulse &amp; Sectors
               </span>
-              <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 font-mono text-[11px]">SingStat & News MCP</span>
+              <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 font-mono text-[11px]">__MCF_PULSE_BADGE__</span>
             </div>
             <p class="text-slate-300 text-[11px] leading-relaxed">
-              Real-time triangulation via the official <strong>SingStat MCP Server</strong> (SANDRA AI) and the <strong>Singapore News MCP</strong> (Straits Times, Business Times, CNA).
+              Embedded market telemetry from <strong>MyCareersFuture (MCF) API v2</strong> (harvested __MCF_HARVEST_DATE__) alongside <strong>MOM Labour Market Survey</strong> sector retrenchment hazards.
             </p>
           </div>
           <div class="text-[10px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">
-            Corroborates Supplementary Survey on Own-Account Workers (~34k secondary workers), Tripartite Guidelines on Restraint of Trade / Non-Compete Clauses, and live retrenchment / restructuring news.
+            Displays advertised P25–P75 offer bands, applicant competition (apps/vacancy), and permanent vs contract shares across active SSOC codes and 17 Singapore industry sectors.
           </div>
         </div>
       </div>
@@ -1399,8 +1399,8 @@
       skipBoss: 4,
       sidelineMode: "both",
       showAllYears: false,
-      stayMajor: "2",
-      leaveMajor: "1",
+      stayMajor: "ALL",
+      leaveMajor: "ALL",
       // Retrenchment, Seniority Rank, Grade Ceiling Caps & Contract Types
       stayJobType: "PERM", // 'PERM' or 'CONTRACT'
       leaveJobType: "PERM",
@@ -1661,10 +1661,16 @@
       } else {
         // Sole Proprietorship
         corpTax = 0;
-        if (chargeableProfit > 6000) {
-          medisaveContrib = Math.round(Math.min(8160, chargeableProfit * medisaveRate));
-        } else {
+        // 1 Jan 2026 CPF SEP MediSave cap (age-tiered 8%-10.5% on NTI up to S$102,000, with S$6k-S$18k phase-in)
+        const maxMedisaveCap = Math.round(102000 * medisaveRate);
+        if (chargeableProfit <= 6000) {
           medisaveContrib = 0;
+        } else if (chargeableProfit <= 12000) {
+          medisaveContrib = Math.round(chargeableProfit * (medisaveRate * 0.5));
+        } else if (chargeableProfit <= 18000) {
+          medisaveContrib = Math.round(12000 * (medisaveRate * 0.5) + (chargeableProfit - 12000) * (2.0 * medisaveRate));
+        } else {
+          medisaveContrib = Math.round(Math.min(maxMedisaveCap, chargeableProfit * medisaveRate));
         }
 
         // Estimate marginal personal tax bracket based on primary base
@@ -2186,8 +2192,8 @@
           badgeEl.innerHTML = '🟢 Official MOM OWS Survey Reported';
           const extra = rData.rb50 ? ` (Median Basic: S$${rData.rb50.toLocaleString()}/mo · Median Gross: S$${rData.rg50.toLocaleString()}/mo)` : '';
           let deltaNote = '';
-          if (rData.rb50 && Math.abs(rData.p50 - rData.rb50) >= 1000) {
-            deltaNote = `<div class="mt-1.5 pt-1.5 border-t border-slate-800 text-[10px] text-cyan-300">💡 <strong>Market Reality vs Survey Basket:</strong> MOM establishment table aggregates survey enumerators & field clerks under generic '${rData.t}' (Basic: S$${rData.rb50.toLocaleString()}/mo). The Calibrated Title Market Base (S$${rData.p50.toLocaleString()}/mo) captures specialized professional practice (e.g. clinical/pharma biostatistics, senior quantitative research, benchmarking against MOM Data Analyst record #494 at S$8,356–$12,106/mo).</div>`;
+          if (rData.c === '21221' && rData.rb50 && Math.abs(rData.p50 - rData.rb50) >= 1000) {
+            deltaNote = `<div class="mt-1.5 pt-1.5 border-t border-slate-800 text-[10px] text-cyan-300">💡 <strong>Market Reality vs Survey Basket:</strong> MOM OWS 2024 generic '${rData.t}' (record #496, Basic P50: S$${rData.rb50.toLocaleString()}/mo) pools survey/field statisticians, whereas applied quantitative &amp; biostatistics practice aligns with MOM Statistical Officer / Data Analyst (record #495, Basic P50–P75: S$8,305–S$12,106/mo). Calibrated parent baseline: S$${rData.p50.toLocaleString()}/mo.</div>`;
           }
           detailsEl.innerHTML = `<strong>Official MOM OWS 2024 Survey:</strong> Data.gov.sg table <code>d_9917e751f7498502f70052a940a3f312</code>${extra}.${deltaNote}${mcfHtml}`;
         } else {
@@ -2733,11 +2739,13 @@
     function runSimulation() {
       const maxYears = state.selectedHorizon === 0 ? Math.max(1, state.retireAge - state.currentAge) : state.selectedHorizon;
 
-      // SCM Promotion & Boss Trap
-      const bossFactor = (state.bossLmx / 7.0);
-      const skipFactor = (state.skipBoss / 5.0);
+      // SCM Promotion & Boss Trap (synced identically with syncContractRankUI & runMonteCarloCareer)
+      const stayRankCfg = RANK_CONFIG[state.stayRank] || RANK_CONFIG.SENIOR;
+      const lmxFactor = 0.3 + 0.7 * (state.bossLmx / 7.0);
+      const skipFactor = 0.5 + 0.5 * (state.skipBoss / 5.0);
+      const typeFactor = state.stayJobType === 'CONTRACT' ? 0.05 : 1.0;
+      const promoProb = stayRankCfg.promoOdds * lmxFactor * skipFactor * typeFactor;
       const flightRisk = 0.15;
-      const promoProb = Math.min(0.35, 0.04 + 0.12 * bossFactor + 0.15 * skipFactor);
       const trapIndex = Math.round((0.65 * 0.85 + 0.35 * 0.70) * (1 - flightRisk) * (1 - 0.7 * promoProb) * 100);
 
       const politicalCap = (state.bossLmx <= 2 && state.skipBoss <= 2) ? 0.015 : 0.042;
@@ -2823,15 +2831,19 @@
       let erRate = 0.17;
       let eeRate = 0.20;
 
+      // Official CPF Board 1 Jan 2026 Contribution Rates (age-tiered ER + EE)
       if (age > 55 && age <= 60) {
-        erRate = 0.15;
-        eeRate = 0.15;
+        erRate = 0.16;
+        eeRate = 0.18;
       } else if (age > 60 && age <= 65) {
-        erRate = 0.115;
-        eeRate = 0.105;
-      } else if (age > 65) {
+        erRate = 0.125;
+        eeRate = 0.125;
+      } else if (age > 65 && age <= 70) {
         erRate = 0.09;
         eeRate = 0.075;
+      } else if (age > 70) {
+        erRate = 0.075;
+        eeRate = 0.05;
       }
 
       const annualTotal = (cappedOw * 12 + cappedAw) * (erRate + eeRate);
@@ -2856,7 +2868,7 @@
     }
 
     function updateScmDisplay(politicalCap, promoProb, trapIndex) {
-      document.getElementById('stayPromoOddsLabel').textContent = `Promo Prob: ${(promoProb * 100).toFixed(0)}% / yr`;
+      document.getElementById('stayPromoOddsLabel').textContent = `Promo Prob: ${(promoProb * 100).toFixed(1)}% / yr`;
       document.getElementById('trapScoreVal').textContent = `Trap: ${trapIndex}/100`;
 
       const trapBox = document.getElementById('trapAlertBox');
