@@ -95,6 +95,42 @@ def calibrate_title_pay(code: str, title: str, p25: float, p50: float, p75: floa
         elif re.search(r'\b(lecturer|senior lecturer)\b', t_lower):
             return int(round(p25 * 0.85)), 2.0, 'SEN', 'University Faculty: Teaching Lecturer / Fellow'
 
+    # 4b. Statistics & Quantitative Science Sub-Specialty Domain Calibration (SSOC 21221)
+    if code == '21221':
+        if 'finance' in t_lower or 'financial' in t_lower or 'quant' in t_lower:
+            return 12500, 3.8, 'SEN', 'Actuarially Calibrated Domain: Finance Statistician (Quant Modeling & Derivatives Risk)'
+        elif 'biostatistician' in t_lower:
+            return 9800, 2.8, 'SEN', 'Actuarially Calibrated Domain: Biostatistician (Clinical Trial Protocol & CDISC Regulatory Submissions)'
+        elif 'bioinformatics' in t_lower:
+            return 9650, 2.6, 'SEN', 'Actuarially Calibrated Domain: Bioinformatics Specialist (Genomics & High-Throughput Omics)'
+        elif 'biometrician' in t_lower:
+            return 9200, 2.4, 'SEN', 'Actuarially Calibrated Domain: Biometrician (Biological & Agricultural Systems Modeling)'
+        elif 'economics' in t_lower or 'econometric' in t_lower:
+            return 8500, 2.6, 'SEN', 'Actuarially Calibrated Domain: Economics Statistician (Econometric & Macro Policy Modeling)'
+        elif 'health' in t_lower or 'epidemiol' in t_lower:
+            return 7800, 2.5, 'SEN', 'Actuarially Calibrated Domain: Health Statistician (Public Healthcare & Population Surveillance)'
+        elif 'demographer' in t_lower:
+            return 7600, 2.4, 'SEN', 'Actuarially Calibrated Domain: Demographer (Population Projections & Vital Statistics)'
+        elif 'education' in t_lower:
+            return 7200, 2.2, 'SEN', 'Actuarially Calibrated Domain: Education Statistician (Psychometrics & Assessment Analytics)'
+        elif 'research officer' in t_lower:
+            return 6800, 2.0, 'SEN', 'Actuarially Calibrated Domain: Research Officer (Statistical Data Modeling)'
+        elif 'survey' in t_lower or 'polling' in t_lower:
+            return 5600, 1.8, 'SEN', 'Actuarially Calibrated Domain: Survey Statistician (Sampling Operations & Survey Fieldwork)'
+        elif re.search(r'\b(assistant|junior)\b', t_lower):
+            return 4800, 1.5, 'SEN', 'Actuarially Calibrated Domain: Assistant / Junior Statistician'
+        else:
+            return 8350, 2.2, 'BASE', 'Principal Profession Benchmark: Statistician (Parent SSOC 21221 Median Anchor)'
+
+    # 4c. Mathematics & Cryptography Domain Calibration (SSOC 21211)
+    if code == '21211':
+        if 'cryptanalyst' in t_lower or 'cipher' in t_lower:
+            return 11500, 3.2, 'SEN', 'Actuarially Calibrated Domain: Cryptanalyst / Cipher Specialist (Cybersecurity & Defense Math)'
+        elif 'applied' in t_lower:
+            return 9800, 2.8, 'SEN', 'Actuarially Calibrated Domain: Applied Mathematics Scientist'
+        elif 'algebraist' in t_lower or 'geometrician' in t_lower:
+            return 8800, 2.5, 'SEN', 'Actuarially Calibrated Domain: Pure Mathematics Researcher'
+
     # 5. Entry-level / Junior / Trainee keywords (Evaluate early to prevent false senior matches)
     if re.search(r'\b(pupil|intern\b|apprentice|trainee\b|assistant nurse|cadet)\b', t_lower):
         return int(round(p25 * 0.70)), 1.0, 'SEN', 'Actuarially Calibrated Seniority: Intern / Trainee Entry Tier (0.70x P25)'
