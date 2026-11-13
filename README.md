@@ -19,7 +19,7 @@ FastMCP Server: `sg-career-actuarial-mcp`
 
 ---
 
-## Interactive Visualization & Stochastic Roadmap (`ssoc_career_actuarial_visualizer.html`)
+## Interactive Visualization & Stochastic Roadmap (`index.html`)
 The project includes a standalone, offline-capable interactive HTML5/Canvas visualization dashboard:
 - **Interactive Role Matching**: Live searchable autocomplete across all 1,006 SSOC 2024 occupations for both Current Role (STAY) and Target Role (LEAVE).
 - **Multi-Horizon Trajectory Engine**: Live toggle between **10-Year**, **20-Year**, **30-Year**, and **Till Retirement (e.g. Age X → 65)** roadmaps.
@@ -39,23 +39,23 @@ The master dataset (`ssoc_2024_actuarial_stay_leave_master.csv` & `.json`) cover
    - ACRA Legal Structure (Sole Proprietorship vs Exempt Private Limited with SUTE tax exemption).
    - Weekly time budget (8 hrs/week baseline).
    - Monthly & Annual Gross Revenue.
-   - 2026 CPF Self-Employed Person (SEP) MediSave contribution (9% on Net Trade Income > S$6,000, capped at S$8,160).
+   - 2026 CPF Self-Employed Person (SEP) MediSave contribution (age-tiered 8%–10.5% on Net Trade Income up to S$102,000, capped at S$8,160–S$10,710/yr with S$6k–S$18k phase-in).
    - Net disposable annual cashflow.
    - Moonlighting Conflict of Interest (COI) risk level and concrete safe-harbor mitigation protocol.
 
 ### Summary Across Major SSOC Groups
 | Major SSOC Group | Occs | Median Base ($P_{50}$) | Definite Leave Threshold | Required Counteroffer | Sideline Monthly Gross | Sideline Annual Net Cash |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1 - Managers & Senior Officials** | 82 | **S$11,076 / mo** | **+21.4%** | **S$14,310 / mo (+29.2%)** | **S$3,996 / mo** | **S$38,410 / yr** |
-| **2 - Professionals** | 308 | **S$9,316 / mo** | **+22.6%** | **S$12,120 / mo (+30.1%)** | **S$3,527 / mo** | **S$33,896 / yr** |
-| **3 - Associate Professionals & Technicians** | 216 | **S$4,388 / mo** | **+18.5%** | **S$5,358 / mo (+22.1%)** | **S$1,536 / mo** | **S$14,757 / yr** |
-| **4 - Clerical Support Workers** | 60 | **S$3,117 / mo** | **+16.0%** | **S$3,656 / mo (+17.3%)** | **S$1,091 / mo** | **S$10,481 / yr** |
-| **5 - Service & Sales Workers** | 86 | **S$2,937 / mo** | **+15.6%** | **S$3,416 / mo (+16.3%)** | **S$1,175 / mo** | **S$11,289 / yr** |
-| **6 - Agricultural & Fishery Workers** | 11 | **S$2,600 / mo** | **+15.0%** | **S$2,985 / mo (+14.8%)** | **S$910 / mo** | **S$8,743 / yr** |
-| **7 - Craftsmen & Related Trades Workers** | 94 | **S$3,391 / mo** | **+16.4%** | **S$3,981 / mo (+17.4%)** | **S$1,526 / mo** | **S$14,663 / yr** |
-| **8 - Plant & Machine Operators & Drivers** | 79 | **S$3,234 / mo** | **+15.3%** | **S$3,742 / mo (+15.7%)** | **S$1,229 / mo** | **S$11,808 / yr** |
-| **9 - Cleaners, Labourers & Elementary** | 65 | **S$1,968 / mo** | **+14.0%** | **S$2,236 / mo (+13.6%)** | **S$886 / mo** | **S$8,515 / yr** |
-| **X - Armed Forces & Unclassified** | 5 | **S$6,500 / mo** | **+20.0%** | **S$8,060 / mo (+24.0%)** | **S$2,275 / mo** | **S$21,858 / yr** |
+| **1 - Managers & Senior Officials** | 82 | **S$7,772 / mo** | **+20.0%** | **S$9,930 / mo (+26.6%)** | **S$2,851 / mo** | **S$27,396 / yr** |
+| **2 - Professionals** | 308 | **S$6,238 / mo** | **+22.0%** | **S$8,296 / mo (+28.1%)** | **S$2,420 / mo** | **S$23,255 / yr** |
+| **3 - Associate Professionals & Technicians** | 216 | **S$3,958 / mo** | **+18.0%** | **S$4,812 / mo (+21.3%)** | **S$1,385 / mo** | **S$13,310 / yr** |
+| **4 - Clerical Support Workers** | 60 | **S$3,100 / mo** | **+16.0%** | **S$3,635 / mo (+17.3%)** | **S$1,085 / mo** | **S$10,426 / yr** |
+| **5 - Service & Sales Workers** | 86 | **S$2,803 / mo** | **+15.0%** | **S$3,235 / mo (+15.4%)** | **S$1,121 / mo** | **S$10,773 / yr** |
+| **6 - Agricultural & Fishery Workers** | 11 | **S$2,142 / mo** | **+15.0%** | **S$2,460 / mo (+14.8%)** | **S$750 / mo** | **S$7,207 / yr** |
+| **7 - Craftsmen & Related Trades Workers** | 94 | **S$2,571 / mo** | **+16.0%** | **S$3,077 / mo (+16.9%)** | **S$1,157 / mo** | **S$11,118 / yr** |
+| **8 - Plant & Machine Operators & Drivers** | 79 | **S$2,440 / mo** | **+15.0%** | **S$2,851 / mo (+15.3%)** | **S$927 / mo** | **S$8,908 / yr** |
+| **9 - Cleaners, Labourers & Elementary** | 65 | **S$1,816 / mo** | **+14.0%** | **S$2,064 / mo (+13.6%)** | **S$818 / mo** | **S$7,861 / yr** |
+| **X - Armed Forces & Unclassified** | 5 | **S$6,500 / mo** | **+20.0%** | **S$8,063 / mo (+24.0%)** | **S$2,275 / mo** | **S$21,862 / yr** |
 
 ---
 

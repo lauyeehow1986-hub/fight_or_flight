@@ -1,6 +1,7 @@
 import csv
 import json
 import re
+import statistics
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -156,16 +157,18 @@ def main() -> None:
     unmatched_imputations = 0
     statutory_count = 0
     used_mom_ids = set()
+    mom_peer_rows = []
+    old_p50_map = {}
 
+    # Pass 1: Assign authoritative STATUTORY_BENCHMARK and MOM_OWS_2024_REPORTED rows
     for row in master:
         code = str(row["ssoc_code"])
         title = str(row["ssoc_title"])
         t_lower = title.lower().strip()
-        old_p50 = float(row["p50_median_monthly_base_sgd"])
+        old_p50_map[code] = float(row["p50_median_monthly_base_sgd"])
 
         if row.get("wage_data_source_tier") == "STATUTORY_BENCHMARK":
             statutory_count += 1
-            recompute_dependent_fields(row, old_p50)
             continue
 
         matched_rec = None
@@ -207,20 +210,52 @@ def main() -> None:
                 row["p25_monthly_base_sgd"] = rb25
                 row["p50_median_monthly_base_sgd"] = rb50
                 row["p75_monthly_base_sgd"] = rb75
+
+            mom_peer_rows.append(row)
         else:
-            unmatched_imputations += 1
             row["wage_data_source_tier"] = "ACTUARIALLY_IMPUTED"
             row["is_officially_reported"] = False
             row["official_reported_p25_sgd"] = None
             row["official_reported_p50_sgd"] = None
             row["official_reported_p75_sgd"] = None
             row["official_reported_gross_p50_sgd"] = None
-            row["wage_citation"] = MAJOR_GROUP_CITATIONS.get(
-                code[:1],
-                "SSOC 2024 Actuarial Cross-Sectional Imputation from MOM OWS 2024 Peer Benchmarks",
-            )
 
-        recompute_dependent_fields(row, old_p50)
+    # Pass 2: Hierarchical MOM OWS 2024 peer imputation for all ACTUARIALLY_IMPUTED codes
+    # Lookup hierarchy: 4-digit (n>=1) -> 3-digit (n>=2) -> 3-digit (n>=1) -> 2-digit (n>=1) -> 1-digit (n>=1)
+    for row in master:
+        code = str(row["ssoc_code"])
+        if row.get("wage_data_source_tier") == "ACTUARIALLY_IMPUTED":
+            unmatched_imputations += 1
+            chosen_peers = []
+            chosen_k = None
+            for k, min_n in ((4, 1), (3, 2), (3, 1), (2, 1), (1, 1)):
+                peers = [p for p in mom_peer_rows if str(p["ssoc_code"])[:k] == code[:k]]
+                if len(peers) >= min_n:
+                    chosen_peers = peers
+                    chosen_k = k
+                    break
+
+            if chosen_peers:
+                row["p25_monthly_base_sgd"] = round(
+                    statistics.median(p["official_reported_p25_sgd"] for p in chosen_peers)
+                )
+                row["p50_median_monthly_base_sgd"] = round(
+                    statistics.median(p["official_reported_p50_sgd"] for p in chosen_peers)
+                )
+                row["p75_monthly_base_sgd"] = round(
+                    statistics.median(p["official_reported_p75_sgd"] for p in chosen_peers)
+                )
+                row["wage_citation"] = (
+                    f"SSOC {chosen_k}-Digit Peer Group ({code[:chosen_k]}*, n={len(chosen_peers)}) "
+                    f"Hierarchical Median Imputation from MOM OWS 2024"
+                )
+            else:
+                row["wage_citation"] = MAJOR_GROUP_CITATIONS.get(
+                    code[:1],
+                    "SSOC 2024 Actuarial Cross-Sectional Imputation (Armed Forces / Unclassified)",
+                )
+
+        recompute_dependent_fields(row, old_p50_map[code])
 
     MASTER_JSON_PATH.write_text(json.dumps(master, indent=2), encoding="utf-8")
     fieldnames = list(master[0].keys())
@@ -229,12 +264,72 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(master)
 
+    update_readme_summary(master)
+
     print(
         f"Updated {len(master)} SSOC records: "
         f"MOM_OWS_2024_REPORTED={matched_count} ({len(used_mom_ids)} unique MOM rows), "
         f"STATUTORY_BENCHMARK={statutory_count}, "
         f"ACTUARIALLY_IMPUTED={unmatched_imputations}"
     )
+
+
+def update_readme_summary(master: list) -> None:
+    readme_path = ROOT / "README.md"
+    if not readme_path.exists():
+        return
+
+    group_labels = [
+        ("1", "**1 - Managers & Senior Officials**"),
+        ("2", "**2 - Professionals**"),
+        ("3", "**3 - Associate Professionals & Technicians**"),
+        ("4", "**4 - Clerical Support Workers**"),
+        ("5", "**5 - Service & Sales Workers**"),
+        ("6", "**6 - Agricultural & Fishery Workers**"),
+        ("7", "**7 - Craftsmen & Related Trades Workers**"),
+        ("8", "**8 - Plant & Machine Operators & Drivers**"),
+        ("9", "**9 - Cleaners, Labourers & Elementary**"),
+        ("X", "**X - Armed Forces & Unclassified**"),
+    ]
+    lines = [
+        "### Summary Across Major SSOC Groups",
+        "| Major SSOC Group | Occs | Median Base ($P_{50}$) | Definite Leave Threshold | Required Counteroffer | Sideline Monthly Gross | Sideline Annual Net Cash |",
+        "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
+    ]
+    for g, label in group_labels:
+        rows = [r for r in master if str(r["ssoc_code"])[:1] == g]
+        if not rows:
+            continue
+        med_p50 = round(statistics.median(r["p50_median_monthly_base_sgd"] for r in rows))
+        med_leave = statistics.median(r["definite_leave_min_increment_pct"] for r in rows)
+        med_co_base = round(statistics.median(r["bellman_indifference_counteroffer_base_sgd"] for r in rows))
+        med_co_pct = statistics.median(r["bellman_counteroffer_required_raise_pct"] for r in rows)
+        med_sl_mo = round(statistics.median(r["sideline_monthly_gross_sgd"] for r in rows))
+        med_sl_net = round(statistics.median(r["sideline_annual_net_cash_sgd"] for r in rows))
+        lines.append(
+            f"| {label} | {len(rows)} | **S${med_p50:,} / mo** | **+{med_leave:.1f}%** | "
+            f"**S${med_co_base:,} / mo (+{med_co_pct:.1f}%)** | **S${med_sl_mo:,} / mo** | **S${med_sl_net:,} / yr** |"
+        )
+
+    new_block = "\n".join(lines)
+    raw = readme_path.read_bytes()
+    has_crlf = b"\r\n" in raw
+    text = raw.decode("utf-8").replace("\r\n", "\n")
+    text = re.sub(
+        r"### Summary Across Major SSOC Groups\n(?:\|.*\n)+",
+        new_block + "\n",
+        text,
+        count=1,
+    )
+    text = text.replace(
+        "(`ssoc_career_actuarial_visualizer.html`)",
+        "(`index.html`)",
+    ).replace(
+        "2026 CPF Self-Employed Person (SEP) MediSave contribution (9% on Net Trade Income > S$6,000, capped at S$8,160).",
+        "2026 CPF Self-Employed Person (SEP) MediSave contribution (age-tiered 8%–10.5% on Net Trade Income up to S$102,000, capped at S$8,160–S$10,710/yr with S$6k–S$18k phase-in).",
+    )
+    readme_path.write_bytes((text.replace("\n", "\r\n") if has_crlf else text).encode("utf-8"))
+    print("Synced README.md Summary Across Major SSOC Groups with true dataset medians:\n" + new_block)
 
 
 if __name__ == "__main__":
