@@ -57,6 +57,11 @@ The master dataset (`ssoc_2024_actuarial_stay_leave_master.csv` & `.json`) cover
 | **9 - Cleaners, Labourers & Elementary** | 65 | **S$1,816 / mo** | **+14.0%** | **S$2,064 / mo (+13.6%)** | **S$818 / mo** | **S$7,861 / yr** |
 | **X - Armed Forces & Unclassified** | 5 | **S$6,500 / mo** | **+20.0%** | **S$8,063 / mo (+24.0%)** | **S$2,275 / mo** | **S$21,862 / yr** |
 
+> **Salary Definition & Benchmark Comparison Caveat:**
+> - **Basic Monthly Salary vs. MOM CLFS Gross Income:** `Median Base (P50)` above reports **monthly basic wages** (MOM OWS 2024 `mthly_basic_wage_50_pctile` + hierarchical peer medians), **excluding** annual bonuses/AWS and employer CPF. MOM's Comprehensive Labour Force Survey (CLFS) headline figures (e.g., `S$10,820` Managers, `S$8,363` Professionals, `S$4,735` Assoc Prof & Technicians; `S$5,775` all full-time employed residents) are **employment-weighted gross monthly incomes including 1/12th bonuses and 17% employer CPF**. Adding modeled bonuses and 17% employer CPF (up to the S$8,000 OW ceiling) to our dataset yields medians of **`S$11,117` / `S$9,078` / `S$5,330`**, aligned with CLFS.
+> - **Equal-Weighted SSOC Codes vs. Worker Headcount:** The table takes medians across unique 5-digit SSOC codes (each occupation counts once) rather than weighting by headcount.
+> - **Median (`P50`) vs. MOM COMPASS C1 Benchmarks:** MOM's Employment Pass COMPASS C1 schedules (`c1-salary-benchmarks-upcoming.pdf`) publish **65th and 90th percentile** local PMET fixed monthly salaries split by **sector × age (23–45+)**, not 50th-percentile all-age occupation medians.
+
 ---
 
 ## Statutory & Economic Parameters Enforced
